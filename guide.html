@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SwiftSaleApp – User Guide</title>
 
-  <!-- Fonts & Site CSS (match index.html exactly) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
+  <!-- Match index.html exactly -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/styles.css"/>
+
+  <!-- OPTIONAL: if your index defines brand vars inline, keep them here too -->
+  <!--
+  <style>
+    :root{
+      --bg:#F9FAFB; --ink:#111827; --muted:#6B7280;
+      --brand1:#ec4657; --brand2:#52a961; --accent:#fbc73e;
+      --header:#111111; --white:#FFFFFF;
+      --radius:12px; --shadow:0 4px 14px rgba(0,0,0,.05);
+    }
+  </style>
+  -->
 </head>
 <body>
 
-  <!-- Header (identical structure/classes/IDs as index) -->
+  <!-- Header (identical to index) -->
   <header>
     <div class="container nav">
       <a href="/" class="logo" aria-label="SwiftSaleApp home">
-        <img src="/images/ssa_logo.png" alt="SwiftSaleApp" class="logo-img" />
+        <img src="/images/ssa_logo.png" alt="SwiftSaleApp" class="logo-img"/>
       </a>
 
       <nav id="nav-menu" class="nav-links" aria-label="Primary">
         <a href="/#features">Features</a>
         <a href="/#video">Demo</a>
-        <a href="/guide.html" class="active">How it works</a>
+        <a href="/guide" class="active">How it works</a>
         <a href="/#pricing">Pricing</a>
         <a href="/#download">Download</a>
         <a href="/#support">Support</a>
@@ -47,7 +59,6 @@
         <!-- Top actions -->
         <div class="guide-actions" style="display:flex; gap:.75rem; flex-wrap:wrap; margin-bottom:2rem;">
           <a class="btn btn-subtle" href="/">← Back to Home</a>
-          <!-- TODO: host the PDF and update this path -->
           <a class="btn btn-primary" href="/docs/swiftsaleapp_user_guide.pdf" target="_blank" rel="noopener">Download PDF</a>
         </div>
 
@@ -160,16 +171,7 @@
     </div>
   </footer>
 
-  <!-- Minimal page-specific CSS; everything else comes from your site CSS -->
-  <style>
-    #guide .guide-block { margin-bottom: 2rem; }
-    #guide h3 { margin-top: 0; }
-    #guide ol, #guide ul { margin: 0 0 1rem 1.25rem; }
-    #guide .muted { color: var(--muted, #6B7280); }
-    .guide-actions .btn { display:inline-block; }
-  </style>
-
-  <!-- Same menu script as index (keeps mobile nav consistent) -->
+  <!-- Keep same script as index for mobile nav -->
   <script>
     function toggleMenu(){
       const nav = document.getElementById('nav-menu');
@@ -190,5 +192,14 @@
       }
     });
   </script>
+
+  <!-- Page-specific tweaks only -->
+  <style>
+    #guide .guide-block { margin-bottom: 2rem; }
+    #guide h3 { margin-top: 0; }
+    #guide ol, #guide ul { margin: 0 0 1rem 1.25rem; }
+    #guide .muted { color: var(--muted, #6B7280); }
+    .guide-actions .btn { display:inline-block; }
+  </style>
 </body>
 </html>
