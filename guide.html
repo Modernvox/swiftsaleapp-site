@@ -1,151 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwiftSaleApp – User Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Your existing stylesheet -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SwiftSaleApp – User Guide</title>
+
+  <!-- Fonts & Site CSS (match index.html exactly) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
 
-<header>
-    <div class="container">
-       <a href="/" class="logo" aria-label="SwiftSaleApp home">
-          <img src="/images/ssa_logo.png" alt="SwiftSaleApp" class="logo-img" />
+  <!-- Header (identical structure/classes/IDs as index) -->
+  <header>
+    <div class="container nav">
+      <a href="/" class="logo" aria-label="SwiftSaleApp home">
+        <img src="/images/ssa_logo.png" alt="SwiftSaleApp" class="logo-img" />
       </a>
 
-        <nav>
-            <a href="/">Home</a>
-            <a href="/pricing">Pricing</a>
-            <a href="/guide" class="active">Guide</a>
-            <a href="/support">Support</a>
-        </nav>
-    </div>
-</header>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/#video">Demo</a>
+        <a href="/guide.html" class="active">How it works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#download">Download</a>
+        <a href="/#support">Support</a>
+      </nav>
 
-<main>
+      <div class="nav-cta">
+        <a class="btn btn-subtle" href="/#pricing">Pricing</a>
+        <a class="btn btn-primary" href="/#download">Download</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <main>
     <section id="guide">
-        <div class="container">
-            <div class="section-head">
-                <h2>SwiftSaleApp User Guide</h2>
-                <span class="muted">Accurate steps for install, setup, live use, and manual fallback</span>
-            </div>
-
-            <!-- Intro -->
-            <div class="guide-block">
-                <h3>Overview</h3>
-                <p>SwiftSaleApp helps Whatnot sellers speed up packing and shipping with bin assignments, label annotation, and instant mailing lists. This guide reflects the current app behavior, including the <strong>manual fallback</strong> when live capture is not available.</p>
-            </div>
-
-            <!-- Installation -->
-            <div class="guide-block">
-                <h3>1) Installation</h3>
-                <ol>
-                    <li>Download the Windows installer from the <a href="#download">Downloads</a> section.</li>
-                    <li>Run the installer (no admin needed; installs to your user AppData).</li>
-                    <li>Launch SwiftSaleApp from the Start Menu or Desktop shortcut.</li>
-                </ol>
-                <p class="muted">If Windows SmartScreen warns you, choose “More info” → “Run anyway”.</p>
-            </div>
-
-            <!-- Activation & Tiers -->
-            <div class="guide-block">
-                <h3>2) Activation & Tiers</h3>
-                <ol>
-                    <li>On first launch, enter a valid email. Your install ID and tier will sync automatically when available.</li>
-                    <li>Paid users receive an activation code via email within <strong>24 hours</strong> (typically ~<strong>14 hours</strong>).</li>
-                    <li>To enter a promo or unlock code, press <strong>Ctrl + Alt + D</strong> (dialog is labeled <em>Enter Promo Code</em>).</li>
-                </ol>
-                <ul>
-                    <li><strong>Starter:</strong> Free — up to 20 bins; includes core features (chat tools, sell rate, top buyers, label annotation, mailing list).</li>
-                    <li><strong>Bronze:</strong> $29.99/mo — up to 50 bins.</li>
-                    <li><strong>Silver:</strong> $69.99/mo — up to 150 bins.</li>
-                    <li><strong>Gold:</strong> $99.99/mo — up to 600 bins, 2-device limit per email, priority support.</li>
-                </ul>
-                <p>Manage upgrades/downgrades on the website via <a href="/manage">Manage Subscription</a>.</p>
-            </div>
-
-            <!-- Capturing Buyers -->
-            <div class="guide-block">
-                <h3>3) Capturing Buyers (Live + Manual Fallback)</h3>
-                <p><strong>Live capture (when enabled in your build):</strong> During a show, SwiftSaleApp can automatically detect buyer usernames and assign bins in real time.</p>
-                <p><strong>Manual fallback (always available):</strong> If live capture is unavailable for any reason, simply type buyer usernames into the Bidder List and assign bins manually. All downstream features (annotation, mailing list, reports) still work exactly the same.</p>
-                <p class="muted">Note: SwiftSaleApp does not require a Whatnot OAuth login. It works from live event data (when available) plus manual entry.</p>
-            </div>
-
-            <!-- Bin Assignments -->
-            <div class="guide-block">
-                <h3>4) Bin Assignments</h3>
-                <ol>
-                    <li>As buyers win or purchase, each username gets a bin number (auto or manual).</li>
-                    <li>Assignments are idempotent — the same buyer keeps the same bin for the show.</li>
-                    <li>You can view, edit, or lock bins if needed before you print labels.</li>
-                </ol>
-            </div>
-
-            <!-- Label Annotation -->
-            <div class="guide-block">
-                <h3>5) Label Annotation (Post-Show)</h3>
-                <ol>
-                    <li>Download your Whatnot shipping labels PDF after the show.</li>
-                    <li>Open the PDF in SwiftSaleApp. The app overlays <strong>buyer name</strong> and <strong>bin number</strong> on each label.</li>
-                    <li>Save or print the annotated PDF. Match labels to bins and pack faster.</li>
-                </ol>
-                <p class="muted">Tip: If a buyer was added manually, they will still annotate correctly so long as their username matches the order.</p>
-            </div>
-
-            <!-- Mailing List & Reports -->
-            <div class="guide-block">
-                <h3>6) Mailing List & Reports</h3>
-                <ul>
-                    <li><strong>Mailing List:</strong> Export a CSV of buyers for marketing and follow-ups.</li>
-                    <li><strong>Top Buyers:</strong> Identify repeat customers and high spenders.</li>
-                    <li><strong>Sell-Rate:</strong> Quick snapshot of show performance.</li>
-                </ul>
-            </div>
-
-            <!-- Device Limits & Sync -->
-            <div class="guide-block">
-                <h3>7) Device Limits & Sync</h3>
-                <ul>
-                    <li><strong>Gold:</strong> Enforced <strong>2-device limit</strong> per email. If you replace a device, contact support to release an old one.</li>
-                    <li>Install/tier syncing runs automatically based on your email and activation status.</li>
-                </ul>
-            </div>
-
-            <!-- Shortcuts -->
-            <div class="guide-block">
-                <h3>8) Shortcuts & Best Practices</h3>
-                <ul>
-                    <li><strong>Ctrl + Alt + D</strong>: Open <em>Enter Promo Code</em> dialog.</li>
-                    <li>Keep buyer usernames consistent. If manual entry is used, match the exact Whatnot username to ensure perfect annotation.</li>
-                    <li>Before printing, spot-check a few labels to confirm annotation (bin and buyer overlay) is correct.</li>
-                </ul>
-            </div>
-
-            <!-- Support -->
-            <div class="guide-block">
-                <h3>9) Support</h3>
-                <p>Questions or need a device reset? Email <a href="mailto:support@swiftsaleapp.com">support@swiftsaleapp.com</a>. Include your <strong>Install ID</strong> from the app’s status bar for faster help. Gold users receive priority response.</p>
-                <p class="muted"><em>Activation codes are emailed within 24 hours of payment (typically ~14 hours).</em></p>
-            </div>
+      <div class="container">
+        <div class="section-head" style="margin-bottom:1rem;">
+          <h2>SwiftSaleApp User Guide</h2>
+          <span class="muted">Accurate steps for install, setup, live use, and manual fallback</span>
         </div>
+
+        <!-- Top actions -->
+        <div class="guide-actions" style="display:flex; gap:.75rem; flex-wrap:wrap; margin-bottom:2rem;">
+          <a class="btn btn-subtle" href="/">← Back to Home</a>
+          <!-- TODO: host the PDF and update this path -->
+          <a class="btn btn-primary" href="/docs/swiftsaleapp_user_guide.pdf" target="_blank" rel="noopener">Download PDF</a>
+        </div>
+
+        <!-- Overview -->
+        <div class="guide-block">
+          <h3>Overview</h3>
+          <p>SwiftSaleApp helps Whatnot sellers speed up packing and shipping with bin assignments, label annotation, and instant mailing lists. This guide reflects the current app behavior, including the <strong>manual fallback</strong> when live capture is not available.</p>
+        </div>
+
+        <!-- Installation -->
+        <div class="guide-block">
+          <h3>1) Installation</h3>
+          <ol>
+            <li>Download the Windows installer from the <a href="/#download">Downloads</a> section.</li>
+            <li>Run the installer (no admin needed; installs to your user AppData).</li>
+            <li>Launch SwiftSaleApp from the Start Menu or Desktop shortcut.</li>
+          </ol>
+          <p class="muted">If Windows SmartScreen warns you, choose “More info” → “Run anyway”.</p>
+        </div>
+
+        <!-- Activation & Tiers -->
+        <div class="guide-block">
+          <h3>2) Activation & Tiers</h3>
+          <ol>
+            <li>On first launch, enter a valid email. Your install ID and tier will sync automatically when available.</li>
+            <li>Paid users receive an activation code via email within <strong>24 hours</strong> (typically ~<strong>14 hours</strong>).</li>
+            <li>To enter a promo or unlock code, press <strong>Ctrl + Alt + D</strong> (dialog is labeled <em>Enter Promo Code</em>).</li>
+          </ol>
+          <ul>
+            <li><strong>Starter:</strong> Free — up to 20 bins; includes core features (chat tools, sell rate, top buyers, label annotation, mailing list).</li>
+            <li><strong>Bronze:</strong> $29.99/mo — up to 50 bins.</li>
+            <li><strong>Silver:</strong> $69.99/mo — up to 150 bins.</li>
+            <li><strong>Gold:</strong> $99.99/mo — up to 600 bins, 2-device limit per email, priority support.</li>
+          </ul>
+          <p>Manage upgrades/downgrades on the website via <a href="/manage">Manage Subscription</a>.</p>
+        </div>
+
+        <!-- Capturing Buyers -->
+        <div class="guide-block">
+          <h3>3) Capturing Buyers (Live + Manual Fallback)</h3>
+          <p><strong>Live capture (when enabled in your build):</strong> During a show, SwiftSaleApp can automatically detect buyer usernames and assign bins in real time.</p>
+          <p><strong>Manual fallback (always available):</strong> If live capture is unavailable for any reason, simply type buyer usernames into the Bidder List and assign bins manually. All downstream features (annotation, mailing list, reports) still work exactly the same.</p>
+          <p class="muted">Note: SwiftSaleApp does not require a Whatnot OAuth login. It works from live event data (when available) plus manual entry.</p>
+        </div>
+
+        <!-- Bin Assignments -->
+        <div class="guide-block">
+          <h3>4) Bin Assignments</h3>
+          <ol>
+            <li>As buyers win or purchase, each username gets a bin number (auto or manual).</li>
+            <li>Assignments are idempotent — the same buyer keeps the same bin for the show.</li>
+            <li>You can view, edit, or lock bins if needed before you print labels.</li>
+          </ol>
+        </div>
+
+        <!-- Label Annotation -->
+        <div class="guide-block">
+          <h3>5) Label Annotation (Post-Show)</h3>
+          <ol>
+            <li>Download your Whatnot shipping labels PDF after the show.</li>
+            <li>Open the PDF in SwiftSaleApp. The app overlays <strong>buyer name</strong> and <strong>bin number</strong> on each label.</li>
+            <li>Save or print the annotated PDF. Match labels to bins and pack faster.</li>
+          </ol>
+          <p class="muted">Tip: If a buyer was added manually, they will still annotate correctly so long as their username matches the order.</p>
+        </div>
+
+        <!-- Mailing List & Reports -->
+        <div class="guide-block">
+          <h3>6) Mailing List & Reports</h3>
+          <ul>
+            <li><strong>Mailing List:</strong> Export a CSV of buyers for marketing and follow-ups.</li>
+            <li><strong>Top Buyers:</strong> Identify repeat customers and high spenders.</li>
+            <li><strong>Sell-Rate:</strong> Quick snapshot of show performance.</li>
+          </ul>
+        </div>
+
+        <!-- Device Limits & Sync -->
+        <div class="guide-block">
+          <h3>7) Device Limits & Sync</h3>
+          <ul>
+            <li><strong>Gold:</strong> Enforced <strong>2-device limit</strong> per email. If you replace a device, contact support to release an old one.</li>
+            <li>Install/tier syncing runs automatically based on your email and activation status.</li>
+          </ul>
+        </div>
+
+        <!-- Shortcuts -->
+        <div class="guide-block">
+          <h3>8) Shortcuts & Best Practices</h3>
+          <ul>
+            <li><strong>Ctrl + Alt + D</strong>: Open <em>Enter Promo Code</em> dialog.</li>
+            <li>Keep buyer usernames consistent. If manual entry is used, match the exact Whatnot username to ensure perfect annotation.</li>
+            <li>Before printing, spot-check a few labels to confirm annotation (bin and buyer overlay) is correct.</li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="guide-block">
+          <h3>9) Support</h3>
+          <p>Questions or need a device reset? Email <a href="mailto:support@swiftsaleapp.com">support@swiftsaleapp.com</a>. Include your <strong>Install ID</strong> from the app’s status bar for faster help. Gold users receive priority response.</p>
+          <p class="muted"><em>Activation codes are emailed within 24 hours of payment (typically ~14 hours).</em></p>
+        </div>
+
+      </div>
     </section>
-</main>
+  </main>
 
-<footer>
+  <footer>
     <div class="container">
-        <p>&copy; 2025 SwiftSaleApp. All rights reserved.</p>
+      <p>&copy; 2025 SwiftSaleApp. All rights reserved.</p>
     </div>
-</footer>
+  </footer>
 
-<style>
+  <!-- Minimal page-specific CSS; everything else comes from your site CSS -->
+  <style>
     #guide .guide-block { margin-bottom: 2rem; }
     #guide h3 { margin-top: 0; }
     #guide ol, #guide ul { margin: 0 0 1rem 1.25rem; }
     #guide .muted { color: var(--muted, #6B7280); }
-</style>
+    .guide-actions .btn { display:inline-block; }
+  </style>
 
+  <!-- Same menu script as index (keeps mobile nav consistent) -->
+  <script>
+    function toggleMenu(){
+      const nav = document.getElementById('nav-menu');
+      const btn = document.querySelector('.menu-toggle');
+      nav.classList.toggle('show');
+      btn?.setAttribute('aria-expanded', nav.classList.contains('show'));
+    }
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('#nav-menu a')) {
+        document.getElementById('nav-menu').classList.remove('show');
+        document.querySelector('.menu-toggle')?.setAttribute('aria-expanded', 'false');
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        document.getElementById('nav-menu').classList.remove('show');
+        document.querySelector('.menu-toggle')?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
 </body>
 </html>
