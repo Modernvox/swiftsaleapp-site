@@ -152,6 +152,9 @@
     gtag('js', new Date());
     gtag('config', 'G-J8NE8Y3279');
   </script>
+
+  <!-- Stripe Buy Button (loaded once) -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
 <body>
   <header>
@@ -301,7 +304,11 @@
             <li>✓ Label annotation</li>
             <li>✓ Auto-create mailing list</li>
           </ul>
-          <a class="btn btn-primary" href="/manage">Manage subscription</a>
+          <!-- Stripe Buy Button: Bronze -->
+          <stripe-buy-button
+            buy-button-id="buy_btn_1RviLNJ7WrcpTNl6LZ1eP7hG"
+            publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5">
+          </stripe-buy-button>
         </div>
 
         <!-- Silver (Featured) -->
@@ -317,7 +324,11 @@
             <li>✓ Label annotation</li>
             <li>✓ Auto-create mailing list</li>
           </ul>
-          <a class="btn btn-primary" href="/manage">Manage subscription</a>
+          <!-- Stripe Buy Button: Silver -->
+          <stripe-buy-button
+            buy-button-id="buy_btn_1RviHUJ7WrcpTNl6XOHlSceJ"
+            publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5">
+          </stripe-buy-button>
         </div>
 
         <!-- Gold -->
@@ -332,7 +343,11 @@
             <li>✓ Priority support</li>
             <li>✓ All core features included</li>
           </ul>
-          <a class="btn btn-primary" href="/manage">Manage subscription</a>
+          <!-- Stripe Buy Button: Gold -->
+          <stripe-buy-button
+            buy-button-id="buy_btn_1RviTzJ7WrcpTNl6fgMg6pKR"
+            publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5">
+          </stripe-buy-button>
         </div>
       </div>
 
