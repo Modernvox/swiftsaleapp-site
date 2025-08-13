@@ -90,27 +90,27 @@
 <body>
 
   <!-- Header (identical to index) -->
- <header>
-  <div class="container nav">
-    <a href="/" class="logo" aria-label="SwiftSaleApp home">
-      <img src="/images/ssa_logo.png" alt="SwiftSaleApp" class="logo-img" />
-    </a>
-    <nav id="nav-menu" class="nav-links" aria-label="Primary">
-      <a href="/#features">Features</a>
-      <a href="/#video">Demo</a>
-      <a href="/guide.html" class="active">How it works</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/#download">Download</a>
-      <a href="/#support">Support</a>
-    </nav>
-    <div class="nav-cta">
-      <a class="btn btn-subtle" href="/#pricing">Pricing</a>
-      <a class="btn btn-primary" href="/#download">Download</a>
+  <header>
+    <div class="container nav">
+      <a href="/" class="logo" aria-label="SwiftSaleApp home">
+        <img src="/images/ssa_logo.png" alt="SwiftSaleApp" class="logo-img" />
+      </a>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/#video">Demo</a>
+        <a href="/guide.html" class="active">How it works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#download">Download</a>
+        <a href="/#support">Support</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-subtle" href="/#pricing">Pricing</a>
+        <a class="btn btn-primary" href="/#download">Download</a>
+      </div>
+      <!-- Removed inline onclick; handled by /js/nav.js -->
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
-  </div>
-</header>
-
+  </header>
 
   <main>
     <section id="guide">
@@ -234,27 +234,12 @@
     </div>
   </footer>
 
-  <!-- Same menu script as index -->
+  <!-- Small inline util: year -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    function toggleMenu(){
-      const nav = document.getElementById('nav-menu');
-      const btn = document.querySelector('.menu-toggle');
-      nav.classList.toggle('show');
-      btn?.setAttribute('aria-expanded', nav.classList.contains('show'));
-    }
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('#nav-menu a')) {
-        document.getElementById('nav-menu').classList.remove('show');
-        document.querySelector('.menu-toggle')?.setAttribute('aria-expanded', 'false');
-      }
-    });
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 900) {
-        document.getElementById('nav-menu').classList.remove('show');
-        document.querySelector('.menu-toggle')?.setAttribute('aria-expanded', 'false');
-      }
-    });
   </script>
+
+  <!-- Shared nav script (same as index) -->
+  <script src="/js/nav.js" defer></script>
 </body>
 </html>

@@ -60,7 +60,6 @@
     .btn-subtle{border-color:rgba(255,255,255,.06)}
     .logo-img{height:28px;width:auto;display:block}
 
-
     .menu-toggle{display:none;background:none;border:none;color:var(--ink);font-size:28px;cursor:pointer}
 
     /* Mobile menu */
@@ -172,7 +171,8 @@
         <a class="btn btn-subtle" href="#pricing">Pricing</a>
         <a class="btn btn-primary" href="#download">Download</a>
       </div>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+      <!-- Removed inline onclick; handled by /js/nav.js -->
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
@@ -180,12 +180,12 @@
   <div class="hero">
     <div class="container hero-wrap">
       <div>
-        <span class="eyebrow">Built by high‑volume Whatnot sellers</span>
+        <span class="eyebrow">Built by high-volume Whatnot sellers</span>
         <h1>Cut packing & shipping time by up to <span style="color:var(--accent)">57%</span></h1>
-        <p class="lead">SwiftSaleApp automatically assigns bins, annotates Whatnot shipping labels with buyer names/bin numbers, and builds your mailing list — so you can finish post‑show work fast.</p>
+        <p class="lead">SwiftSaleApp automatically assigns bins, annotates Whatnot shipping labels with buyer names/bin numbers, and builds your mailing list — so you can finish post-show work fast.</p>
         <div class="cta-row">
           <a id="download-btn" class="btn btn-primary" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe">⬇️ Download for Windows</a>
-          <a class="btn" href="#video">▶ Watch 2‑min demo</a>
+          <a class="btn" href="#video">▶ Watch 2-min demo</a>
         </div>
         <div class="hero-bullets">
           <span class="chip">⚡ 600 bin assignments (Gold)</span>
@@ -199,7 +199,6 @@
       </div>
       <div>
         <div class="video-embed" id="video">
-          <!-- Replace YOUR_VIDEO_ID with your YouTube ID -->
           <iframe src="https://www.youtube.com/embed/5qa9Y4ik4cU?si=VZest7AAX_X5ns-w&rel=0&modestbranding=1" title="SwiftSaleApp Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
@@ -216,23 +215,23 @@
       <div class="feature-grid">
         <div class="card">
           <div class="kicker">Bins</div>
-          <h3>One‑click bin assignment</h3>
+          <h3>One-click bin assignment</h3>
           <p>Assign bins to buyers as they purchase, up to 600 bins on Gold. Idempotent assignments avoid duplicates and keep records clean.</p>
         </div>
         <div class="card">
           <div class="kicker">Labels</div>
           <h3>Buyer + bin stamped on labels</h3>
-          <p>Annotate Whatnot PDF labels with the buyer name and bin number. Print with confidence and pack without cross‑checking.</p>
+          <p>Annotate Whatnot PDF labels with the buyer name and bin number. Print with confidence and pack without cross-checking.</p>
         </div>
         <div class="card">
           <div class="kicker">Lists</div>
-          <h3>Mailing list auto‑build</h3>
+          <h3>Mailing list auto-build</h3>
           <p>Emails collected from purchasers are aggregated into a clean export for your CRM or newsletter tool.</p>
         </div>
         <div class="card">
           <div class="kicker">Pickups</div>
           <h3>Local pickup slips</h3>
-          <p>Overlay buyer names on pickup slips to eliminate mix‑ups at the warehouse front desk.</p>
+          <p>Overlay buyer names on pickup slips to eliminate mix-ups at the warehouse front desk.</p>
         </div>
         <div class="card">
           <div class="kicker">Integrations</div>
@@ -241,107 +240,107 @@
         </div>
         <div class="card">
           <div class="kicker">Teams</div>
-          <h3>Gold: 2‑device limit</h3>
-          <p>Gold tier enforces a 2‑device limit per email for predictable team usage.</p>
+          <h3>Gold: 2-device limit</h3>
+          <p>Gold tier enforces a 2-device limit per email for predictable team usage.</p>
         </div>
       </div>
     </div>
   </section>
 
-<!-- How it works -->
-<section id="how">
-  <div class="container">
-    <div class="section-head">
-      <h2>How it works</h2>
-      <span class="muted">From show to shipped in five steps</span>
-    </div>
-    <p class="muted" style="text-align:center; max-width:600px; margin: 0 auto 1.5rem;">
-      Learn exactly how SwiftSaleApp takes you from show to shipped with bin assignments, label annotation, and mailing lists.
-    </p>
-    <div style="text-align:center;">
-      <a href="/guide.html" class="btn btn-primary">View Full Guide</a>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing -->
-<section id="pricing">
-  <div class="container">
-    <div class="section-head">
-      <h2>Simple pricing</h2>
-      <span class="muted">Manage subscriptions on the website</span>
-    </div>
-
-    <div class="pricing">
-      <!-- Starter (Free) -->
-      <div class="card">
-        <div class="kicker">Free</div>
-        <h3>Starter</h3>
-        <p class="muted">All core features for low-volume sellers.</p>
-        <div class="price"><strong>$0</strong><span>/ forever</span></div>
-        <ul>
-          <li>✓ Up to <strong>20</strong> bin assignments</li>
-          <li>✓ Chat tools & sell-rate insights</li>
-          <li>✓ Top buyers summary</li>
-          <li>✓ Label annotation</li>
-          <li>✓ Auto-create mailing list</li>
-        </ul>
-        <a class="btn btn-subtle" href="#download">Get started</a>
+  <!-- How it works -->
+  <section id="how">
+    <div class="container">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <span class="muted">From show to shipped in five steps</span>
       </div>
-
-      <!-- Bronze -->
-      <div class="card">
-        <div class="kicker">Bronze</div>
-        <h3>Bronze</h3>
-        <p class="muted">Great for growing sellers.</p>
-        <div class="price"><strong>$29.99</strong><span>/ month</span></div>
-        <ul>
-          <li>✓ Up to <strong>50</strong> bin assignments</li>
-          <li>✓ Chat tools & sell-rate insights</li>
-          <li>✓ Top buyers summary</li>
-          <li>✓ Label annotation</li>
-          <li>✓ Auto-create mailing list</li>
-        </ul>
-        <a class="btn btn-primary" href="/manage">Manage subscription</a>
-      </div>
-
-      <!-- Silver (Featured) -->
-      <div class="card" style="border-color:rgba(236,70,87,.5)">
-        <div class="kicker">Silver</div>
-        <h3>Silver</h3>
-        <p class="muted">Most popular for busy solo sellers.</p>
-        <div class="price"><strong>$69.99</strong><span>/ month</span></div>
-        <ul>
-          <li>✓ Up to <strong>150</strong> bin assignments</li>
-          <li>✓ Chat tools & sell-rate insights</li>
-          <li>✓ Top buyers summary</li>
-          <li>✓ Label annotation</li>
-          <li>✓ Auto-create mailing list</li>
-        </ul>
-        <a class="btn btn-primary" href="/manage">Manage subscription</a>
-      </div>
-
-      <!-- Gold -->
-      <div class="card">
-        <div class="kicker">Gold</div>
-        <h3>Gold</h3>
-        <p class="muted">For high-volume teams who need speed.</p>
-        <div class="price"><strong>$99.99</strong><span>/ month</span></div>
-        <ul>
-          <li>✓ Up to <strong>600</strong> bin assignments</li>
-          <li>✓ 2-device limit per email</li>
-          <li>✓ Priority support</li>
-          <li>✓ All core features included</li>
-        </ul>
-        <a class="btn btn-primary" href="/manage">Manage subscription</a>
+      <p class="muted" style="text-align:center; max-width:600px; margin: 0 auto 1.5rem;">
+        Learn exactly how SwiftSaleApp takes you from show to shipped with bin assignments, label annotation, and mailing lists.
+      </p>
+      <div style="text-align:center;">
+        <a href="/guide.html" class="btn btn-primary">View Full Guide</a>
       </div>
     </div>
+  </section>
 
-    <div class="muted" style="margin-top:1rem; font-size:.9rem;">
-      <em>Activation codes are emailed within 24 hours of payment (usually within 14 hours).</em>
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <h2>Simple pricing</h2>
+        <span class="muted">Manage subscriptions on the website</span>
+      </div>
+
+      <div class="pricing">
+        <!-- Starter (Free) -->
+        <div class="card">
+          <div class="kicker">Free</div>
+          <h3>Starter</h3>
+          <p class="muted">All core features for low-volume sellers.</p>
+          <div class="price"><strong>$0</strong><span>/ forever</span></div>
+          <ul>
+            <li>✓ Up to <strong>20</strong> bin assignments</li>
+            <li>✓ Chat tools & sell-rate insights</li>
+            <li>✓ Top buyers summary</li>
+            <li>✓ Label annotation</li>
+            <li>✓ Auto-create mailing list</li>
+          </ul>
+          <a class="btn btn-subtle" href="#download">Get started</a>
+        </div>
+
+        <!-- Bronze -->
+        <div class="card">
+          <div class="kicker">Bronze</div>
+          <h3>Bronze</h3>
+          <p class="muted">Great for growing sellers.</p>
+          <div class="price"><strong>$29.99</strong><span>/ month</span></div>
+          <ul>
+            <li>✓ Up to <strong>50</strong> bin assignments</li>
+            <li>✓ Chat tools & sell-rate insights</li>
+            <li>✓ Top buyers summary</li>
+            <li>✓ Label annotation</li>
+            <li>✓ Auto-create mailing list</li>
+          </ul>
+          <a class="btn btn-primary" href="/manage">Manage subscription</a>
+        </div>
+
+        <!-- Silver (Featured) -->
+        <div class="card" style="border-color:rgba(236,70,87,.5)">
+          <div class="kicker">Silver</div>
+          <h3>Silver</h3>
+          <p class="muted">Most popular for busy solo sellers.</p>
+          <div class="price"><strong>$69.99</strong><span>/ month</span></div>
+          <ul>
+            <li>✓ Up to <strong>150</strong> bin assignments</li>
+            <li>✓ Chat tools & sell-rate insights</li>
+            <li>✓ Top buyers summary</li>
+            <li>✓ Label annotation</li>
+            <li>✓ Auto-create mailing list</li>
+          </ul>
+          <a class="btn btn-primary" href="/manage">Manage subscription</a>
+        </div>
+
+        <!-- Gold -->
+        <div class="card">
+          <div class="kicker">Gold</div>
+          <h3>Gold</h3>
+          <p class="muted">For high-volume teams who need speed.</p>
+          <div class="price"><strong>$99.99</strong><span>/ month</span></div>
+          <ul>
+            <li>✓ Up to <strong>600</strong> bin assignments</li>
+            <li>✓ 2-device limit per email</li>
+            <li>✓ Priority support</li>
+            <li>✓ All core features included</li>
+          </ul>
+          <a class="btn btn-primary" href="/manage">Manage subscription</a>
+        </div>
+      </div>
+
+      <div class="muted" style="margin-top:1rem; font-size:.9rem;">
+        <em>Activation codes are emailed within 24 hours of payment (usually within 14 hours).</em>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Download / Support -->
   <section id="download">
@@ -367,12 +366,12 @@
       <div class="feature-grid">
         <div class="card">
           <h3>Getting started</h3>
-          <p>Step‑by‑step setup guide and first‑show checklist.</p>
+          <p>Step-by-step setup guide and first-show checklist.</p>
           <a class="btn" href="/docs/getting-started.html">Open guide →</a>
         </div>
         <div class="card">
           <h3>Troubleshooting</h3>
-          <p>PDF annotation not stamping? 2‑device limit questions? Start here.</p>
+          <p>PDF annotation not stamping? 2-device limit questions? Start here.</p>
           <a class="btn" href="/docs/troubleshooting.html">Open docs →</a>
         </div>
         <div class="card">
@@ -408,26 +407,6 @@
     // YEAR
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile menu
-    function toggleMenu(){
-      const nav = document.getElementById('nav-menu');
-      const btn = document.querySelector('.menu-toggle');
-      nav.classList.toggle('show');
-      btn.setAttribute('aria-expanded', nav.classList.contains('show'));
-    }
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('#nav-menu a')) {
-        document.getElementById('nav-menu').classList.remove('show');
-        document.querySelector('.menu-toggle')?.setAttribute('aria-expanded', 'false');
-      }
-    });
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 900) {
-        document.getElementById('nav-menu').classList.remove('show');
-        document.querySelector('.menu-toggle')?.setAttribute('aria-expanded', 'false');
-      }
-    });
-
     // ---- Download tracking ----
     const DOWNLOAD_URL = 'https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe';
     const downloadButtons = [document.getElementById('download-btn'), document.getElementById('download-btn-2')].filter(Boolean);
@@ -459,14 +438,13 @@
 
     downloadButtons.forEach(btn => {
       if(!btn) return;
-      btn.addEventListener('click', (e) => {
-        // ensure we still navigate to the href even if tracking fails
-        trackDownload();
-        // keep the default navigation to the href
-      });
+      btn.addEventListener('click', () => { trackDownload(); });
       // ensure the href points at the canonical download URL
       btn.setAttribute('href', DOWNLOAD_URL);
     });
   </script>
+
+  <!-- Shared nav script (replaces inline toggleMenu) -->
+  <script src="/js/nav.js" defer></script>
 </body>
 </html>
