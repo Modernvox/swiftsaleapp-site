@@ -358,20 +358,31 @@
     </div>
   </section>
 
-  <!-- Download / Support -->
-  <section id="download">
-    <div class="container">
-      <div class="section-head">
-        <h2>Download SwiftSaleApp</h2>
-        <span class="muted">Windows installer • v4.0-rc1</span>
-      </div>
-      <div class="card">
-        <p>Click the button below to download the latest installer. </p>
-        <a id="download-btn-2" class="btn btn-primary" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe">⬇️ Download v4.0-rc1 for Windows</a>
-        <div class="fine" style="margin-top:10px">Checksum (SHA-256): <code id="checksum">coming soon</code></div>
-      </div>
+<!-- Download / Support -->
+<section id="download">
+  <div class="container">
+    <div class="section-head">
+      <h2>Download SwiftSaleApp</h2>
+      <span class="muted">Windows installer • v4.0-rc1</span>
     </div>
-  </section>
+
+    <!-- Stable -->
+    <div class="card" style="margin-bottom:1rem;">
+      <p>Click the button below to download the latest stable installer.</p>
+      <a id="download-btn-stable" class="btn btn-primary" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe">⬇️ Download v4.0-rc1 for Windows</a>
+      <div class="fine" style="margin-top:10px">Checksum (SHA-256): <code id="checksum">coming soon</code></div>
+    </div>
+
+    <!-- Beta -->
+    <div class="card" style="border: 1px solid rgba(236,70,87,.5); background:rgba(236,70,87,.08);">
+      <div class="kicker">Beta</div>
+      <h3>SwiftSaleApp v4.1 – Auto-Paste Beta</h3>
+      <p class="muted">This beta version automatically pastes and submits Whatnot usernames into SwiftSaleApp, making bin assignments faster than ever and even more error-proof.</p>
+      <a id="download-btn-beta" class="btn btn-subtle" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/swiftsaleappq4.1_installer.exe">⬇️ Download v4.1 Beta for Windows</a>
+      <div class="fine" style="margin-top:10px">Note: This is a beta build – feedback is welcome!</div>
+    </div>
+  </div>
+</section>
 
   <section id="support">
     <div class="container">
@@ -419,46 +430,70 @@
     </div>
   </footer>
 
-  <script>
-    // YEAR
-    document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+  // YEAR
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // ---- Download tracking ----
-    const DOWNLOAD_URL = 'https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe';
-    const downloadButtons = [document.getElementById('download-btn'), document.getElementById('download-btn-2')].filter(Boolean);
+  // ---- Download tracking ----
+  const STABLE_DOWNLOAD_URL = 'https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe';
+  const BETA_DOWNLOAD_URL   = 'https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/swiftsaleappq4.1_installer.exe';
 
-    function collectUTM(){
-      const params = new URLSearchParams(location.search);
-      const utm = {};
-      ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k=>{
-        if(params.get(k)) utm[k]=params.get(k)
-      });
-      return utm;
-    }
+  const stableButtons = [
+    document.getElementById('download-btn'),        // hero button (if present)
+    document.getElementById('download-btn-stable')  // download section
+  ].filter(Boolean);
 
-    async function trackDownload(){
+  const betaButtons = [
+    document.getElementById('download-btn-beta')
+  ].filter(Boolean);
+
+  function collectUTM(){
+    const params = new URLSearchParams(location.search);
+    const utm = {};
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k=>{
+      if(params.get(k)) utm[k]=params.get(k);
+    });
+    return utm;
+  }
+
+  async function trackDownload({channel, url, itemId}) {
+    // GA4 event (best effort)
+    try { gtag('event', 'download_click', { item_id: itemId, item_category: channel }); } catch(e){}
+    // Optional backend (implement /api/track on your server)
+    try {
       const payload = {
         event: 'download',
-        url: DOWNLOAD_URL,
+        channel,           // 'stable' | 'beta'
+        url,
         ts: Date.now(),
         utm: collectUTM(),
         ua: navigator.userAgent
       };
-      // GA4 event (best effort)
-      try { gtag('event', 'download_click', { item_id: 'ssa_win_v4_0_rc1' }); } catch(e){}
-      // optional backend (implement /api/track on your server)
-      try {
-        await fetch('/api/track', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
-      } catch(e){}
-    }
+      await fetch('/api/track', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(payload)
+      });
+    } catch(e){}
+  }
 
-    downloadButtons.forEach(btn => {
-      if(!btn) return;
-      btn.addEventListener('click', () => { trackDownload(); });
-      // ensure the href points at the canonical download URL
-      btn.setAttribute('href', DOWNLOAD_URL);
+  // Bind stable buttons
+  stableButtons.forEach(btn => {
+    btn.setAttribute('href', STABLE_DOWNLOAD_URL);
+    btn.addEventListener('click', () => {
+      trackDownload({ channel: 'stable', url: STABLE_DOWNLOAD_URL, itemId: 'ssa_win_v4_0_rc1' });
     });
-  </script>
+  });
+
+  // Bind beta buttons
+  betaButtons.forEach(btn => {
+    btn.setAttribute('href', BETA_DOWNLOAD_URL);
+    btn.addEventListener('click', () => {
+      trackDownload({ channel: 'beta', url: BETA_DOWNLOAD_URL, itemId: 'ssa_win_v4_1_beta' });
+    });
+  });
+</script>
+
 
   <!-- Shared nav script (replaces inline toggleMenu) -->
   <script src="/js/nav.js" defer></script>
