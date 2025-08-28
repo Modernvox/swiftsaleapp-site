@@ -104,13 +104,16 @@
 
     /* Hero */
     .hero{
-      position:relative;overflow:hidden;
+      position:relative;overflow:hidden;text-align:center;
       background:
         radial-gradient(900px 420px at 10% -10%, rgba(245,189,63,.22), transparent 60%),
         linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
       color:#fff;
     }
-    .hero-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:60px 0}
+    .hero-wrap{
+      display:grid;grid-template-columns:1fr;gap:24px;align-items:center;
+      padding:60px 0;
+    }
     .eyebrow{
       display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
       color:#f3f4f6;border:1px solid rgba(255,255,255,.28);padding:6px 10px;border-radius:999px;margin-bottom:14px;background:rgba(255,255,255,.06)
@@ -118,16 +121,34 @@
     h1{font-size:44px;line-height:1.15;margin:0 0 16px}
     .accent{color:var(--accent)}
     .lead{font-size:18px;color:#eef2ff;margin:0 0 26px}
-    .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
     .hero-card{
       background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
-      border-radius:var(--radius-lg);padding:18px;box-shadow:0 10px 24px rgba(0,0,0,.2)
+      border-radius:var(--radius-lg);padding:18px;box-shadow:0 10px 24px rgba(0,0,0,.2);display:inline-block
     }
     .mini{font-size:12px;color:#f3f4f6}
-    .hero-bullets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+    .hero-bullets{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;margin-top:14px;max-width:720px;margin-left:auto;margin-right:auto
+    }
     .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;padding:8px 12px;border-radius:12px;font-size:13px}
-    @media (max-width:900px){.hero-wrap{grid-template-columns:1fr;gap:24px;padding:38px 0} h1{font-size:34px}}
+    @media (max-width:900px){
+      h1{font-size:34px}
+      .hero-bullets{grid-template-columns:1fr}
+    }
 
+    /* Full-bleed responsive video */
+    .video-embed{
+      position:relative;overflow:hidden;background:#000;
+      border:1px solid rgba(255,255,255,.28);box-shadow:0 12px 30px rgba(0,0,0,.25);
+      border-radius:0; /* full-bleed edge-to-edge */
+    }
+    .video-embed.fullbleed{
+      width:100vw;           /* span entire viewport width */
+      margin-left:calc(50% - 50vw); /* break out of container */
+      aspect-ratio:16/9;     /* keep 16:9 on any screen */
+    }
+    .video-embed iframe{width:100%;height:100%;display:block;border:0}
 
     /* Sections (light) */
     section{padding:56px 0}
@@ -227,77 +248,45 @@
     </div>
   </header>
 
-<!-- Hero -->
-<div class="hero" id="home">
-  <div class="container hero-wrap">
-    <div>
-      <span class="eyebrow">Built by a high-volume Whatnot seller</span>
-      <h1>Cut packing & shipping time by up to <span class="accent">57%</span></h1>
-
-      <!-- Keep this ONE video -->
-      <div class="video-embed" id="video" style="margin:16px 0 18px;">
-        <iframe
-          src="https://www.youtube.com/embed/5qa9Y4ik4cU?si=VZest7AAX_X5ns-w&rel=0&modestbranding=1"
-          title="SwiftSaleApp Demo"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <p class="lead">
-        SwiftSaleApp automatically assigns bins, annotates Whatnot shipping labels with buyer names/bin numbers,
-        and builds your mailing list — so you can finish post-show work fast.
-      </p>
-
-      <div class="cta-row">
-        <a id="download-btn" class="btn btn-primary" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe">⬇️ Download for Windows</a>
-        <a class="btn" href="#video">▶ Watch 2-min demo</a>
-      </div>
-
-      <div class="hero-bullets">
-        <span class="chip">⚡ 600 bin assignments (Gold)</span>
-        <span class="chip">🧾 Auto label annotation</span>
-        <span class="chip">📧 Auto mailing lists</span>
-        <span class="chip">🏷️ Local pickup slips</span>
-      </div>
-
-      <div class="hero-card" style="margin-top:14px">
-        <div class="mini">No credit card required • Free tier available • Manage subscriptions on website</div>
-      </div>
-    </div>
-
-    <!-- Optional spacer to preserve two-column spacing on desktop -->
-    <div aria-hidden="true"></div>
-  </div>
-</div>
-
-
-      <!-- Now the descriptive paragraph comes AFTER the video -->
-      <p class="lead">
-        SwiftSaleApp automatically assigns bins, annotates Whatnot shipping labels with buyer names/bin numbers,
-        and builds your mailing list — so you can finish post-show work fast.
-      </p>
-
-      <div class="cta-row">
-        <a id="download-btn" class="btn btn-primary" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe">⬇️ Download for Windows</a>
-        <a class="btn" href="#video">▶ Watch 2-min demo</a>
-      </div>
-
-      <div class="hero-bullets">
-        <span class="chip">⚡ 600 bin assignments (Gold)</span>
-        <span class="chip">🧾 Auto label annotation</span>
-        <span class="chip">📧 Auto mailing lists</span>
-        <span class="chip">🏷️ Local pickup slips</span>
-      </div>
-
-      <div class="hero-card" style="margin-top:14px">
-        <div class="mini">No credit card required • Free tier available • Manage subscriptions on website</div>
-      </div>
-    </div>
+  <!-- Hero -->
+  <div class="hero" id="home">
+    <div class="container hero-wrap">
       <div>
-        <div class="video-embed" id="video">
-          <iframe src="https://www.youtube.com/embed/5qa9Y4ik4cU?si=VZest7AAX_X5ns-w&rel=0&modestbranding=1" title="SwiftSaleApp Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+        <span class="eyebrow">Built by a high-volume Whatnot seller</span>
+        <h1>Cut packing & shipping time by up to <span class="accent">57%</span></h1>
+      </div>
+    </div>
+
+    <!-- Full-bleed video RIGHT AFTER H1 -->
+    <div class="video-embed fullbleed" id="video">
+      <iframe
+        src="https://www.youtube.com/embed/5qa9Y4ik4cU?si=VZest7AAX_X5ns-w&rel=0&modestbranding=1"
+        title="SwiftSaleApp Demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="container hero-wrap" style="padding-top:24px;">
+      <p class="lead">
+        SwiftSaleApp automatically assigns bins, annotates Whatnot shipping labels with buyer names/bin numbers,
+        and builds your mailing list — so you can finish post-show work fast.
+      </p>
+
+      <div class="cta-row">
+        <a id="download-btn" class="btn btn-primary" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe">⬇️ Download for Windows</a>
+        <a class="btn" href="#video">▶ Watch 2-min demo</a>
+      </div>
+
+      <div class="hero-bullets">
+        <span class="chip">⚡ 600 bin assignments (Gold)</span>
+        <span class="chip">🧾 Auto label annotation</span>
+        <span class="chip">📧 Auto mailing lists</span>
+        <span class="chip">🏷️ Local pickup slips</span>
+      </div>
+
+      <div class="hero-card" style="margin-top:14px">
+        <div class="mini">No credit card required • Free tier available • Manage subscriptions on website</div>
       </div>
     </div>
   </div>
