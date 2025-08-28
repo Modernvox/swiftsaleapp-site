@@ -20,51 +20,81 @@
   <meta name="twitter:description" content="Assign bins, annotate labels, and finish packing in record time." />
   <meta name="twitter:image" content="https://www.swiftsaleapp.com/images/ssa_logo.png" />
 
-  <!-- Fonts (optional) -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Silence “payment” console noise since checkout happens on Stripe -->
+  <meta http-equiv="Permissions-Policy" content="payment=()">
+
   <style>
+    /* ===== Light theme mapped to your logo ===== */
     :root{
-      --bg:#0b0c10;          /* deep charcoal */
-      --panel:#111216;       /* surface */
-      --ink:#e5e7eb;         /* text */
-      --muted:#9aa3b2;       /* secondary text */
-      --brand:#ec4657;       /* brand red */
-      --brand-2:#52a961;     /* brand green */
-      --accent:#fbc73e;      /* accent */
+      --bg:#FAF9F9;          /* light page background */
+      --panel:#FFFFFF;       /* card/panel surface */
+      --ink:#38302A;         /* primary text */
+      --muted:#6B7280;       /* secondary text */
+      --brand:#E64C53;       /* rocket red */
+      --brand-2:#518567;     /* teal/green */
+      --accent:#F5BD3F;      /* yellow highlight */
       --white:#fff;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+
+      --shadow:0 6px 18px rgba(0,0,0,.12);
       --radius:16px;
       --radius-lg:22px;
       --max:1200px;
+      --border: rgba(0,0,0,.08);
+      --border-strong: rgba(0,0,0,.14);
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
     img{max-width:100%;display:block}
-    a{color:var(--ink);text-decoration:none}
+    a{color:var(--brand);text-decoration:none}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
-    /* Header */
-    header{position:sticky;top:0;z-index:50;background:rgba(11,12,16,.7);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+    /* Header (kept dark for brand contrast) */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:#000; /* solid like your logo */
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .logo{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.3px}
-    .logo-dot{width:12px;height:12px;background:var(--brand);border-radius:50%;box-shadow:0 0 0 6px rgba(236,70,87,.2)}
-    .nav-links{display:flex;align-items:center;gap:20px}
-    .nav-links a{opacity:.9}
-    .nav-cta{display:flex;align-items:center;gap:10px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--ink);font-weight:600;transition:transform .08s ease, background .2s ease}
-    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06)}
-    .btn-primary{background:var(--brand);border:none}
-    .btn-primary:hover{background:#d33b4a}
-    .btn-subtle{border-color:rgba(255,255,255,.06)}
     .logo-img{height:28px;width:auto;display:block}
+    .nav-links{display:flex;align-items:center;gap:20px}
+    .nav-links a{color:#fff;opacity:.92}
+    .nav-cta{display:flex;align-items:center;gap:10px}
 
-    .menu-toggle{display:none;background:none;border:none;color:var(--ink);font-size:28px;cursor:pointer}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 18px;border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;color:var(--ink);font-weight:700;
+      transition:transform .08s ease, box-shadow .2s ease, background .2s ease;
+      box-shadow:0 1px 2px rgba(0,0,0,.04);
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.12)}
+    .btn-primary{background:var(--brand);border:none;color:#fff}
+    .btn-primary:hover{filter:brightness(.96)}
+    .btn-subtle{background:#fff}
+    .menu-toggle{display:none;background:none;border:none;color:#fff;font-size:28px;cursor:pointer}
 
     /* Mobile menu */
     @media (max-width:900px){
-      .nav-links{display:none;position:absolute;top:64px;right:20px;background:var(--panel);flex-direction:column;gap:0;width:260px;border-radius:14px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.06)}
+      .nav-links{
+        display:none;position:absolute;top:64px;right:20px;background:#111; /* dark flyout for contrast */
+        flex-direction:column;gap:0;width:260px;border-radius:14px;
+        box-shadow:0 12px 30px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08)
+      }
       .nav-links a{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
       .nav-links a:last-child{border-bottom:none}
       .nav-links.show{display:flex}
@@ -73,42 +103,62 @@
     }
 
     /* Hero */
-    .hero{position:relative;overflow:hidden}
-    .hero-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:60px 0}
-    .eyebrow{display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;margin-bottom:14px}
-    h1{font-size:44px;line-height:1.15;margin:0 0 16px}
-    .lead{font-size:18px;color:var(--muted);margin:0 0 26px}
-    .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-    .hero-card{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:18px;box-shadow:var(--shadow)}
-    .mini{font-size:12px;color:var(--muted)}
-    .hero-bullets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
-    .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:var(--ink);padding:8px 12px;border-radius:12px;font-size:13px}
-
-    @media (max-width:900px){
-      .hero-wrap{grid-template-columns:1fr;gap:24px;padding:38px 0}
-      h1{font-size:34px}
+    .hero{
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(900px 420px at 10% -10%, rgba(245,189,63,.22), transparent 60%),
+        linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+      color:#fff;
     }
+    .hero-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:60px 0}
+    .eyebrow{
+      display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+      color:#f3f4f6;border:1px solid rgba(255,255,255,.28);padding:6px 10px;border-radius:999px;margin-bottom:14px;background:rgba(255,255,255,.06)
+    }
+    h1{font-size:44px;line-height:1.15;margin:0 0 16px}
+    .accent{color:var(--accent)}
+    .lead{font-size:18px;color:#eef2ff;margin:0 0 26px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-card{
+      background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+      border-radius:var(--radius-lg);padding:18px;box-shadow:0 10px 24px rgba(0,0,0,.2)
+    }
+    .mini{font-size:12px;color:#f3f4f6}
+    .hero-bullets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+    .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;padding:8px 12px;border-radius:12px;font-size:13px}
+    @media (max-width:900px){.hero-wrap{grid-template-columns:1fr;gap:24px;padding:38px 0} h1{font-size:34px}}
 
     /* Video */
-    .video-embed{border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08);background:#000;aspect-ratio:16/9}
+    .video-embed{border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.28);background:#000;aspect-ratio:16/9}
     .video-embed iframe{width:100%;height:100%;display:block;border:0}
 
-    /* Sections */
+    /* Sections (light) */
     section{padding:56px 0}
     section .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:20px}
     section h2{margin:0;font-size:30px}
     .muted{color:var(--muted)}
 
-    /* Features */
+    /* Features / Cards */
     .feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 16px 28px rgba(0,0,0,.16)}
     .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:6px}
     .card h3{margin:0 0 6px}
     @media (max-width:900px){.feature-grid{grid-template-columns:1fr}}
 
     /* How it works */
     .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-    .step{border-left:3px solid var(--brand);padding:12px;border-radius:12px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08)}
+    .step{
+      border-left:3px solid var(--brand);padding:12px;border-radius:12px;
+      background:#fff;border:1px solid var(--border)
+    }
     @media (max-width:1000px){.steps{grid-template-columns:1fr 1fr}.step{min-height:120px}}
     @media (max-width:620px){.steps{grid-template-columns:1fr}}
 
@@ -118,15 +168,17 @@
     .price strong{font-size:36px}
     @media (max-width:900px){.pricing{grid-template-columns:1fr}}
 
-    /* Footer */
-    footer{padding:36px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--muted)}
+    /* Footer (light) */
+    footer{
+      padding:36px 0;border-top:1px solid var(--border);color:var(--muted);background:#fff
+    }
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
     .footer-grid a{color:var(--muted)}
     @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
     .fine{font-size:12px;color:var(--muted)}
 
     /* Badges */
-    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.08);padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.04)}
+    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:8px 12px;border-radius:999px;background:#fff;color:var(--ink)}
   </style>
 
   <!-- JSON-LD: SoftwareApplication -->
@@ -174,17 +226,16 @@
         <a class="btn btn-subtle" href="#pricing">Pricing</a>
         <a class="btn btn-primary" href="#download">Download</a>
       </div>
-      <!-- Removed inline onclick; handled by /js/nav.js -->
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
   <!-- Hero -->
-  <div class="hero">
+  <div class="hero" id="home">
     <div class="container hero-wrap">
       <div>
         <span class="eyebrow">Built by high-volume Whatnot sellers</span>
-        <h1>Cut packing & shipping time by up to <span style="color:var(--accent)">57%</span></h1>
+        <h1>Cut packing & shipping time by up to <span class="accent">57%</span></h1>
         <p class="lead">SwiftSaleApp automatically assigns bins, annotates Whatnot shipping labels with buyer names/bin numbers, and builds your mailing list — so you can finish post-show work fast.</p>
         <div class="cta-row">
           <a id="download-btn" class="btn btn-primary" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe">⬇️ Download for Windows</a>
@@ -304,7 +355,6 @@
             <li>✓ Label annotation</li>
             <li>✓ Auto-create mailing list</li>
           </ul>
-          <!-- Stripe Buy Button: Bronze -->
           <stripe-buy-button
             buy-button-id="buy_btn_1RviLNJ7WrcpTNl6LZ1eP7hG"
             publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5">
@@ -312,7 +362,7 @@
         </div>
 
         <!-- Silver (Featured) -->
-        <div class="card" style="border-color:rgba(236,70,87,.5)">
+        <div class="card" style="border-color:var(--border-strong)">
           <div class="kicker">Silver</div>
           <h3>Silver</h3>
           <p class="muted">Most popular for busy solo sellers.</p>
@@ -324,11 +374,10 @@
             <li>✓ Label annotation</li>
             <li>✓ Auto-create mailing list</li>
           </ul>
-         <stripe-buy-button
-  buy-button-id="buy_btn_1Rvis1J7WrcpTNl65ruVtBMU"
-  publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5"
->
-</stripe-buy-button>
+          <stripe-buy-button
+            buy-button-id="buy_btn_1Rvis1J7WrcpTNl65ruVtBMU"
+            publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5">
+          </stripe-buy-button>
         </div>
 
         <!-- Gold -->
@@ -343,13 +392,11 @@
             <li>✓ Priority support</li>
             <li>✓ All core features included</li>
           </ul>
-          <!-- Stripe Buy Button: Gold -->
           <stripe-buy-button
              buy-button-id="buy_btn_1RvimFJ7WrcpTNl6lymzErNs"
-             publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5"
-          >
-          </stripe-buy-button>        
-         </div>
+             publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5">
+          </stripe-buy-button>
+        </div>
       </div>
 
       <div class="muted" style="margin-top:1rem; font-size:.9rem;">
@@ -358,32 +405,32 @@
     </div>
   </section>
 
-<!-- Download / Support -->
-<section id="download">
-  <div class="container">
-    <div class="section-head">
-      <h2>Download SwiftSaleApp</h2>
-      <span class="muted">Windows installer</span>
-    </div>
+  <!-- Download / Support -->
+  <section id="download">
+    <div class="container">
+      <div class="section-head">
+        <h2>Download SwiftSaleApp</h2>
+        <span class="muted">Windows installer</span>
+      </div>
 
-    <!-- Beta -->
-    <div class="card" style="border: 1px solid rgba(236,70,87,.5); background:rgba(236,70,87,.08); margin-bottom:1rem;">
-      <div class="kicker">Beta</div>
-      <h3>🔥 SwiftSaleApp v4.1 – Auto-Paste Beta</h3>
-      <p><strong>Fastest bin assignment yet — just copy a Whatnot username!</strong></p>
-      <p class="muted">Automatically pastes and submits Whatnot usernames into SwiftSaleApp, assigning each buyer a bin number instantly. More speed, fewer errors, zero extra clicks.</p>
-      <a id="download-btn-beta" class="btn btn-primary" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/swiftsaleappq4.1_installer.exe">⬇️ Download v4.1 Beta for Windows</a>
-      <div class="fine" style="margin-top:10px">Note: This is a beta build — feedback is welcome!</div>
-    </div>
+      <!-- Beta -->
+      <div class="card" style="border: 1px solid var(--border-strong); background:rgba(230,76,83,.06); margin-bottom:1rem;">
+        <div class="kicker">Beta</div>
+        <h3>🔥 SwiftSaleApp v4.1 – Auto-Paste Beta</h3>
+        <p><strong>Fastest bin assignment yet — just copy a Whatnot username!</strong></p>
+        <p class="muted">Automatically pastes and submits Whatnot usernames into SwiftSaleApp, assigning each buyer a bin number instantly. More speed, fewer errors, zero extra clicks.</p>
+        <a id="download-btn-beta" class="btn btn-primary" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/swiftsaleappq4.1_installer.exe">⬇️ Download v4.1 Beta for Windows</a>
+        <div class="fine" style="margin-top:10px">Note: This is a beta build — feedback is welcome!</div>
+      </div>
 
-    <!-- Stable -->
-    <div class="card">
-      <p>Prefer the stable release? Download the latest production version below.</p>
-      <a id="download-btn-stable" class="btn btn-subtle" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe">⬇️ Download v4.0-rc1 for Windows</a>
-      <div class="fine" style="margin-top:10px">Checksum (SHA-256): <code id="checksum">coming soon</code></div>
+      <!-- Stable -->
+      <div class="card">
+        <p>Prefer the stable release? Download the latest production version below.</p>
+        <a id="download-btn-stable" class="btn btn-subtle" href="https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/SwiftSaleAppV4_Installer.exe">⬇️ Download v4.0-rc1 for Windows</a>
+        <div class="fine" style="margin-top:10px">Checksum (SHA-256): <code id="checksum">coming soon</code></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="support">
     <div class="container">
@@ -440,8 +487,8 @@
   const BETA_DOWNLOAD_URL   = 'https://github.com/Modernvox/swiftsale4/releases/download/v4.0-rc1/swiftsaleappq4.1_installer.exe';
 
   const stableButtons = [
-    document.getElementById('download-btn'),        // hero button (if present)
-    document.getElementById('download-btn-stable')  // download section
+    document.getElementById('download-btn'),
+    document.getElementById('download-btn-stable')
   ].filter(Boolean);
 
   const betaButtons = [
@@ -458,27 +505,13 @@
   }
 
   async function trackDownload({channel, url, itemId}) {
-    // GA4 event (best effort)
     try { gtag('event', 'download_click', { item_id: itemId, item_category: channel }); } catch(e){}
-    // Optional backend (implement /api/track on your server)
     try {
-      const payload = {
-        event: 'download',
-        channel,           // 'stable' | 'beta'
-        url,
-        ts: Date.now(),
-        utm: collectUTM(),
-        ua: navigator.userAgent
-      };
-      await fetch('/api/track', {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify(payload)
-      });
+      const payload = { event:'download', channel, url, ts: Date.now(), utm: collectUTM(), ua: navigator.userAgent };
+      await fetch('/api/track', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
     } catch(e){}
   }
 
-  // Bind stable buttons
   stableButtons.forEach(btn => {
     btn.setAttribute('href', STABLE_DOWNLOAD_URL);
     btn.addEventListener('click', () => {
@@ -486,7 +519,6 @@
     });
   });
 
-  // Bind beta buttons
   betaButtons.forEach(btn => {
     btn.setAttribute('href', BETA_DOWNLOAD_URL);
     btn.addEventListener('click', () => {
@@ -495,8 +527,7 @@
   });
 </script>
 
-
-  <!-- Shared nav script (replaces inline toggleMenu) -->
-  <script src="/js/nav.js" defer></script>
+<!-- Shared nav script -->
+<script src="/js/nav.js" defer></script>
 </body>
 </html>
