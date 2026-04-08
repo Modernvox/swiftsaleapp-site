@@ -115,57 +115,38 @@
       padding: 16px 0;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
 
-    .brand-mark {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255, 214, 92, 0.28);
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255, 214, 92, 0.65), transparent 40%),
-        radial-gradient(circle at 70% 70%, rgba(70, 232, 255, 0.5), transparent 36%),
-        linear-gradient(135deg, rgba(157, 89, 255, 0.9), rgba(30, 16, 60, 0.95));
-      box-shadow: var(--shadow-glow-gold), var(--shadow-glow-cyan);
-    }
+.brand-title {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
 
-    .brand-mark::after {
-      content: "S";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-size: 1.25rem;
-      font-weight: 900;
-      color: #120918;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.16);
-    }
+.brand-sub {
+  font-size: 11px;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
 
-    .brand-copy {
-      min-width: 0;
-    }
 
-    .brand-copy strong {
-      display: block;
-      font-size: 1.02rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
 
-    .brand-copy span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.9rem;
-      white-space: nowrap;
-    }
+.brand img {
+  height: 40px;
+  width: auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
 
     .nav {
       display: flex;
@@ -407,7 +388,7 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       background:
         linear-gradient(180deg, rgba(8, 5, 15, 0.1), rgba(8, 5, 15, 0.48)),
-        url("https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/667cddc4-ece7-4a7d-13be-204c4047dc00/w=1600,quality=90,format=auto")
+        url("https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/667cddc4-ece7-4a7d-13be-204c4047dc00/w=1600,quality=90,format=auto") center center / cover no-repeat;
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
     }
 
@@ -940,14 +921,13 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="SwiftSale home">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div class="brand-copy">
-          <strong>SwiftSale</strong>
-          <span>Game-show speed for live sellers</span>
-        </div>
-      </a>
-
+<a href="index.html" class="brand" aria-label="SwiftSale home">
+  <img src="/images/ssa_logo.png" alt="SwiftSale logo" />
+  <div class="brand-text">
+    <div class="brand-title">SwiftSale</div>
+    <div class="brand-sub">Desktop</div>
+  </div>
+</a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="guide.html" class="active">Guide</a>
