@@ -471,23 +471,23 @@
       letter-spacing: 0.08em;
     }
 
-    .hero-panel {
-      background:
-        linear-gradient(180deg, rgba(14, 16, 35, 0.84), rgba(13, 12, 29, 0.94));
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 26px;
-      padding: 20px;
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.36);
-      backdrop-filter: blur(16px);
-    }
+ .hero-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
 
-    .hero-panel-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
+  background:
+    linear-gradient(180deg, rgba(8, 5, 15, 0.2), rgba(8, 5, 15, 0.7)),
+    url("https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/667cddc4-ece7-4a7d-13be-204c4047dc00/public")
+    center center / cover no-repeat;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-panel-top {
+  position: relative;
+  z-index: 2;
+}
 
     .hero-panel-title {
       font-size: 14px;
