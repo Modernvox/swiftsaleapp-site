@@ -360,17 +360,22 @@
       width: 100%;
     }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      min-height: calc(100vh - var(--nav-h));
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding: 52px 0 40px;
-      isolation: isolate;
-    }
+.hero {
+  position: relative;
+  overflow: hidden;
 
+  background:
+    linear-gradient(180deg, rgba(8,5,15,0.4), rgba(8,5,15,0.85)),
+    url("/images/hero-wheel.png") center center / cover no-repeat;
+}
+.hero {
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from { background-size: 100%; }
+  to   { background-size: 105%; }
+}
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -1154,11 +1159,6 @@
            Save the provided hero image as:
            /images/hero-wheel.png
       -->
-      <img
-        class="hero-image"
-        src="/images/hero-wheel.png"
-        alt="SwiftSale hero image with game-show wheel and live selling visuals"
-      />
       <div class="hero-bg"></div>
       <div class="hero-vignette"></div>
 
