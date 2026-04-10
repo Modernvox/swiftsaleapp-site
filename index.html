@@ -51,7 +51,7 @@
       "applicationCategory": "BusinessApplication",
       "description": "Desktop software for live sellers to capture winners, assign bins, run games, annotate shipping labels, and ship faster.",
       "url": "https://swiftsaleapp.com/",
-      "downloadUrl": "https://downloads.swiftsaleapp.com/SwiftSale-Setup-0.1.3.exe",
+      "downloadUrl": "https://downloads.swiftsaleapp.com/SwiftSale-Setup-0.1.4.exe",
       "offers": [
         { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Starter" },
         { "@type": "Offer", "price": "29.99", "priceCurrency": "USD", "name": "Bronze" },
@@ -1425,16 +1425,14 @@
           </div>
         </div>
 
-        <div class="video-shell">
-          <iframe
-            src="https://www.youtube.com/embed/5qa9Y4ik4cU?rel=0&modestbranding=1"
-            title="SwiftSale demo video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </section>
+<div class="video-shell" onclick="this.innerHTML = `
+  <iframe src='https://www.youtube.com/embed/MBZhOm4GNRk?autoplay=1'
+  frameborder='0'
+  allow='autoplay; encrypted-media'
+  allowfullscreen></iframe>`">
+
+  <img src="https://img.youtube.com/vi/MBZhOm4GNRk/maxresdefault.jpg" />
+</div>    </section>
 
     <section class="section" id="pricing">
       <div class="container">
@@ -1660,9 +1658,9 @@
               <a
                 id="download-btn"
                 class="btn btn-primary"
-                href="https://downloads.swiftsaleapp.com/SwiftSale-Setup-0.1.3.exe"
+                href="https://downloads.swiftsaleapp.com/SwiftSale-Setup-0.1.4.exe"
               >
-                ⬇ Download v0.1.3
+                ⬇ Download v0.1.4
               </a>
               <a class="btn btn-secondary" href="#demo">Watch demo</a>
             </div>
@@ -1674,7 +1672,7 @@
               </div>
               <div class="mini-card">
                 <strong>Version</strong>
-                <div class="muted"><code class="inline">0.1.3</code></div>
+                <div class="muted"><code class="inline">0.1.4</code></div>
               </div>
               <div class="mini-card">
                 <strong>Updates</strong>
@@ -1774,7 +1772,7 @@
       downloadBtn.addEventListener("click", () => {
         if (typeof window.gtag === "function") {
           window.gtag("event", "download_click", {
-            item_id: "ssa_win_0_1_3",
+            item_id: "ssa_win_0_1_4",
             item_category: "stable"
           });
         }
