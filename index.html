@@ -69,34 +69,35 @@
 </script>
 
   <style>
-    :root {
-      --bg: #0b0a1a;
-      --bg-2: #130f2b;
-      --bg-3: #1b1440;
-      --panel: rgba(17, 19, 42, 0.78);
-      --panel-solid: #141733;
-      --panel-2: rgba(23, 27, 58, 0.92);
-      --text: #ffffff;
-      --muted: #b9bdd6;
-      --muted-2: #8f95bb;
-      --line: rgba(255, 255, 255, 0.1);
-      --line-strong: rgba(255, 255, 255, 0.18);
-      --purple: #8b5cf6;
-      --purple-2: #6d28d9;
-      --cyan: #22d3ee;
-      --pink: #ff4d8d;
-      --gold: #f6b73c;
-      --gold-2: #ffcf66;
-      --green: #2ee59d;
-      --danger: #ff6b6b;
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
-      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.28);
-      --radius: 20px;
-      --radius-sm: 14px;
-      --radius-pill: 999px;
-      --max: 1220px;
-      --nav-h: 76px;
-    }
+:root {
+  --bg: #0b0f16;
+  --bg-2: #111827;
+  --bg-3: #0f1624;
+
+  --panel: rgba(17, 24, 39, 0.82);
+  --panel-solid: #111827;
+  --panel-2: rgba(15, 22, 36, 0.96);
+
+  --text: #ffffff;
+  --muted: #b8c0cf;
+  --muted-2: #8d98ad;
+
+  --line: rgba(255, 209, 102, 0.12);
+  --line-strong: rgba(255, 209, 102, 0.22);
+
+  --gold: #f59e0b;
+  --gold-2: #ffd166;
+  --green: #22c55e;
+  --danger: #ef4444;
+
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.28);
+  --radius: 20px;
+  --radius-sm: 14px;
+  --radius-pill: 999px;
+  --max: 1220px;
+  --nav-h: 76px;
+}
 
     * {
       box-sizing: border-box;
@@ -106,20 +107,20 @@
       scroll-behavior: smooth;
     }
 
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(1200px 600px at 50% -10%, rgba(139, 92, 246, 0.22), transparent 60%),
-        radial-gradient(900px 500px at 0% 20%, rgba(34, 211, 238, 0.12), transparent 55%),
-        radial-gradient(900px 500px at 100% 10%, rgba(255, 77, 141, 0.12), transparent 55%),
-        linear-gradient(180deg, #080814 0%, #0d0b1e 36%, #0b0a1a 100%);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-    }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(255, 209, 102, 0.14), transparent 60%),
+    radial-gradient(900px 500px at 0% 20%, rgba(255, 209, 102, 0.08), transparent 55%),
+    radial-gradient(900px 500px at 100% 10%, rgba(255, 209, 102, 0.06), transparent 55%),
+    linear-gradient(180deg, #080b12 0%, #0b0f16 36%, #0b0f16 100%);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 
     img {
       display: block;
@@ -195,25 +196,13 @@
       color: var(--muted-2);
     }
 
-    .accent-cyan {
-      color: var(--cyan);
-    }
+.accent-gold {
+  color: var(--gold-2);
+}
 
-    .accent-gold {
-      color: var(--gold-2);
-    }
-
-    .accent-pink {
-      color: var(--pink);
-    }
-
-    .glow-gold {
-      text-shadow: 0 0 20px rgba(246, 183, 60, 0.34);
-    }
-
-    .glow-cyan {
-      text-shadow: 0 0 20px rgba(34, 211, 238, 0.26);
-    }
+.glow-gold {
+  text-shadow: 0 0 20px rgba(255, 209, 102, 0.34);
+}
 
     /* Header */
     .site-header {
@@ -351,11 +340,12 @@
       background: rgba(255,255,255,0.08);
     }
 
-    .btn-cyan {
-      color: #04111a;
-      background: linear-gradient(180deg, #73f4ff 0%, #22d3ee 100%);
-      box-shadow: 0 12px 30px rgba(34, 211, 238, 0.24);
-    }
+.btn-gold {
+  color: #1b1202;
+  background: linear-gradient(180deg, #ffd66a 0%, #f6b73c 100%);
+  border-color: rgba(255, 207, 102, 0.55);
+  box-shadow: 0 12px 30px rgba(246, 183, 60, 0.28);
+}
 
     .btn-danger {
       color: #fff;
@@ -625,20 +615,20 @@
       padding: 22px;
       background:
         linear-gradient(180deg, rgba(18,20,46,0.9), rgba(11,12,29,0.96));
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,209,102,0.14);
       box-shadow: var(--shadow-soft);
       overflow: hidden;
     }
 
-    .feature-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto auto 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--pink), var(--cyan));
-      opacity: 0.88;
-    }
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-2), var(--gold));
+  opacity: 0.92;
+}
 
     .feature-icon {
       width: 54px;
@@ -678,7 +668,7 @@
     .glass-card {
       border-radius: 24px;
       background: linear-gradient(180deg, rgba(18,20,46,0.88), rgba(12,13,31,0.96));
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,209,102,0.14);
       box-shadow: var(--shadow);
       overflow: hidden;
     }
@@ -762,7 +752,7 @@
       border-radius: 24px;
       padding: 22px;
       background: linear-gradient(180deg, rgba(18,20,46,0.92), rgba(12,13,31,0.98));
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,209,102,0.14);
       box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
@@ -874,7 +864,7 @@
       border-radius: 20px;
       padding: 20px;
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,209,102,0.14);
     }
 
     .faq-item h3 {
@@ -890,17 +880,17 @@
     }
 
     /* CTA */
-    .cta-band {
-      border-radius: 30px;
-      overflow: hidden;
-      padding: 38px 30px;
-      background:
-        radial-gradient(600px 300px at 20% 30%, rgba(34,211,238,0.18), transparent 50%),
-        radial-gradient(600px 300px at 80% 60%, rgba(255,77,141,0.16), transparent 52%),
-        linear-gradient(135deg, rgba(24,22,56,0.96), rgba(12,12,30,0.98));
-      border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: var(--shadow);
-    }
+.cta-band {
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 38px 30px;
+  background:
+    radial-gradient(600px 300px at 20% 30%, rgba(255,209,102,0.16), transparent 50%),
+    radial-gradient(600px 300px at 80% 60%, rgba(245,158,11,0.12), transparent 52%),
+    linear-gradient(135deg, rgba(17,24,39,0.96), rgba(11,15,22,0.98));
+  border: 1px solid rgba(255,209,102,0.14);
+  box-shadow: var(--shadow);
+}
 
     .cta-band-grid {
       display: grid;
@@ -944,7 +934,7 @@
       border-radius: 22px;
       padding: 22px;
       background: linear-gradient(180deg, rgba(18,20,46,0.9), rgba(12,13,31,0.98));
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,209,102,0.14);
       box-shadow: var(--shadow-soft);
     }
 
@@ -1183,7 +1173,7 @@
           <span class="eyebrow">Built for Whatnot sellers who need speed, control, and energy</span>
 
 <h1>
-  Run <span class="accent-cyan glow-cyan">Singles + Fill-A-Box</span><br />
+  Run <span class="accent-gold glow-gold">Singles + Fill-A-Box</span><br />
   Back-to-Back<br />
   <span class="accent-gold glow-gold">Without Losing Track</span>
 </h1>
@@ -1375,7 +1365,7 @@
               </div>
 
               <div class="hero-cta">
-                <a class="btn btn-cyan" href="#demo">See it in action</a>
+                <a class="btn btn-primary" href="#demo">See it in action</a>
                 <a class="btn btn-secondary" href="#download">Download SwiftSale</a>
               </div>
             </div>
