@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SwiftSale — Run Singles + Fill-A-Box Back-to-Back Without Losing Track</title>
+  <title>SwiftSale - Run Your Whatnot Show Faster</title>
   <meta
     name="description"
     content="Run singles and fill-a-box back-to-back without losing track. SwiftSale helps live sellers capture winners, assign BINs, annotate packing slips, and stay organized during and after every show."
@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" />
 
 <!-- Open Graph -->
-<meta property="og:title" content="SwiftSale — Run Singles + Fill-A-Box Back-to-Back Without Losing Track" />
+<meta property="og:title" content="SwiftSale - Run Your Whatnot Show Faster" />
 <meta
   property="og:description"
   content="Run singles and fill-a-box without stopping. Capture winners, assign BINs, annotate packing slips, and keep every show organized with SwiftSale."
@@ -30,7 +30,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SwiftSale — Run Singles + Fill-A-Box Back-to-Back Without Losing Track" />
+  <meta name="twitter:title" content="SwiftSale - Run Your Whatnot Show Faster" />
   <meta
     name="twitter:description"
     content="Run singles and fill-a-box without stopping. Capture winners, assign BINs, annotate packing slips, and stay organized with SwiftSale."
@@ -581,6 +581,7 @@ body {
 
     /* Logo rail */
     .logo-rail {
+      display: none;
       padding: 22px 0;
       border-top: 1px solid rgba(255,255,255,0.06);
       border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -722,6 +723,129 @@ body {
       color: var(--muted);
       font-size: 14px;
       line-height: 1.7;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step-card {
+      border-radius: 22px;
+      padding: 20px;
+      background: linear-gradient(180deg, rgba(17,24,39,0.9), rgba(11,15,22,0.96));
+      border: 1px solid rgba(255,209,102,0.14);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      color: #1b1202;
+      background: linear-gradient(180deg, #ffd66a, #f6b73c);
+      font-weight: 900;
+    }
+
+    .step-card h3,
+    .comparison-card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .step-card p,
+    .comparison-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .workflow-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .flow-node {
+      position: relative;
+      min-height: 112px;
+      border-radius: 22px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 900;
+      color: #fff;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,209,102,0.16);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .flow-node:not(:last-child)::after {
+      content: ">";
+      position: absolute;
+      right: -11px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold-2);
+      font-weight: 900;
+      z-index: 2;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .comparison-card {
+      border-radius: 24px;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(18,20,46,0.88), rgba(12,13,31,0.96));
+      border: 1px solid rgba(255,209,102,0.14);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .group-list {
+      display: grid;
+      gap: 10px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .group-list li {
+      display: flex;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .section[aria-label="SwiftSale workflow"] .showcase-wrap,
+    .section[aria-label="SwiftSale workflow"] .showcase-body {
+      display: none;
+    }
+
+    #features .feature-card:nth-child(n+4) {
+      display: none;
+    }
+
+    #why-swiftsale .feature-card:nth-child(n+3) {
+      display: none;
+    }
+
+    #how-it-works .feature-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     /* Demo */
@@ -1040,6 +1164,19 @@ body {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      #how-it-works .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps-grid,
+      .workflow-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .flow-node:not(:last-child)::after {
+        content: "";
+      }
+
       .logo-rail-inner,
       .download-meta {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1089,12 +1226,19 @@ body {
       }
 
       .hero-proof,
+      .steps-grid,
+      .workflow-flow,
+      .comparison-grid,
       .feature-grid,
       .faq-grid,
       .pricing-grid,
       .logo-rail-inner,
       .download-meta,
       .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #how-it-works .feature-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1171,78 +1315,70 @@ body {
 
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Built for Whatnot sellers who need speed, control, and energy</span>
+          <span class="eyebrow">Whatnot workflow software for live sellers</span>
 
-<h1>
-  Run <span class="accent-gold glow-gold">Singles + Fill-A-Box</span><br />
-  Back-to-Back<br />
-  <span class="accent-gold glow-gold">Without Losing Track</span>
-</h1>
+          <h1>
+            Run your Whatnot show faster.<br />
+            <span class="accent-gold glow-gold">Pack with less chaos.</span>
+          </h1>
           <p>
-            SwiftSale is a desktop app for Whatnot sellers that captures winners, assigns bins,
-            tracks buyers, annotates labels, exports fulfillment data, and supports post-sale
-            bonus engagement features like Bingo, Bin Bonanza, and Prize Vault after purchases are complete.
-          </p>
-
-          <p>
-            In simple terms: SwiftSale helps you stay in control during the show, then makes packing and shipping easier after the show.
+            SwiftSale captures winners, assigns BINs, tracks buyers, and helps organize packing slips so your post-show workflow is already under control.
           </p>
 
           <div class="hero-cta">
             <a class="btn btn-primary" href="#download">⬇ Download for Windows</a>
             <a class="btn btn-secondary" href="#demo">▶ Watch Demo</a>
-            <a class="btn btn-secondary" href="/guide.html">Read the Guide</a>
           </div>
 
           <div class="hero-proof">
             <div class="proof-card">
-              <div class="proof-value">Live</div>
-              <div class="proof-label">Capture winners and update your workflow in real time</div>
+              <div class="proof-value">1</div>
+              <div class="proof-label">Capture winners live</div>
             </div>
             <div class="proof-card">
-              <div class="proof-value">Organized</div>
-              <div class="proof-label">Use bins, label annotation, and buyer tracking to pack faster</div>
+              <div class="proof-value">2</div>
+              <div class="proof-label">Assign BINs automatically</div>
             </div>
             <div class="proof-card">
-              <div class="proof-value">Engaging</div>
-              <div class="proof-label">Run post-sale bonus games like Bingo, Bin Bonanza, and Prize Vault after purchases are complete</div>
+              <div class="proof-value">3</div>
+              <div class="proof-label">Annotate packing slips</div>
             </div>
           </div>
         </div>
 
         <div class="hero-panel">
           <div class="hero-panel-top">
-            <div class="hero-panel-title">What SwiftSale actually does</div>
+            <div class="hero-panel-title">Show workflow</div>
             <div class="live-pill">
               <span class="live-dot"></span>
-              Real-time workflow
+              During and after the show
             </div>
           </div>
 
           <div class="hero-panel-grid">
             <div class="mini-card">
-              <strong>One app for your entire post-sale system.</strong>
+              <strong>Capture now. Pack cleaner later.</strong>
               <div class="muted">
-                Capture winners, assign bins, track buyers, prep shipping, and run post-sale bonus games after purchases are complete.
+                SwiftSale connects winners, BINs, buyer history, packing slips, and post-sale bonus games in one guided desktop workflow.
               </div>
             </div>
 
             <div class="mini-list">
               <div class="mini-item">
-                <div class="mini-item-label">Winner capture</div>
-                <div class="mini-item-value">Save buyers instantly during the show</div>
+                <div class="mini-item-label">Live sale</div>
+                <div class="mini-item-value">Winner captured</div>
               </div>
               <div class="mini-item">
-                <div class="mini-item-label">BIN system</div>
-                <div class="mini-item-value">Know where every order goes while packing</div>
+                <div class="mini-item-label">BIN board</div>
+                <div class="mini-item-value">Order location assigned</div>
               </div>
               <div class="mini-item">
-                <div class="mini-item-label">Shipping tools</div>
-                <div class="mini-item-value">Annotate labels and export your data</div>
+                <div class="mini-item-label">Packing slips</div>
+                <div class="mini-item-value">Buyer and BIN annotated</div>
               </div>
               <div class="mini-item">
-                <div class="mini-item-label">Live engagement</div>
-                <div class="mini-item-value">Chat output, post-sale bonus games (Bingo, Bin Bonanza, Prize Vault after purchases are complete)</div>
+                <div class="mini-item-label">Bonus games</div>
+                <div class="mini-item-value">Post-sale engagement</div>
               </div>
             </div>
           </div>
@@ -1254,50 +1390,8 @@ body {
       <div class="container logo-rail-inner">
         <div class="logo-rail-card">⚡ Capture winners instantly</div>
         <div class="logo-rail-card">📦 Assign bins automatically</div>
-        <div class="logo-rail-card">🏷️ Annotate labels for faster packing</div>
+        <div class="logo-rail-card">Annotate packing slips for faster packing</div>
         <div class="logo-rail-card">🎉 Add post-sale bonus games after purchases to make your stream more fun</div>
-      </div>
-    </section>
-
-    <section class="section" id="why-swiftsale">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Why SwiftSale</span>
-            <h2>More than shipping software. More than a game tool.</h2>
-            <p class="lead">
-              SwiftSale is built around the real workflow of a Whatnot seller: capture winners fast,
-              stay organized while sales are happening, and make fulfillment easier when the show ends.
-            </p>
-          </div>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-icon">❌</div>
-            <h3>Without SwiftSale</h3>
-            <p>
-              You are juggling usernames, notes, bins, labels, chat messages, and packing steps by hand.
-              That slows you down and makes mistakes more likely.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">✅</div>
-            <h3>With SwiftSale</h3>
-            <p>
-              Winners are captured, bins are assigned, buyers are tracked, labels are annotated, and your fulfillment flow is already organized.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>Built for live sellers</h3>
-            <p>
-              SwiftSale is designed for the speed of a live show, not a generic office workflow. It helps while you are selling and after you are done.
-            </p>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -1305,12 +1399,54 @@ body {
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">How it works</span>
-            <h2>From winner capture to shipping, all in one flow.</h2>
-            <p class="lead">
-              This is the fastest way to understand what SwiftSale does.
-            </p>
+            <span class="eyebrow">How SwiftSale Works</span>
+            <h2>A simple workflow for busy live shows.</h2>
           </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">❌</div>
+            <h3>Capture the winner</h3>
+            <p>Save the buyer during the live show before the next sale distracts you.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h3>Assign the BIN</h3>
+            <p>Give each buyer a clear packing location as orders come in.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Track the buyer</h3>
+            <p>Keep buyer history and show activity connected to each winner.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">4</div>
+            <h3>Pack faster after the show</h3>
+            <p>Use organized BINs and annotated packing slips when fulfillment starts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="SwiftSale workflow">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Workflow</span>
+            <h2>See the product in one line.</h2>
+          </div>
+        </div>
+
+        <div class="workflow-flow">
+          <div class="flow-node">Live Sale</div>
+          <div class="flow-node">BIN Board</div>
+          <div class="flow-node">Packing Slips</div>
+          <div class="flow-node">Buyer History</div>
+          <div class="flow-node">Bonus Games</div>
         </div>
 
 <div class="showcase-wrap">
@@ -1349,7 +1485,7 @@ body {
                   <div>
                     <h3>Prep fulfillment faster</h3>
                     <p>
-                      Use the BIN board, winner history, buyer tracking, exports, and label annotation to make your post-show packing process cleaner and faster.
+                      Use the BIN board, winner history, buyer tracking, exports, and packing slip annotation to make your post-show packing process cleaner and faster.
                     </p>
                   </div>
                 </div>
@@ -1380,43 +1516,49 @@ body {
         <div class="section-head">
           <div>
             <span class="eyebrow">Features</span>
-            <h2>Everything SwiftSale gives you during and after the show.</h2>
-            <p class="lead">
-              These are the tools that make SwiftSale a live seller control center.
-            </p>
+            <h2>Grouped around how sellers actually work.</h2>
           </div>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card">
             <div class="feature-icon">⚡</div>
-            <h3>Instant winner capture</h3>
-            <p>
-              Double-click a buyer during your live show and SwiftSale captures them instantly with a bin assigned automatically.
-            </p>
+            <h3>During the show</h3>
+            <p>Keep the selling pace high while SwiftSale keeps the order details structured.</p>
+            <ul class="group-list">
+              <li><span class="tick">✓</span><span>Winner capture</span></li>
+              <li><span class="tick">✓</span><span>BIN board</span></li>
+              <li><span class="tick">✓</span><span>Buyer tracking</span></li>
+            </ul>
           </article>
 
           <article class="feature-card">
             <div class="feature-icon">📦</div>
-            <h3>BIN system for packing</h3>
-            <p>
-              Every buyer gets a bin number so you instantly know where everything goes during the show and when it is time to pack.
-            </p>
+            <h3>After the show</h3>
+            <p>Turn a busy sale into a cleaner packing process with less manual cleanup.</p>
+            <ul class="group-list">
+              <li><span class="tick">✓</span><span>Packing slip annotation</span></li>
+              <li><span class="tick">✓</span><span>CSV exports</span></li>
+              <li><span class="tick">✓</span><span>Mailing list tools</span></li>
+            </ul>
           </article>
 
           <article class="feature-card">
             <div class="feature-icon">📋</div>
-            <h3>Visual BIN board</h3>
-            <p>
-              See every bin filled in real time so your packing process stays organized and easy to follow.
-            </p>
+            <h3>Engagement</h3>
+            <p>Add post-sale bonus games and chat output without changing the purchase itself.</p>
+            <ul class="group-list">
+              <li><span class="tick">✓</span><span>Bingo</span></li>
+              <li><span class="tick">✓</span><span>Bin Bonanza</span></li>
+              <li><span class="tick">✓</span><span>Prize Vault and chat output</span></li>
+            </ul>
           </article>
 
           <article class="feature-card">
             <div class="feature-icon">🏷️</div>
-            <h3>Label annotation</h3>
+            <h3>Packing slip annotation</h3>
             <p>
-              Automatically stamp buyer names and bin numbers onto shipping labels to speed up fulfillment.
+              Automatically stamp buyer names and bin numbers onto packing slips to speed up fulfillment.
             </p>
           </article>
 
@@ -1464,7 +1606,7 @@ body {
             <div class="feature-icon">🎱</div>
             <h3>Bingo</h3>
             <p>
-              Run Bingo as a post-sale bonus game for completed buyers and keep your audience engaged without affecting the purchase itself.
+              Run Bingo as a post-sale bonus game after purchases are complete without affecting the purchase itself.
             </p>
           </article>
 
@@ -1472,7 +1614,7 @@ body {
             <div class="feature-icon">🎡</div>
             <h3>Bin Bonanza</h3>
             <p>
-              Use assigned bins in a post-sale bonus prize wheel after purchases are complete for a high-energy game-show moment.
+              Use assigned BINs in a post-sale bonus reveal after purchases are complete without affecting the purchase itself.
             </p>
           </article>
 
@@ -1480,40 +1622,33 @@ body {
             <div class="feature-icon">🏆</div>
             <h3>Prize Vault</h3>
             <p>
-              Let a completed buyer pick a case and reveal a bonus prize live after the purchase is complete to end your show with excitement.
+              Reveal post-sale bonus prize details live after the purchase is complete without affecting the purchase itself.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="why-swiftsale">
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Who it is for</span>
-            <h2>Best for sellers who want less chaos and more control.</h2>
-            <p class="lead">
-              SwiftSale is especially useful if you run busy Whatnot shows, manage a lot of winners, want cleaner fulfillment, or want your stream to feel more interactive.
-            </p>
+            <span class="eyebrow">Why sellers need this</span>
+            <h2>Less manual tracking. More control after the show.</h2>
           </div>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card">
             <div class="feature-icon">🛍️</div>
-            <h3>Growing sellers</h3>
-            <p>
-              Great if you are starting to get enough orders that keeping track manually is becoming a problem.
-            </p>
+            <h3>Without SwiftSale</h3>
+            <p>Manual notes, lost usernames, messy bins, and slow packing.</p>
           </article>
 
           <article class="feature-card">
             <div class="feature-icon">🚀</div>
-            <h3>Busy live sellers</h3>
-            <p>
-              Ideal if your shows move fast and you need a system that can keep up while you are selling.
-            </p>
+            <h3>With SwiftSale</h3>
+            <p>Captured winners, assigned BINs, cleaner packing slips, buyer history, and faster fulfillment.</p>
           </article>
 
           <article class="feature-card">
@@ -1534,7 +1669,7 @@ body {
             <span class="eyebrow">Demo</span>
             <h2>See SwiftSale work like a real live-selling control room.</h2>
             <p class="lead">
-              Watch how capture, bins, buyer tracking, post-sale bonus games after purchases are complete, and fulfillment all connect inside one workflow.
+              Watch how winner capture, BINs, buyer tracking, packing slips, and post-sale bonus games connect inside one workflow.
             </p>
           </div>
         </div>
@@ -1556,9 +1691,9 @@ body {
         <div class="section-head">
           <div>
             <span class="eyebrow">Pricing</span>
-            <h2>Choose how fast and organized you want your shows to run</h2>
+            <h2>Choose the BIN limit that fits your show volume.</h2>
             <p class="lead">
-              Start free, then move up as your show volume grows. As your show volume grows, unlock more speed, control, and headroom
+              Every plan includes the core SwiftSale workflow. Higher tiers support more unique buyers per show.
             </p>
           </div>
         </div>
@@ -1577,7 +1712,7 @@ body {
               <li><span class="tick">✓</span><span>Up to <strong>20</strong> bin assignments every show</span></li>
               <li><span class="tick">✓</span><span>Winner capture</span></li>
               <li><span class="tick">✓</span><span>BIN workflow</span></li>
-              <li><span class="tick">✓</span><span>Label annotation</span></li>
+              <li><span class="tick">✓</span><span>Packing slip annotation</span></li>
               <li><span class="tick">✓</span><span>Core workflow tools</span></li>
             </ul>
 
@@ -1597,8 +1732,8 @@ body {
 
             <ul class="feature-list">
               <li><span class="tick">✓</span><span>Up to <strong>50</strong> bin assignments every show</span></li>
-              <li><span class="tick">✓</span><span>Capture + shipping workflow</span></li>
-              <li><span class="tick">✓</span><span>Label annotation</span></li>
+              <li><span class="tick">✓</span><span>Capture + packing workflow</span></li>
+              <li><span class="tick">✓</span><span>Packing slip annotation</span></li>
               <li><span class="tick">✓</span><span>Mailing list tools</span></li>
             </ul>
 
@@ -1621,9 +1756,9 @@ body {
 
             <ul class="feature-list">
               <li><span class="tick">✓</span><span>Up to <strong>150</strong> bin assignments every show</span></li>
-              <li><span class="tick">✓</span><span>Capture, shipping, and games</span></li>
+              <li><span class="tick">✓</span><span>Capture, packing slips, and post-sale bonus games</span></li>
               <li><span class="tick">✓</span><span>Live chat output</span></li>
-              <li><span class="tick">✓</span><span>Label annotation + exports</span></li>
+              <li><span class="tick">✓</span><span>Packing slip annotation + exports</span></li>
               <li><span class="tick">✓</span><span>Buyer organization tools</span></li>
             </ul>
 
@@ -1647,7 +1782,7 @@ body {
             <ul class="feature-list">
               <li><span class="tick">✓</span><span>Up to <strong>600</strong> bin assignments every show</span></li>
               <li><span class="tick">✓</span><span>2-device access limit per email</span></li>
-              <li><span class="tick">✓</span><span>Full workflow + games suite</span></li>
+              <li><span class="tick">✓</span><span>Full workflow + post-sale bonus games suite</span></li>
               <li><span class="tick">✓</span><span>Priority support</span></li>
             </ul>
 
@@ -1680,37 +1815,37 @@ body {
 
         <div class="faq-grid">
           <article class="faq-item">
-            <h3>What is a bin?</h3>
+            <h3>What is a BIN?</h3>
             <p>
-              A bin is simply the spot where a buyer’s order goes while you are organizing and packing.
+              A BIN is the spot where a buyer's order goes while you are organizing and packing.
             </p>
           </article>
 
           <article class="faq-item">
-            <h3>Do I use SwiftSale during the live show?</h3>
+            <h3>Does SwiftSale work during the show?</h3>
             <p>
               Yes. SwiftSale helps you capture winners, assign bins, and run engagement features while the show is happening.
             </p>
           </article>
 
           <article class="faq-item">
-            <h3>Does it also help after the show?</h3>
+            <h3>What does label annotation mean?</h3>
             <p>
-              Yes. That is one of the biggest benefits. Your bins, buyer history, winners, and labels are already more organized for shipping.
+              SwiftSale adds buyer and BIN details to packing slips so orders are easier to identify while packing.
             </p>
           </article>
 
           <article class="faq-item">
             <h3>Does SwiftSale print shipping labels?</h3>
             <p>
-              SwiftSale helps annotate and organize labels so fulfillment is easier and faster to follow.
+              No. SwiftSale helps annotate packing slips so fulfillment is easier and faster to follow.
             </p>
           </article>
 
           <article class="faq-item">
-            <h3>Why are games included?</h3>
+            <h3>Are games post-sale only?</h3>
             <p>
-              Games like Bingo, Bin Bonanza, and Prize Vault are designed as post-sale bonus engagement features that do not affect the purchase and help make your stream more fun, memorable, and interactive for buyers.
+              Yes. Bingo, Bin Bonanza, and Prize Vault are post-sale bonus engagement features and do not affect the purchase itself.
             </p>
           </article>
 
@@ -1819,7 +1954,7 @@ body {
         <img src="https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/4b6ef6e0-75c0-4735-d56d-3a32133ee400/public" alt="SwiftSale logo" />
         <p class="muted" style="max-width: 420px; margin: 0 0 14px;">
           SwiftSale helps Whatnot sellers capture winners, assign bins, track buyers, organize orders,
-          annotate labels, export fulfillment data, and add game-show energy to their live streams.
+          annotate packing slips, export fulfillment data, and add post-sale bonus game energy to their live streams.
         </p>
         <div class="fine">© <span id="year"></span> SwiftSale. All rights reserved.</div>
       </div>
