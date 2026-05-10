@@ -83,7 +83,7 @@
     body {
       width: 100%;
       max-width: 100%;
-      overflow-x: clip;
+      overflow-x: hidden;
     }
 
     html {
@@ -272,6 +272,7 @@
       position: relative;
       isolation: isolate;
       overflow: hidden;
+      contain: paint;
       width: 100%;
       max-width: 100%;
       padding: 54px 0 50px;
@@ -360,6 +361,7 @@
       min-width: 0;
       max-width: 100%;
       overflow: hidden;
+      contain: paint;
       border-radius: 28px;
       padding: 1px;
       background: linear-gradient(135deg, rgba(255, 211, 107, 0.62), rgba(255, 211, 107, 0.08), rgba(134, 79, 7, 0.7));
@@ -905,6 +907,7 @@
         width: 100%;
         max-width: 100%;
         overflow-x: hidden;
+        overscroll-behavior-x: none;
       }
 
       .container {
@@ -965,6 +968,7 @@
 
       .hero {
         padding: 22px 0 28px;
+        contain: paint;
         background:
           radial-gradient(360px 180px at 42% 18%, rgba(255, 206, 105, 0.16), transparent 68%),
           linear-gradient(180deg, rgba(255, 211, 107, 0.04), transparent 46%);
@@ -1041,8 +1045,9 @@
         min-width: 0;
         margin-top: 0;
         overflow: hidden;
+        contain: paint;
         border-radius: 16px;
-        box-shadow: 0 18px 54px rgba(0, 0, 0, 0.5), 0 0 46px rgba(246, 183, 53, 0.1);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.48), inset 0 0 32px rgba(246, 183, 53, 0.05);
       }
 
       .hero-media::before {
