@@ -3,41 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SwiftSale - Run Your Whatnot Show Faster</title>
+  <title>SwiftSale - Run Singles + Fill-A-Box Back-to-Back</title>
   <meta
     name="description"
-    content="Run singles and fill-a-box back-to-back without losing track. SwiftSale helps live sellers capture winners, assign BINs, annotate packing slips, and stay organized during and after every show."
+    content="SwiftSale captures Whatnot winners, assigns BINs, syncs to Companion, and stamps the right BIN onto every packing slip."
   />
-  <meta name="theme-color" content="#0b0a1a" />
+  <meta name="theme-color" content="#090705" />
   <link rel="icon" href="/favicon.ico?v=4" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" />
 
-<!-- Open Graph -->
-<meta property="og:title" content="SwiftSale - Run Your Whatnot Show Faster" />
-<meta
-  property="og:description"
-  content="Run singles and fill-a-box without stopping. Capture winners, assign BINs, annotate packing slips, and keep every show organized with SwiftSale."
-/>
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://swiftsaleapp.com/" />
-<meta property="og:image" content="https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/bb5dee42-4e67-455e-ef19-3df5a0503300/public" />
+  <meta property="og:title" content="SwiftSale - Never Lose Track During Fast Shows" />
+  <meta
+    property="og:description"
+    content="Run singles and fill-a-box back-to-back. Capture winners, assign BINs, sync Companion, and annotate packing slips faster."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://swiftsaleapp.com/" />
+  <meta property="og:image" content="https://swiftsaleapp.com/images/ss-hero.png" />
+  <meta property="og:image:width" content="1536" />
+  <meta property="og:image:height" content="1024" />
 
-<!-- Recommended extras -->
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SwiftSale - Run Your Whatnot Show Faster" />
+  <meta name="twitter:title" content="SwiftSale - Never Lose Track During Fast Shows" />
   <meta
     name="twitter:description"
-    content="Run singles and fill-a-box without stopping. Capture winners, assign BINs, annotate packing slips, and stay organized with SwiftSale."
+    content="Capture Whatnot winners, assign BINs, sync Companion, and stamp BINs onto packing slips."
   />
-  <meta name="twitter:image" content="https://swiftsaleapp.com/images/hero-wheel.png" />
+  <meta name="twitter:image" content="https://swiftsaleapp.com/images/ss-hero.png" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -45,59 +40,40 @@
     rel="stylesheet"
   />
 
-  <!-- Stripe -->
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-
-  <!-- JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "SwiftSale",
-  "operatingSystem": "Windows",
-  "applicationCategory": "BusinessApplication",
-  "description": "Desktop software for live sellers to capture winners, assign BINs, run post-sale bonus engagement features, annotate packing slips, and stay organized during and after every show.",
-  "url": "https://swiftsaleapp.com/",
-  "downloadUrl": "https://downloads.swiftsaleapp.com/SwiftSale-Setup-0.1.8.exe",
-  "offers": [
-    { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Starter" },
-    { "@type": "Offer", "price": "29.99", "priceCurrency": "USD", "name": "Bronze" },
-    { "@type": "Offer", "price": "59.99", "priceCurrency": "USD", "name": "Silver" },
-    { "@type": "Offer", "price": "99.99", "priceCurrency": "USD", "name": "Gold" }
-  ]
-}
-</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SwiftSale",
+    "operatingSystem": "Windows",
+    "applicationCategory": "BusinessApplication",
+    "description": "Desktop software for live sellers to capture winners, assign BINs, sync to Companion, annotate packing slips, and stay organized during and after every show.",
+    "url": "https://swiftsaleapp.com/",
+    "downloadUrl": "https://downloads.swiftsaleapp.com/SwiftSale-Setup-0.1.8.exe"
+  }
+  </script>
 
   <style>
-:root {
-  --bg: #0b0f16;
-  --bg-2: #111827;
-  --bg-3: #0f1624;
-
-  --panel: rgba(17, 24, 39, 0.82);
-  --panel-solid: #111827;
-  --panel-2: rgba(15, 22, 36, 0.96);
-
-  --text: #ffffff;
-  --muted: #b8c0cf;
-  --muted-2: #8d98ad;
-
-  --line: rgba(255, 209, 102, 0.12);
-  --line-strong: rgba(255, 209, 102, 0.22);
-
-  --gold: #f59e0b;
-  --gold-2: #ffd166;
-  --green: #22c55e;
-  --danger: #ef4444;
-
-  --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.28);
-  --radius: 20px;
-  --radius-sm: 14px;
-  --radius-pill: 999px;
-  --max: 1220px;
-  --nav-h: 76px;
-}
+    :root {
+      --black: #070604;
+      --black-2: #0c0905;
+      --ink: #15100a;
+      --panel: rgba(21, 16, 10, 0.76);
+      --panel-strong: rgba(30, 22, 12, 0.92);
+      --line: rgba(255, 205, 105, 0.18);
+      --line-strong: rgba(255, 205, 105, 0.34);
+      --text: #fff8e9;
+      --muted: #cfc2ad;
+      --muted-2: #9f927f;
+      --gold: #f6b735;
+      --gold-2: #ffd36b;
+      --gold-3: #9f6208;
+      --max: 1180px;
+      --nav-h: 76px;
+      --radius: 22px;
+      --radius-sm: 14px;
+      --shadow: 0 22px 70px rgba(0, 0, 0, 0.42);
+    }
 
     * {
       box-sizing: border-box;
@@ -107,24 +83,25 @@
       scroll-behavior: smooth;
     }
 
-body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(1200px 600px at 50% -10%, rgba(255, 209, 102, 0.14), transparent 60%),
-    radial-gradient(900px 500px at 0% 20%, rgba(255, 209, 102, 0.08), transparent 55%),
-    radial-gradient(900px 500px at 100% 10%, rgba(255, 209, 102, 0.06), transparent 55%),
-    linear-gradient(180deg, #080b12 0%, #0b0f16 36%, #0b0f16 100%);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
+    body {
+      margin: 0;
+      min-width: 0;
+      overflow-x: hidden;
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      background:
+        radial-gradient(900px 520px at 50% -12%, rgba(255, 191, 74, 0.16), transparent 62%),
+        radial-gradient(760px 420px at 92% 8%, rgba(177, 98, 12, 0.2), transparent 58%),
+        linear-gradient(180deg, #050403 0%, #0a0704 42%, #050403 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
     img {
       display: block;
       max-width: 100%;
+      height: auto;
     }
 
     a {
@@ -132,91 +109,23 @@ body {
       text-decoration: none;
     }
 
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
     .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
+      width: min(var(--max), calc(100% - 36px));
+      margin-inline: auto;
     }
 
-    .section {
-      padding: 88px 0;
-      position: relative;
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      min-height: var(--nav-h);
+      border-bottom: 1px solid rgba(255, 211, 107, 0.13);
+      background: rgba(5, 4, 3, 0.78);
+      backdrop-filter: blur(18px);
     }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: end;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: var(--radius-pill);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #f7ebbf;
-      background: rgba(246, 183, 60, 0.12);
-      border: 1px solid rgba(246, 183, 60, 0.28);
-      box-shadow: 0 0 0 1px rgba(246, 183, 60, 0.06) inset;
-    }
-
-    .section h2 {
-      margin: 12px 0 0;
-      font-size: clamp(32px, 4vw, 50px);
-      line-height: 1.04;
-      letter-spacing: -0.04em;
-    }
-
-    .section p.lead {
-      max-width: 760px;
-      margin: 12px 0 0;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .muted-2 {
-      color: var(--muted-2);
-    }
-
-.accent-gold {
-  color: var(--gold-2);
-}
-
-.glow-gold {
-  text-shadow: 0 0 20px rgba(255, 209, 102, 0.34);
-}
-
-    /* Header */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: var(--nav-h);
-  backdrop-filter: blur(18px);
-  background: rgba(11, 15, 22, 0.72);
-  border-bottom: 1px solid rgba(255, 209, 102, 0.14);
-}
 
     .nav {
-      height: 100%;
+      min-height: var(--nav-h);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -224,47 +133,32 @@ body {
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
+      flex: 0 0 auto;
       min-width: 0;
     }
 
     .brand img {
-      height: 60px;
       width: auto;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    .brand-title {
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-sub {
-      font-size: 11px;
-      color: var(--muted-2);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
+      height: clamp(38px, 5vw, 54px);
+      max-width: 190px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.42));
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 24px;
+      margin-left: auto;
     }
 
     .nav-links a {
-      color: rgba(255, 255, 255, 0.88);
+      color: rgba(255, 248, 233, 0.8);
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       transition: color 0.18s ease;
     }
 
@@ -272,45 +166,59 @@ body {
       color: var(--gold-2);
     }
 
-    .nav-cta {
+    .nav-links .mobile-download {
+      display: none;
+    }
+
+    .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .menu-toggle {
       display: none;
-      height: 44px;
-      width: 44px;
-      border: 1px solid rgba(255,255,255,0.12);
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 211, 107, 0.24);
       border-radius: 12px;
-      background: rgba(255,255,255,0.04);
-      color: #fff;
-      font-size: 20px;
+      color: var(--text);
+      background: rgba(255, 211, 107, 0.07);
       cursor: pointer;
     }
 
-    /* Buttons */
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .menu-toggle {
+      flex-direction: column;
+      gap: 4px;
+    }
+
     .btn {
       display: inline-flex;
+      min-height: 48px;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 50px;
-      padding: 0 20px;
-      border-radius: var(--radius-pill);
       border: 1px solid transparent;
-      cursor: pointer;
-      font-weight: 800;
+      border-radius: 999px;
+      padding: 0 20px;
       font-size: 15px;
-      letter-spacing: -0.01em;
-      transition:
-        transform 0.14s ease,
-        box-shadow 0.22s ease,
-        background 0.22s ease,
-        border-color 0.22s ease,
-        color 0.22s ease;
+      font-weight: 900;
+      letter-spacing: 0;
       white-space: nowrap;
+      transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
     }
 
     .btn:hover {
@@ -318,961 +226,596 @@ body {
     }
 
     .btn-primary {
-      color: #1b1202;
-      background: linear-gradient(180deg, #ffd66a 0%, #f6b73c 100%);
-      border-color: rgba(255, 207, 102, 0.55);
-      box-shadow: 0 12px 30px rgba(246, 183, 60, 0.28);
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 18px 36px rgba(246, 183, 60, 0.38);
+      color: #130c02;
+      background: linear-gradient(180deg, #ffe08a 0%, #f4b22d 48%, #b66d08 100%);
+      border-color: rgba(255, 222, 135, 0.62);
+      box-shadow: 0 14px 34px rgba(246, 183, 53, 0.27), inset 0 1px 0 rgba(255, 255, 255, 0.34);
     }
 
     .btn-secondary {
-      color: #fff;
-      background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.14);
-      box-shadow: var(--shadow-soft);
+      color: var(--text);
+      background: rgba(255, 248, 233, 0.06);
+      border-color: rgba(255, 248, 233, 0.16);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.2);
     }
 
-    .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.26);
-      background: rgba(255,255,255,0.08);
-    }
-
-.btn-gold {
-  color: #1b1202;
-  background: linear-gradient(180deg, #ffd66a 0%, #f6b73c 100%);
-  border-color: rgba(255, 207, 102, 0.55);
-  box-shadow: 0 12px 30px rgba(246, 183, 60, 0.28);
-}
-
-    .btn-danger {
-      color: #fff;
-      background: rgba(255, 107, 107, 0.12);
-      border-color: rgba(255, 107, 107, 0.34);
-    }
-
-    .btn-block {
-      width: 100%;
-    }
-
-.hero {
-  position: relative;
-  overflow: hidden;
-
-  background:
-    linear-gradient(180deg, rgba(11,15,22,0.55), rgba(11,15,22,0.92)),
-    url("/images/hero-wheel.png") center center / cover no-repeat;
-}
-
-.hero {
-  animation: heroZoom 20s ease-in-out infinite alternate;
-}
-
-@keyframes heroZoom {
-  from { background-size: 100%; }
-  to   { background-size: 105%; }
-}
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: -3;
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 54px 0 50px;
       background:
-        radial-gradient(700px 480px at 50% 50%, rgba(255, 178, 38, 0.22), transparent 55%),
-        linear-gradient(180deg, rgba(7, 6, 20, 0.18) 0%, rgba(7, 6, 20, 0.76) 100%);
+        radial-gradient(740px 300px at 22% 28%, rgba(255, 206, 105, 0.19), transparent 64%),
+        linear-gradient(180deg, rgba(255, 211, 107, 0.04), transparent 38%);
     }
 
-    .hero-image {
+    .hero::before {
+      content: "";
       position: absolute;
-      inset: 0;
-      z-index: -4;
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      opacity: 0.82;
-      filter: saturate(1.06) contrast(1.02);
+      inset: auto -10% -1px;
+      height: 220px;
+      z-index: -1;
+      background: linear-gradient(180deg, transparent, rgba(7, 6, 4, 0.95));
+      pointer-events: none;
     }
 
-.hero-vignette {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background:
-    linear-gradient(90deg, rgba(11,15,22,0.92) 0%, rgba(11,15,22,0.45) 28%, rgba(11,15,22,0.45) 72%, rgba(11,15,22,0.92) 100%),
-    linear-gradient(180deg, rgba(11,15,22,0.62) 0%, rgba(11,15,22,0.08) 18%, rgba(11,15,22,0.70) 100%);
-}
-
-    .hero-grid {
+    .hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
-      gap: 34px;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.3fr);
+      gap: clamp(26px, 4vw, 58px);
       align-items: center;
     }
 
     .hero-copy {
-      max-width: 700px;
+      position: relative;
+      z-index: 2;
+      max-width: 560px;
     }
 
-    .hero-copy h1 {
-      margin: 18px 0 18px;
-      font-size: clamp(42px, 6vw, 84px);
-      line-height: 0.96;
-      letter-spacing: -0.06em;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 8px 13px;
+      border: 1px solid rgba(255, 211, 107, 0.28);
+      border-radius: 999px;
+      color: #ffe2a1;
+      background: rgba(246, 183, 53, 0.1);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      margin-bottom: 22px;
+      font-size: clamp(42px, 6.2vw, 82px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .gold-text {
+      color: var(--gold-2);
+      text-shadow: 0 0 30px rgba(255, 211, 107, 0.28);
     }
 
     .hero-copy p {
-      margin: 0 0 24px;
-      font-size: 19px;
-      line-height: 1.75;
-      color: #d9dbeb;
-      max-width: 640px;
+      max-width: 540px;
+      margin-bottom: 28px;
+      color: #eadcc6;
+      font-size: clamp(16px, 1.55vw, 19px);
+      line-height: 1.72;
     }
 
-    .hero-cta {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 22px;
     }
 
-    .hero-proof {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      max-width: 760px;
+    .hero-media {
+      position: relative;
+      border-radius: 28px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 211, 107, 0.62), rgba(255, 211, 107, 0.08), rgba(134, 79, 7, 0.7));
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.58), 0 0 90px rgba(246, 183, 53, 0.12);
     }
 
-.proof-card {
-  background: rgba(17, 24, 39, 0.82);
-  border: 1px solid rgba(255, 209, 102, 0.14);
-  border-radius: 18px;
-  padding: 14px 14px 12px;
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(10px);
-}
-
-    .proof-value {
-      font-size: 26px;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 8px;
-      color: #fff;
+    .hero-media::before {
+      content: "";
+      position: absolute;
+      inset: -34px -26px auto auto;
+      width: 260px;
+      height: 260px;
+      z-index: -1;
+      background: radial-gradient(circle, rgba(255, 211, 107, 0.24), transparent 66%);
+      filter: blur(4px);
     }
 
-    .proof-label {
-      font-size: 12px;
-      line-height: 1.45;
-      color: var(--muted);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-.hero-panel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 22px;
-
-  background:
-    url("https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/667cddc4-ece7-4a7d-13be-204c4047dc00/public")
-    center center / cover no-repeat;
-
-  border: 1px solid rgba(255, 209, 102, 0.18);
-}
-.hero-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(180deg, rgba(11,15,22,0.65), rgba(11,15,22,0.92)),
-    linear-gradient(90deg, rgba(11,15,22,0.75), rgba(11,15,22,0.25));
-
-  z-index: 1;
-}
-
-.hero-panel-top {
-  position: relative;
-  z-index: 2;
-}
-
-    .hero-panel-title {
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold-2);
+    .hero-media img {
+      width: 100%;
+      border-radius: 27px;
+      object-fit: contain;
+      background: #0a0704;
     }
 
-.live-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(34, 197, 94, 0.12);
-  border: 1px solid rgba(34, 197, 94, 0.35);
-  color: #dcfce7;
-  font-weight: 900;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 12px rgba(34, 197, 94, 0.72);
-}
-
-.hero-panel-grid {
-  position: relative;
-  z-index: 2;
-
-  background: rgba(17, 24, 39, 0.78);
-  border-radius: 18px;
-  padding: 16px;
-  backdrop-filter: blur(8px);
-}
-
-.mini-card {
-  border-radius: 18px;
-  padding: 16px;
-  border: 1px solid rgba(255, 209, 102, 0.14);
-  background: rgba(255, 209, 102, 0.05);
-}
-
-    .mini-card strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 8px;
+    .strip {
+      padding: 12px 0 34px;
     }
 
-    .mini-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-.mini-item {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: center;
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: rgba(255, 209, 102, 0.05);
-  border: 1px solid rgba(255, 209, 102, 0.12);
-}
-
-    .mini-item-label {
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .mini-item-value {
-      font-size: 14px;
-      font-weight: 900;
-      color: #fff;
-    }
-
-    /* Logo rail */
-    .logo-rail {
-      display: none;
-      padding: 22px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
-    }
-
-    .logo-rail-inner {
+    .value-strip {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .logo-rail-card {
-      border-radius: 18px;
-      padding: 16px;
-      text-align: center;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #f3f4ff;
-      font-weight: 800;
-    }
-
-    /* Feature cards */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-.feature-card {
-  position: relative;
-  border-radius: 22px;
-  padding: 22px;
-  background:
-    linear-gradient(180deg, rgba(17,24,39,0.9), rgba(11,15,22,0.96));
-  border: 1px solid rgba(255,209,102,0.14);
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
-}
-
-.feature-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto auto 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold-2), var(--gold));
-  opacity: 0.92;
-}
-
-.feature-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  font-size: 24px;
-  margin-bottom: 16px;
-  background: linear-gradient(180deg, rgba(255, 209, 102, 0.22), rgba(245, 158, 11, 0.12));
-  border: 1px solid rgba(255, 209, 102, 0.18);
-}
-
-    .feature-card h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-    }
-
-    .feature-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.72;
-      font-size: 15px;
-    }
-
-    /* Showcase */
-    .showcase-wrap {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: 24px;
-      align-items: center;
-    }
-
-    .showcase-card,
-    .glass-card {
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
       border-radius: 24px;
-      background: linear-gradient(180deg, rgba(18,20,46,0.88), rgba(12,13,31,0.96));
-      border: 1px solid rgba(255,209,102,0.14);
+      background: linear-gradient(180deg, rgba(28, 21, 13, 0.84), rgba(11, 8, 5, 0.88));
       box-shadow: var(--shadow);
-      overflow: hidden;
     }
 
-    .showcase-card img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .value-item,
+    .card,
+    .step,
+    .companion-panel,
+    .download-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255, 211, 107, 0.07), transparent 42%),
+        linear-gradient(180deg, rgba(28, 21, 13, 0.88), rgba(9, 7, 5, 0.92));
+      box-shadow: 0 18px 54px rgba(0, 0, 0, 0.28);
     }
 
-    .showcase-body {
-      padding: 26px;
-    }
-
-    .showcase-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .showcase-item {
-      display: grid;
-      grid-template-columns: 46px minmax(0, 1fr);
-      gap: 14px;
-      align-items: start;
+    .value-item {
+      display: flex;
+      min-height: 88px;
+      align-items: center;
+      gap: 13px;
       padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .showcase-badge {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
       font-weight: 900;
-      font-size: 18px;
-      color: #0a0b14;
-      background: linear-gradient(180deg, #ffd66a, #f6b73c);
+      color: #fff3d8;
     }
 
-    .showcase-item h3 {
-      margin: 0 0 6px;
-      font-size: 18px;
+    .icon {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 211, 107, 0.44);
+      border-radius: 13px;
+      color: var(--gold-2);
+      background: rgba(255, 211, 107, 0.08);
+      box-shadow: inset 0 0 18px rgba(255, 211, 107, 0.09);
+      font-weight: 900;
     }
 
-    .showcase-item p {
-      margin: 0;
+    .section {
+      position: relative;
+      padding: clamp(58px, 8vw, 94px) 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      margin-bottom: 12px;
+      font-size: clamp(32px, 4.7vw, 56px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .section .lead {
+      margin-bottom: 0;
       color: var(--muted);
-      font-size: 14px;
+      font-size: clamp(16px, 1.6vw, 19px);
       line-height: 1.7;
     }
 
-    .steps-grid {
+    .steps {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px;
     }
 
-    .step-card {
-      border-radius: 22px;
-      padding: 20px;
-      background: linear-gradient(180deg, rgba(17,24,39,0.9), rgba(11,15,22,0.96));
-      border: 1px solid rgba(255,209,102,0.14);
-      box-shadow: var(--shadow-soft);
+    .step {
+      position: relative;
+      min-height: 230px;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .step::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 18px auto;
+      width: 80px;
+      height: 80px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255, 211, 107, 0.2), transparent 70%);
     }
 
     .step-number {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 14px;
-      color: #1b1202;
-      background: linear-gradient(180deg, #ffd66a, #f6b73c);
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      border: 1px solid rgba(255, 211, 107, 0.44);
+      border-radius: 999px;
+      color: #120b02;
+      background: linear-gradient(180deg, #ffe08a, #d28a12);
       font-weight: 900;
     }
 
-    .step-card h3,
-    .comparison-card h3 {
-      margin: 0 0 8px;
+    .step h3,
+    .card h3,
+    .download-card h3,
+    .companion-panel h3 {
+      margin-bottom: 10px;
+      color: #fff9ea;
       font-size: 20px;
-      letter-spacing: -0.03em;
+      line-height: 1.2;
     }
 
-    .step-card p,
-    .comparison-card p {
-      margin: 0;
+    .step p,
+    .card p,
+    .download-card p,
+    .companion-panel p {
+      margin-bottom: 0;
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.65;
     }
 
-    .workflow-flow {
+    .companion {
+      overflow: hidden;
+      background:
+        radial-gradient(640px 360px at 75% 45%, rgba(255, 190, 74, 0.14), transparent 62%),
+        linear-gradient(180deg, rgba(255, 211, 107, 0.03), transparent);
+    }
+
+    .companion-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.55fr);
+      gap: 18px;
       align-items: stretch;
     }
 
-    .flow-node {
-      position: relative;
-      min-height: 112px;
-      border-radius: 22px;
-      padding: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: 900;
-      color: #fff;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,209,102,0.16);
-      box-shadow: var(--shadow-soft);
+    .companion-panel {
+      padding: clamp(26px, 4vw, 42px);
     }
 
-    .flow-node:not(:last-child)::after {
-      content: ">";
-      position: absolute;
-      right: -11px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--gold-2);
-      font-weight: 900;
-      z-index: 2;
-    }
-
-    .comparison-grid {
+    .bullet-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .comparison-card {
-      border-radius: 24px;
-      padding: 24px;
-      background: linear-gradient(180deg, rgba(18,20,46,0.88), rgba(12,13,31,0.96));
-      border: 1px solid rgba(255,209,102,0.14);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .group-list {
-      display: grid;
-      gap: 10px;
-      margin: 16px 0 0;
+      gap: 12px;
       padding: 0;
+      margin: 26px 0 0;
       list-style: none;
     }
 
-    .group-list li {
+    .bullet-list li {
       display: flex;
-      gap: 10px;
-      align-items: start;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
-    .section[aria-label="SwiftSale workflow"] .showcase-wrap,
-    .section[aria-label="SwiftSale workflow"] .showcase-body {
-      display: none;
-    }
-
-    #features .feature-card:nth-child(n+4) {
-      display: none;
-    }
-
-    #why-swiftsale .feature-card:nth-child(n+3) {
-      display: none;
-    }
-
-    #how-it-works .feature-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    /* Demo */
-    .video-shell {
-      border-radius: 26px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: var(--shadow);
-      background: #000;
-    }
-
-    .video-shell iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      display: block;
-      border: 0;
-    }
-
-    /* Pricing */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .price-card {
-      position: relative;
-      border-radius: 24px;
-      padding: 22px;
-      background: linear-gradient(180deg, rgba(18,20,46,0.92), rgba(12,13,31,0.98));
-      border: 1px solid rgba(255,209,102,0.14);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .price-card.featured {
-      border-color: rgba(246, 183, 60, 0.44);
-      box-shadow: 0 20px 60px rgba(246, 183, 60, 0.15);
-      transform: translateY(-4px);
-    }
-
-    .price-card .plan {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: #f6f7ff;
-      margin-bottom: 12px;
-    }
-
-    .price-card.featured .plan {
-      background: rgba(246,183,60,0.14);
-      color: #ffe6a7;
-      border-color: rgba(246,183,60,0.34);
-    }
-
-    .price-card h3 {
-      margin: 0 0 8px;
-      font-size: 26px;
-      letter-spacing: -0.04em;
-    }
-
-    .price-copy {
-      color: var(--muted);
-      margin: 0 0 18px;
-      font-size: 14px;
-      min-height: 44px;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .price-row strong {
-      font-size: 42px;
-      line-height: 1;
-      letter-spacing: -0.05em;
-    }
-
-    .price-row span {
-      color: var(--muted);
+      align-items: flex-start;
+      gap: 12px;
+      color: #eadcc6;
       font-weight: 700;
     }
 
-    .feature-list {
-      display: grid;
-      gap: 10px;
-      margin: 0 0 20px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .feature-list li {
-      display: flex;
-      gap: 10px;
-      align-items: start;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    .feature-list li strong {
-      color: #fff;
-    }
-
-    .tick {
-      color: var(--green);
-      font-weight: 900;
-      margin-top: 1px;
-    }
-
-    .price-footer {
-      margin-top: auto;
-    }
-
-    .stripe-wrap {
-      margin-top: 12px;
-    }
-
-    /* FAQ */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .faq-item {
-      border-radius: 20px;
-      padding: 20px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,209,102,0.14);
-    }
-
-    .faq-item h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-    }
-
-    .faq-item p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 15px;
-    }
-
-    /* CTA */
-.cta-band {
-  border-radius: 30px;
-  overflow: hidden;
-  padding: 38px 30px;
-  background:
-    radial-gradient(600px 300px at 20% 30%, rgba(255,209,102,0.16), transparent 50%),
-    radial-gradient(600px 300px at 80% 60%, rgba(245,158,11,0.12), transparent 52%),
-    linear-gradient(135deg, rgba(17,24,39,0.96), rgba(11,15,22,0.98));
-  border: 1px solid rgba(255,209,102,0.14);
-  box-shadow: var(--shadow);
-}
-
-    .cta-band-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .cta-band h2 {
-      margin: 0 0 10px;
-      font-size: clamp(32px, 4vw, 52px);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
-    }
-
-    .cta-band p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.7;
-      max-width: 760px;
-    }
-
-    .cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: flex-end;
-    }
-
-    /* Download */
-    .download-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 340px;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .download-card,
-    .support-card {
-      border-radius: 22px;
-      padding: 22px;
-      background: linear-gradient(180deg, rgba(18,20,46,0.9), rgba(12,13,31,0.98));
-      border: 1px solid rgba(255,209,102,0.14);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .download-card h3,
-    .support-card h3 {
-      margin: 0 0 10px;
-      font-size: 24px;
-      letter-spacing: -0.04em;
-    }
-
-    .download-meta {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .download-meta .mini-card {
-      padding: 14px;
-    }
-
-    code.inline {
-      display: inline-block;
-      padding: 2px 8px;
+    .bullet-list li::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      flex: 0 0 auto;
+      margin-top: 8px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: #fff;
+      background: var(--gold-2);
+      box-shadow: 0 0 16px rgba(255, 211, 107, 0.62);
+    }
+
+    .phone-card {
+      display: grid;
+      min-height: 100%;
+      place-items: center;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background:
+        radial-gradient(160px 240px at 50% 18%, rgba(255, 211, 107, 0.17), transparent 70%),
+        linear-gradient(180deg, rgba(22, 16, 10, 0.92), rgba(5, 4, 3, 0.94));
+      box-shadow: var(--shadow);
+    }
+
+    .phone-frame {
+      width: min(240px, 100%);
+      border: 1px solid rgba(255, 211, 107, 0.38);
+      border-radius: 32px;
+      padding: 16px;
+      background: #070604;
+      box-shadow: inset 0 0 0 5px #15120e, 0 22px 44px rgba(0, 0, 0, 0.4);
+    }
+
+    .phone-logo {
+      width: 58px;
+      height: 58px;
+      margin: 16px auto 18px;
+      object-fit: contain;
+    }
+
+    .phone-frame h3 {
+      margin: 0 0 8px;
+      text-align: center;
+      font-size: 19px;
+    }
+
+    .phone-frame p {
+      margin: 0 0 18px;
+      text-align: center;
+      color: var(--muted-2);
       font-size: 13px;
     }
 
-    /* Footer */
+    .phone-bin {
+      border: 1px solid rgba(255, 211, 107, 0.34);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255, 211, 107, 0.06);
+    }
+
+    .phone-bin span {
+      display: block;
+      color: var(--muted-2);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .phone-bin strong {
+      display: block;
+      color: var(--gold-2);
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      min-height: 190px;
+      padding: 24px;
+    }
+
+    .card .icon {
+      margin-bottom: 18px;
+    }
+
+    .final-cta {
+      padding-bottom: clamp(66px, 9vw, 110px);
+    }
+
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 211, 107, 0.28);
+      border-radius: 32px;
+      padding: clamp(34px, 6vw, 64px);
+      background:
+        radial-gradient(520px 260px at 70% 48%, rgba(255, 211, 107, 0.2), transparent 68%),
+        linear-gradient(135deg, rgba(36, 25, 12, 0.98), rgba(7, 6, 4, 0.98));
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .cta-band h2 {
+      max-width: 720px;
+      margin-bottom: 12px;
+    }
+
+    .cta-band p {
+      max-width: 620px;
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .download-card {
+      margin-top: 18px;
+      padding: 24px;
+    }
+
+    .download-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+      color: var(--muted-2);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
     .site-footer {
-      padding: 40px 0 28px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.02);
+      border-top: 1px solid var(--line);
+      padding: 34px 0;
+      color: var(--muted-2);
+      background: #050403;
     }
 
     .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
     .footer-brand img {
-      height: 60px;
+      height: 42px;
       width: auto;
-      margin-bottom: 12px;
-    }
-
-    .footer-title {
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #fff;
-      margin-bottom: 12px;
+      object-fit: contain;
     }
 
     .footer-links {
-      display: grid;
-      gap: 10px;
-    }
-
-    .footer-links a {
-      color: var(--muted);
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
       font-size: 14px;
+      font-weight: 800;
     }
 
     .footer-links a:hover {
-      color: #fff;
+      color: var(--gold-2);
     }
 
-    .fine {
-      font-size: 12px;
-      color: var(--muted-2);
-    }
+    @media (max-width: 980px) {
+      .nav-links {
+        position: absolute;
+        inset: calc(var(--nav-h) - 1px) 18px auto;
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 0;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 10px;
+        background: rgba(10, 7, 4, 0.97);
+        box-shadow: var(--shadow);
+      }
 
-    /* Utilities */
-    .stack-12 { display: grid; gap: 12px; }
-    .stack-14 { display: grid; gap: 14px; }
-    .stack-18 { display: grid; gap: 18px; }
+      .nav-links.show {
+        display: grid;
+      }
 
-    /* Responsive */
-    @media (max-width: 1120px) {
-      .hero-grid,
-      .showcase-wrap,
-      .download-grid,
-      .cta-band-grid {
+      .nav-links a {
+        padding: 13px 12px;
+        border-radius: 12px;
+      }
+
+      .nav-links a:hover {
+        background: rgba(255, 211, 107, 0.07);
+      }
+
+      .nav-links .mobile-download {
+        display: inline-flex;
+        margin-top: 6px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .hero-layout {
         grid-template-columns: 1fr;
       }
 
-      .cta-actions {
-        justify-content: flex-start;
+      .hero-copy {
+        max-width: 760px;
       }
 
-      .pricing-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .hero-media {
+        max-width: 860px;
+        margin-inline: auto;
       }
 
+      .value-strip,
+      .steps,
       .feature-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      #how-it-works .feature-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .steps-grid,
-      .workflow-flow {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .flow-node:not(:last-child)::after {
-        content: "";
-      }
-
-      .logo-rail-inner,
-      .download-meta {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
+      .companion-grid {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 860px) {
-      .nav-links,
-      .nav-cta {
-        display: none;
+    @media (max-width: 620px) {
+      .container {
+        width: min(var(--max), calc(100% - 24px));
       }
 
-      .menu-toggle {
-        display: inline-grid;
-        place-items: center;
+      .site-header,
+      .nav {
+        min-height: 68px;
       }
 
-      .nav-links.show {
-        position: absolute;
-        top: calc(var(--nav-h) - 4px);
-        left: 16px;
-        right: 16px;
-        display: grid;
-        gap: 0;
-        padding: 10px;
-        border-radius: 18px;
-        background: rgba(11, 10, 26, 0.96);
-        border: 1px solid rgba(255,255,255,0.08);
-        box-shadow: var(--shadow);
+      :root {
+        --nav-h: 68px;
       }
 
-      .nav-links.show a {
-        padding: 14px 12px;
-        border-radius: 12px;
-      }
-
-      .nav-links.show a:hover {
-        background: rgba(255,255,255,0.05);
+      .brand img {
+        height: 38px;
+        max-width: 145px;
       }
 
       .hero {
         padding-top: 34px;
       }
 
-      .hero-proof,
-      .steps-grid,
-      .workflow-flow,
-      .comparison-grid,
-      .feature-grid,
-      .faq-grid,
-      .pricing-grid,
-      .logo-rail-inner,
-      .download-meta,
-      .footer-grid {
+      .hero h1 {
+        font-size: clamp(38px, 12vw, 54px);
+      }
+
+      .hero-actions,
+      .cta-band .hero-actions {
+        display: grid;
         grid-template-columns: 1fr;
-      }
-
-      #how-it-works .feature-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy p,
-      .section p.lead {
-        font-size: 16px;
-      }
-
-      .section {
-        padding: 74px 0;
-      }
-
-      .cta-band {
-        padding: 28px 22px;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .container {
-        width: min(var(--max), calc(100% - 22px));
-      }
-
-      .hero-copy h1 {
-        font-size: 42px;
       }
 
       .btn {
         width: 100%;
       }
 
-      .hero-cta,
-      .cta-actions {
-        display: grid;
+      .hero-media {
+        border-radius: 18px;
+      }
+
+      .hero-media img {
+        border-radius: 17px;
+      }
+
+      .value-strip,
+      .steps,
+      .feature-grid {
         grid-template-columns: 1fr;
+      }
+
+      .value-item,
+      .step,
+      .card,
+      .companion-panel,
+      .download-card {
+        border-radius: 18px;
+      }
+
+      .step {
+        min-height: 0;
+      }
+
+      .footer-grid,
+      .footer-brand {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
   </style>
@@ -1281,230 +824,123 @@ body {
   <header class="site-header">
     <div class="container nav">
       <a href="#home" class="brand" aria-label="SwiftSale home">
-        <img src="https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/bb5dee42-4e67-455e-ef19-3df5a0503300/public" alt="SwiftSale logo" />
-        <div class="brand-text">
-          
-        </div>
+        <img src="images/swiftsaleapp_logo.png" alt="SwiftSaleApp" />
       </a>
 
-      <nav id="nav-menu" class="nav-links" aria-label="Primary">
-        <a href="#how-it-works">How It Works</a>
-        <a href="#why-swiftsale">Why SwiftSale</a>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary navigation">
         <a href="#features">Features</a>
-        <a href="#demo">Demo</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#companion">Companion</a>
         <a href="#download">Download</a>
-        <a href="#faq">FAQ</a>
+        <a class="mobile-download btn btn-primary" href="#download">Download SwiftSale</a>
       </nav>
 
-      <div class="nav-cta">
-        <a class="btn btn-secondary" href="#pricing">Pricing</a>
-        <a class="btn btn-primary" href="#download">Download</a>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#download">Download SwiftSale</a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+        </button>
       </div>
-
-      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
-        ☰
-      </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-bg"></div>
-      <div class="hero-vignette"></div>
-
-      <div class="container hero-grid">
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-layout">
         <div class="hero-copy">
-          <span class="eyebrow">Whatnot workflow software for live sellers</span>
-
-          <h1>
-            Run your Whatnot show faster.<br />
-            <span class="accent-gold glow-gold">Pack with less chaos.</span>
+          <span class="eyebrow">Sellers only</span>
+          <h1 id="hero-title">
+            SELLERS ONLY:<br />
+            Run Singles + Fill-A-Box Back-to-Back.<br />
+            <span class="gold-text">Never Lose Track.</span>
           </h1>
           <p>
-            SwiftSale captures winners, assigns BINs, tracks buyers, and helps organize packing slips so your post-show workflow is already under control.
+            SwiftSale captures Whatnot winners, assigns BINs, syncs to Companion, and stamps the right BIN onto every packing slip.
           </p>
-
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#download">⬇ Download for Windows</a>
-            <a class="btn btn-secondary" href="#demo">▶ Watch Demo</a>
-          </div>
-
-          <div class="hero-proof">
-            <div class="proof-card">
-              <div class="proof-value">1</div>
-              <div class="proof-label">Capture winners live</div>
-            </div>
-            <div class="proof-card">
-              <div class="proof-value">2</div>
-              <div class="proof-label">Assign BINs automatically</div>
-            </div>
-            <div class="proof-card">
-              <div class="proof-value">3</div>
-              <div class="proof-label">Annotate packing slips</div>
-            </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#download">Download SwiftSale</a>
+            <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
           </div>
         </div>
 
-        <div class="hero-panel">
-          <div class="hero-panel-top">
-            <div class="hero-panel-title">Show workflow</div>
-            <div class="live-pill">
-              <span class="live-dot"></span>
-              During and after the show
-            </div>
-          </div>
-
-          <div class="hero-panel-grid">
-            <div class="mini-card">
-              <strong>Capture now. Pack cleaner later.</strong>
-              <div class="muted">
-                SwiftSale connects winners, BINs, buyer history, packing slips, and post-sale bonus games in one guided desktop workflow.
-              </div>
-            </div>
-
-            <div class="mini-list">
-              <div class="mini-item">
-                <div class="mini-item-label">Live sale</div>
-                <div class="mini-item-value">Winner captured</div>
-              </div>
-              <div class="mini-item">
-                <div class="mini-item-label">BIN board</div>
-                <div class="mini-item-value">Order location assigned</div>
-              </div>
-              <div class="mini-item">
-                <div class="mini-item-label">Packing slips</div>
-                <div class="mini-item-value">Buyer and BIN annotated</div>
-              </div>
-              <div class="mini-item">
-                <div class="mini-item-label">Bonus games</div>
-                <div class="mini-item-value">Post-sale engagement</div>
-              </div>
-            </div>
-          </div>
+        <div class="hero-media" aria-label="SwiftSale app shown on laptop and phone">
+          <img src="images/ss-hero.png" alt="SwiftSale capture and Companion workflow shown on laptop and phone" />
         </div>
       </div>
     </section>
 
-    <section class="logo-rail" aria-label="Quick value summary">
-      <div class="container logo-rail-inner">
-        <div class="logo-rail-card">⚡ Capture winners instantly</div>
-        <div class="logo-rail-card">📦 Assign bins automatically</div>
-        <div class="logo-rail-card">Annotate packing slips for faster packing</div>
-        <div class="logo-rail-card">🎉 Add post-sale bonus games after purchases to make your stream more fun</div>
+    <section class="strip" aria-label="SwiftSale value summary">
+      <div class="container value-strip">
+        <div class="value-item"><span class="icon">BIN</span>Live BIN Assignment</div>
+        <div class="value-item"><span class="icon">SYNC</span>Real-Time Companion Sync</div>
+        <div class="value-item"><span class="icon">PACK</span>Faster Packing</div>
+        <div class="value-item"><span class="icon">SLIP</span>Packing Slip Annotation</div>
       </div>
     </section>
 
     <section class="section" id="how-it-works">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">How SwiftSale Works</span>
-            <h2>A simple workflow for busy live shows.</h2>
-          </div>
+        <div class="section-header">
+          <span class="eyebrow">How it works</span>
+          <h2>A cleaner workflow while the show is moving fast.</h2>
+          <p class="lead">SwiftSale keeps the live sale, BIN board, Companion view, and packing slips connected.</p>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-icon">❌</div>
-            <h3>Capture the winner</h3>
-            <p>Save the buyer during the live show before the next sale distracts you.</p>
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">1</div>
+            <h3>Double-click a Whatnot winner</h3>
+            <p>Capture the buyer before the next item pulls your attention away.</p>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon">✅</div>
-            <h3>Assign the BIN</h3>
-            <p>Give each buyer a clear packing location as orders come in.</p>
+          <article class="step">
+            <div class="step-number">2</div>
+            <h3>SwiftSale assigns the buyer a BIN</h3>
+            <p>Every buyer gets a clear location for sorting and fulfillment.</p>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>Track the buyer</h3>
-            <p>Keep buyer history and show activity connected to each winner.</p>
+          <article class="step">
+            <div class="step-number">3</div>
+            <h3>Companion shows the BIN live</h3>
+            <p>A second screen or helper can see the latest assignment instantly.</p>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon">4</div>
-            <h3>Pack faster after the show</h3>
-            <p>Use organized BINs and annotated packing slips when fulfillment starts.</p>
+          <article class="step">
+            <div class="step-number">4</div>
+            <h3>Annotate packing slips and print faster</h3>
+            <p>Stamp the right BIN onto each packing slip for cleaner post-show packing.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-label="SwiftSale workflow">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Workflow</span>
-            <h2>See the product in one line.</h2>
-          </div>
+    <section class="section companion" id="companion">
+      <div class="container companion-grid">
+        <div class="companion-panel">
+          <span class="eyebrow">SwiftSale Companion</span>
+          <h2>Keep another device synced while the show is running.</h2>
+          <p class="lead">
+            SwiftSale Companion lets another device see live BIN assignments while the show is running.
+            Perfect for remote helpers, second screens, and sellers who want their phone to stay in sync.
+          </p>
+
+          <ul class="bullet-list">
+            <li>Join by QR code or show code</li>
+            <li>See latest BIN assignment instantly</li>
+            <li>Keep helpers synced during the show</li>
+            <li>Optional companion workflow, not required to use SwiftSale</li>
+          </ul>
         </div>
 
-        <div class="workflow-flow">
-          <div class="flow-node">Live Sale</div>
-          <div class="flow-node">BIN Board</div>
-          <div class="flow-node">Packing Slips</div>
-          <div class="flow-node">Buyer History</div>
-          <div class="flow-node">Bonus Games</div>
-        </div>
-
-<div class="showcase-wrap">
-  <div class="showcase-card">
-    <img
-      src="https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/e1a67e54-ea9e-4eee-dcc1-e2ffc90a7200/public"
-      alt="SwiftSale showing winner capture, bins, label organization, and post-sale bonus games after purchases are complete"
-    />
-  </div>
-</div>
-          <div class="showcase-body glass-card">
-            <div class="stack-14">
-              <div class="showcase-list">
-                <div class="showcase-item">
-                  <div class="showcase-badge">1</div>
-                  <div>
-                    <h3>Capture winners live</h3>
-                    <p>
-                      As buyers win, SwiftSale captures usernames instantly during your show so you do not lose track.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="showcase-item">
-                  <div class="showcase-badge">2</div>
-                  <div>
-                    <h3>Assign bins automatically</h3>
-                    <p>
-                      Each buyer gets a bin number. A bin is simply the place where that buyer’s order goes while you organize and pack.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="showcase-item">
-                  <div class="showcase-badge">3</div>
-                  <div>
-                    <h3>Prep fulfillment faster</h3>
-                    <p>
-                      Use the BIN board, winner history, buyer tracking, exports, and packing slip annotation to make your post-show packing process cleaner and faster.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="showcase-item">
-                  <div class="showcase-badge">4</div>
-                  <div>
-                    <h3>Keep buyers engaged</h3>
-                    <p>
-                      Run built-in post-sale bonus games and live chat output features like Bingo, Bin Bonanza, Prize Vault, and hype messages after purchases are complete, without breaking your flow.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="hero-cta">
-                <a class="btn btn-primary" href="#demo">See it in action</a>
-                <a class="btn btn-secondary" href="#download">Download SwiftSale</a>
-              </div>
+        <div class="phone-card" aria-hidden="true">
+          <div class="phone-frame">
+            <img class="phone-logo" src="images/swiftsaleapp_logo.png" alt="" />
+            <h3>SwiftSale Companion</h3>
+            <p>Connected to show</p>
+            <div class="phone-bin">
+              <span>Latest Assignment</span>
+              <strong>BIN 1</strong>
+              <span>@mobaljes74124</span>
             </div>
           </div>
         </div>
@@ -1513,436 +949,78 @@ body {
 
     <section class="section" id="features">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Features</span>
-            <h2>Grouped around how sellers actually work.</h2>
-          </div>
+        <div class="section-header">
+          <span class="eyebrow">Features</span>
+          <h2>Built for sellers who run fast shows.</h2>
+          <p class="lead">Short, practical tools for capture, organization, packing, and second-screen coordination.</p>
         </div>
 
         <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>During the show</h3>
-            <p>Keep the selling pace high while SwiftSale keeps the order details structured.</p>
-            <ul class="group-list">
-              <li><span class="tick">✓</span><span>Winner capture</span></li>
-              <li><span class="tick">✓</span><span>BIN board</span></li>
-              <li><span class="tick">✓</span><span>Buyer tracking</span></li>
-            </ul>
+          <article class="card">
+            <span class="icon">01</span>
+            <h3>Capture / Assign BINs</h3>
+            <p>Capture winners and assign clear order locations without slowing the sale.</p>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon">📦</div>
-            <h3>After the show</h3>
-            <p>Turn a busy sale into a cleaner packing process with less manual cleanup.</p>
-            <ul class="group-list">
-              <li><span class="tick">✓</span><span>Packing slip annotation</span></li>
-              <li><span class="tick">✓</span><span>CSV exports</span></li>
-              <li><span class="tick">✓</span><span>Mailing list tools</span></li>
-            </ul>
+          <article class="card">
+            <span class="icon">02</span>
+            <h3>Buyer History</h3>
+            <p>Keep repeat buyers and show activity connected to each capture.</p>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon">📋</div>
-            <h3>Engagement</h3>
-            <p>Add post-sale bonus games and chat output without changing the purchase itself.</p>
-            <ul class="group-list">
-              <li><span class="tick">✓</span><span>Bingo</span></li>
-              <li><span class="tick">✓</span><span>Bin Bonanza</span></li>
-              <li><span class="tick">✓</span><span>Prize Vault and chat output</span></li>
-            </ul>
+          <article class="card">
+            <span class="icon">03</span>
+            <h3>Show Analytics</h3>
+            <p>Review show activity so you can understand what happened after the stream.</p>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon">🏷️</div>
-            <h3>Packing slip annotation</h3>
-            <p>
-              Automatically stamp buyer names and bin numbers onto packing slips to speed up fulfillment.
-            </p>
+          <article class="card">
+            <span class="icon">04</span>
+            <h3>Post-Sale Bonus Games</h3>
+            <p>Run bonus engagement after purchases are complete without changing the purchase.</p>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Buyer tracking</h3>
-            <p>
-              Track wins, repeat buyers, and activity in real time so you always know who your best customers are.
-            </p>
+          <article class="card">
+            <span class="icon">05</span>
+            <h3>Annotate Packing Slips</h3>
+            <p>Stamp BIN details onto packing slips and make fulfillment easier to follow.</p>
           </article>
 
-          <article class="feature-card">
-            <div class="feature-icon">🕘</div>
-            <h3>Winner history</h3>
-            <p>
-              Keep a full running history of captures so you can review who bought, when they bought, and how often they won.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">💬</div>
-            <h3>Live chat output</h3>
-            <p>
-              Generate ready-to-paste chat messages for post-sale bonus games like Bingo, along with hype messages during your show.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">🧾</div>
-            <h3>CSV export</h3>
-            <p>
-              Export your winners and fulfillment data when you need a clean list outside the app.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">🎬</div>
-            <h3>Show session control</h3>
-            <p>
-              Start and manage show sessions so each live stream has its own organized workflow.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">🎱</div>
-            <h3>Bingo</h3>
-            <p>
-              Run Bingo as a post-sale bonus game after purchases are complete without affecting the purchase itself.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">🎡</div>
-            <h3>Bin Bonanza</h3>
-            <p>
-              Use assigned BINs in a post-sale bonus reveal after purchases are complete without affecting the purchase itself.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">🏆</div>
-            <h3>Prize Vault</h3>
-            <p>
-              Reveal post-sale bonus prize details live after the purchase is complete without affecting the purchase itself.
-            </p>
+          <article class="card">
+            <span class="icon">06</span>
+            <h3>Companion Sync</h3>
+            <p>Share live BIN assignments with another device, helper, or second screen.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="why-swiftsale">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Why sellers need this</span>
-            <h2>Less manual tracking. More control after the show.</h2>
-          </div>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-icon">🛍️</div>
-            <h3>Without SwiftSale</h3>
-            <p>Manual notes, lost usernames, messy bins, and slow packing.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">🚀</div>
-            <h3>With SwiftSale</h3>
-            <p>Captured winners, assigned BINs, cleaner packing slips, buyer history, and faster fulfillment.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon">🎉</div>
-            <h3>Sellers who want engagement</h3>
-            <p>
-              Built-in post-sale bonus games and chat output help turn your show into more of an experience without affecting the purchase itself.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="demo">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Demo</span>
-            <h2>See SwiftSale work like a real live-selling control room.</h2>
-            <p class="lead">
-              Watch how winner capture, BINs, buyer tracking, packing slips, and post-sale bonus games connect inside one workflow.
-            </p>
-          </div>
-        </div>
-
-        <div class="video-shell" onclick="this.innerHTML = `
-          <iframe
-            src='https://www.youtube.com/embed/MBZhOm4GNRk?autoplay=1'
-            frameborder='0'
-            allow='autoplay; encrypted-media'
-            allowfullscreen>
-          </iframe>`">
-          <img src="https://img.youtube.com/vi/MBZhOm4GNRk/maxresdefault.jpg" alt="SwiftSale demo video thumbnail" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pricing">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Pricing</span>
-            <h2>Choose the BIN limit that fits your show volume.</h2>
-            <p class="lead">
-              Every plan includes the core SwiftSale workflow. Higher tiers support more unique buyers per show.
-            </p>
-          </div>
-        </div>
-
-        <div class="pricing-grid">
-          <article class="price-card">
-            <div class="plan">Starter</div>
-            <h3>Free</h3>
-            <p class="price-copy">Best for smaller shows with up to 20 unique buyers</p>
-            <div class="price-row">
-              <strong>$0</strong>
-              <span>/ forever</span>
-            </div>
-
-            <ul class="feature-list">
-              <li><span class="tick">✓</span><span>Up to <strong>20</strong> bin assignments every show</span></li>
-              <li><span class="tick">✓</span><span>Winner capture</span></li>
-              <li><span class="tick">✓</span><span>BIN workflow</span></li>
-              <li><span class="tick">✓</span><span>Packing slip annotation</span></li>
-              <li><span class="tick">✓</span><span>Core workflow tools</span></li>
-            </ul>
-
-            <div class="price-footer">
-              <a class="btn btn-secondary btn-block" href="#download">Start free</a>
-            </div>
-          </article>
-
-          <article class="price-card">
-            <div class="plan">Bronze</div>
-            <h3>$29.99</h3>
-            <p class="price-copy">Great for growing shows with more unique buyers and higher volume</p>
-            <div class="price-row">
-              <strong>$29.99</strong>
-              <span>/ month</span>
-            </div>
-
-            <ul class="feature-list">
-              <li><span class="tick">✓</span><span>Up to <strong>50</strong> bin assignments every show</span></li>
-              <li><span class="tick">✓</span><span>Capture + packing workflow</span></li>
-              <li><span class="tick">✓</span><span>Packing slip annotation</span></li>
-              <li><span class="tick">✓</span><span>Mailing list tools</span></li>
-            </ul>
-
-            <div class="price-footer stripe-wrap">
-              <stripe-buy-button
-                buy-button-id="buy_btn_1RviLNJ7WrcpTNl6LZ1eP7hG"
-                publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5">
-              </stripe-buy-button>
-            </div>
-          </article>
-
-          <article class="price-card featured">
-            <div class="plan">Silver • Most Popular</div>
-            <h3>$59.99</h3>
-            <p class="price-copy">Built for fast-paced shows with many unique buyers to manage</p>
-            <div class="price-row">
-              <strong>$59.99</strong>
-              <span>/ month</span>
-            </div>
-
-            <ul class="feature-list">
-              <li><span class="tick">✓</span><span>Up to <strong>150</strong> bin assignments every show</span></li>
-              <li><span class="tick">✓</span><span>Capture, packing slips, and post-sale bonus games</span></li>
-              <li><span class="tick">✓</span><span>Live chat output</span></li>
-              <li><span class="tick">✓</span><span>Packing slip annotation + exports</span></li>
-              <li><span class="tick">✓</span><span>Buyer organization tools</span></li>
-            </ul>
-
-            <div class="price-footer stripe-wrap">
-              <stripe-buy-button
-                buy-button-id="buy_btn_1Rvis1J7WrcpTNl65ruVtBMU"
-                publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5">
-              </stripe-buy-button>
-            </div>
-          </article>
-
-          <article class="price-card">
-            <div class="plan">Gold</div>
-            <h3>$99.99</h3>
-            <p class="price-copy">For high-volume sellers handling large numbers of unique buyers per show</p>
-            <div class="price-row">
-              <strong>$99.99</strong>
-              <span>/ month</span>
-            </div>
-
-            <ul class="feature-list">
-              <li><span class="tick">✓</span><span>Up to <strong>600</strong> bin assignments every show</span></li>
-              <li><span class="tick">✓</span><span>2-device access limit per email</span></li>
-              <li><span class="tick">✓</span><span>Full workflow + post-sale bonus games suite</span></li>
-              <li><span class="tick">✓</span><span>Priority support</span></li>
-            </ul>
-
-            <div class="price-footer stripe-wrap">
-              <stripe-buy-button
-                buy-button-id="buy_btn_1RvimFJ7WrcpTNl6lymzErNs"
-                publishable-key="pk_live_51RJl1aJ7WrcpTNl6HDujxtz6FKIENvdxe4YoRDOqjaeVrqhrT2O6l0izKPrZklC2PharatHSFvwRgGLZsAl3vGDl00KQmWKIY5">
-              </stripe-buy-button>
-            </div>
-          </article>
-        </div>
-
-        <p class="muted" style="margin-top: 16px;">
-          All plans include the full SwiftSale workflow — higher tiers support more unique buyers per show.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">FAQ</span>
-            <h2>Questions first-time visitors usually ask.</h2>
-            <p class="lead">
-              Clear answers in plain English.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-grid">
-          <article class="faq-item">
-            <h3>What is a BIN?</h3>
-            <p>
-              A BIN is the spot where a buyer's order goes while you are organizing and packing.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3>Does SwiftSale work during the show?</h3>
-            <p>
-              Yes. SwiftSale helps you capture winners, assign bins, and run engagement features while the show is happening.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3>What does label annotation mean?</h3>
-            <p>
-              SwiftSale adds buyer and BIN details to packing slips so orders are easier to identify while packing.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3>Does SwiftSale print shipping labels?</h3>
-            <p>
-              No. SwiftSale helps annotate packing slips so fulfillment is easier and faster to follow.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3>Are games post-sale only?</h3>
-            <p>
-              Yes. Bingo, Bin Bonanza, and Prize Vault are post-sale bonus engagement features and do not affect the purchase itself.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3>What does it run on?</h3>
-            <p>
-              The current production version is for Windows desktop.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
+    <section class="section final-cta" id="download">
       <div class="container">
         <div class="cta-band">
-          <div class="cta-band-grid">
-            <div>
-              <span class="eyebrow">Ready for more control?</span>
-              <h2>Run your show better. Pack faster. Keep buyers engaged.</h2>
-              <p>
-                That is what SwiftSale is built to do.
-              </p>
-            </div>
-
-            <div class="cta-actions">
-              <a class="btn btn-primary" href="#download">Download SwiftSale</a>
-              <a class="btn btn-secondary" href="#demo">Watch demo</a>
-            </div>
+          <span class="eyebrow">Download</span>
+          <h2>Stop Losing Track During Fast Shows.</h2>
+          <p>Run cleaner shows, keep buyers organized, and pack faster after the stream.</p>
+          <div class="hero-actions">
+            <a
+              id="download-btn"
+              class="btn btn-primary"
+              href="https://downloads.swiftsaleapp.com/SwiftSale-Setup-0.1.8.exe"
+            >
+              Download SwiftSale
+            </a>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="download">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Download</span>
-            <h2>Get the latest Windows version.</h2>
-            <p class="lead">
-              Download SwiftSale and use it in your next show.
-            </p>
-          </div>
-        </div>
-
-        <div class="download-grid">
           <div class="download-card">
             <h3>SwiftSale for Windows</h3>
-            <p class="muted">
-              Current production installer hosted on our secure download domain.
-            </p>
-
-            <div class="hero-cta" style="margin: 18px 0 12px;">
-              <a
-                id="download-btn"
-                class="btn btn-primary"
-                href="https://downloads.swiftsaleapp.com/SwiftSale-Setup-0.1.8.exe"
-              >
-                ⬇ Download v0.1.8
-              </a>
-              <a class="btn btn-secondary" href="#pricing">See pricing</a>
-            </div>
-
+            <p>Current production installer hosted on the SwiftSale download domain.</p>
             <div class="download-meta">
-              <div class="mini-card">
-                <strong>Platform</strong>
-                <div class="muted">Windows desktop</div>
-              </div>
-              <div class="mini-card">
-                <strong>Version</strong>
-                <div class="muted"><code class="inline">0.1.8</code></div>
-              </div>
-              <div class="mini-card">
-                <strong>Updates</strong>
-                <div class="muted">Auto-update enabled</div>
-              </div>
+              <span>Windows desktop</span>
+              <span>Version 0.1.8</span>
+              <a href="/guide.html">Getting started guide</a>
+              <a href="mailto:support@swiftsaleapp.com">support@swiftsaleapp.com</a>
             </div>
           </div>
-
-          <aside class="support-card">
-            <h3>Need help?</h3>
-            <div class="stack-12">
-              <div class="mini-card">
-                <strong>Support</strong>
-                <div class="muted">support@swiftsaleapp.com</div>
-              </div>
-              <div class="mini-card">
-                <strong>Guide</strong>
-                <div class="muted"><a href="/guide.html">Open getting started guide</a></div>
-              </div>
-              <div class="mini-card">
-                <strong>Troubleshooting</strong>
-                <div class="muted"><a href="/docs/troubleshooting.html">Open support docs</a></div>
-              </div>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
@@ -1951,70 +1029,30 @@ body {
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/4b6ef6e0-75c0-4735-d56d-3a32133ee400/public" alt="SwiftSale logo" />
-        <p class="muted" style="max-width: 420px; margin: 0 0 14px;">
-          SwiftSale helps Whatnot sellers capture winners, assign bins, track buyers, organize orders,
-          annotate packing slips, export fulfillment data, and add post-sale bonus game energy to their live streams.
-        </p>
-        <div class="fine">© <span id="year"></span> SwiftSale. All rights reserved.</div>
+        <img src="images/swiftsaleapp_logo.png" alt="SwiftSaleApp" />
+        <span>&copy; <span id="year"></span> SwiftSale. All rights reserved.</span>
       </div>
 
-      <div>
-        <div class="footer-title">Product</div>
-        <div class="footer-links">
-          <a href="#how-it-works">How It Works</a>
-          <a href="#why-swiftsale">Why SwiftSale</a>
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Resources</div>
-        <div class="footer-links">
-          <a href="/guide.html">Guide</a>
-          <a href="/docs/troubleshooting.html">Troubleshooting</a>
-          <a href="#demo">Demo</a>
-          <a href="mailto:support@swiftsaleapp.com">Support</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Legal</div>
-        <div class="footer-links">
-          <a href="/privacy.html">Privacy</a>
-          <a href="/terms.html">Terms</a>
-        </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#companion">Companion</a>
+        <a href="/guide.html">Guide</a>
+        <a href="mailto:support@swiftsaleapp.com">Support</a>
       </div>
     </div>
   </footer>
 
+  <script src="js/nav.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
-
-    if (menuToggle && navMenu) {
-      menuToggle.addEventListener("click", () => {
-        const isOpen = navMenu.classList.toggle("show");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-      });
-
-      navMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navMenu.classList.remove("show");
-          menuToggle.setAttribute("aria-expanded", "false");
-        });
-      });
-    }
 
     const downloadBtn = document.getElementById("download-btn");
     if (downloadBtn) {
       downloadBtn.addEventListener("click", () => {
         if (typeof window.gtag === "function") {
           window.gtag("event", "download_click", {
-            item_id: "ssa_win_0_1_4",
+            item_id: "ssa_win_0_1_8",
             item_category: "stable"
           });
         }
