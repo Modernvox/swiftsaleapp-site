@@ -83,7 +83,7 @@
     body {
       width: 100%;
       max-width: 100%;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     html {
@@ -93,6 +93,7 @@
     body {
       margin: 0;
       min-width: 0;
+      position: relative;
       color: var(--text);
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.5;
@@ -108,6 +109,25 @@
       display: block;
       max-width: 100%;
       height: auto;
+    }
+
+    video,
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    main,
+    section,
+    .container,
+    .hero,
+    .hero-inner,
+    .hero-copy,
+    .hero-visual,
+    .hero-card,
+    .hero-media {
+      max-width: 100%;
+      min-width: 0;
     }
 
     a {
@@ -825,7 +845,55 @@
       }
     }
 
+    @media (max-width: 768px) {
+      * {
+        max-width: 100%;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .hero,
+      .hero-inner,
+      .hero-copy,
+      .hero-visual,
+      .hero-card,
+      .hero-media,
+      .value-strip,
+      .feature-grid,
+      .companion-grid {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+      }
+
+      .hero-actions,
+      .cta-row {
+        width: 100%;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions a,
+      .cta-row a,
+      .button,
+      .btn {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
     @media (max-width: 620px) {
+      * {
+        max-width: 100%;
+      }
+
       html,
       body,
       main,
@@ -840,9 +908,11 @@
       }
 
       .container {
-        width: calc(100% - 28px);
+        width: 100%;
         max-width: 100%;
         min-width: 0;
+        padding-left: 14px;
+        padding-right: 14px;
       }
 
       .site-header,
@@ -901,6 +971,7 @@
       }
 
       .hero::before {
+        inset: auto 0 -1px 0;
         height: 120px;
       }
 
@@ -975,7 +1046,7 @@
       }
 
       .hero-media::before {
-        inset: -20px -18px auto auto;
+        inset: -20px 0 auto auto;
         width: 150px;
         height: 150px;
       }
