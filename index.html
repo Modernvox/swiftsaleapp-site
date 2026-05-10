@@ -536,67 +536,54 @@
     }
 
     .phone-card {
+      position: relative;
       display: grid;
       min-height: 100%;
       place-items: center;
-      padding: 28px;
+      overflow: hidden;
+      padding: clamp(18px, 4vw, 34px);
       border: 1px solid var(--line);
       border-radius: 28px;
       background:
-        radial-gradient(160px 240px at 50% 18%, rgba(255, 211, 107, 0.17), transparent 70%),
-        linear-gradient(180deg, rgba(22, 16, 10, 0.92), rgba(5, 4, 3, 0.94));
+        radial-gradient(280px 360px at 52% 56%, rgba(255, 185, 45, 0.2), transparent 68%),
+        linear-gradient(180deg, rgba(22, 16, 10, 0.9), rgba(5, 4, 3, 0.96));
       box-shadow: var(--shadow);
     }
 
-    .phone-frame {
-      width: min(240px, 100%);
-      border: 1px solid rgba(255, 211, 107, 0.38);
-      border-radius: 32px;
-      padding: 16px;
-      background: #070604;
-      box-shadow: inset 0 0 0 5px #15120e, 0 22px 44px rgba(0, 0, 0, 0.4);
+    .phone-card::before {
+      content: "";
+      position: absolute;
+      inset: 12% 10% 4%;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255, 196, 73, 0.28), rgba(255, 196, 73, 0.08) 42%, transparent 72%);
+      filter: blur(22px);
+      pointer-events: none;
     }
 
-    .phone-logo {
-      width: 58px;
-      height: 58px;
-      margin: 16px auto 18px;
+    .phone-product {
+      position: relative;
+      z-index: 1;
+      width: min(360px, 88%);
+      height: auto;
       object-fit: contain;
+      filter: drop-shadow(0 28px 44px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 22px rgba(255, 190, 65, 0.15));
+      animation: phoneFloat 7s ease-in-out infinite;
     }
 
-    .phone-frame h3 {
-      margin: 0 0 8px;
-      text-align: center;
-      font-size: 19px;
+    @keyframes phoneFloat {
+      0%, 100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      50% {
+        transform: translate3d(0, -8px, 0);
+      }
     }
 
-    .phone-frame p {
-      margin: 0 0 18px;
-      text-align: center;
-      color: var(--muted-2);
-      font-size: 13px;
-    }
-
-    .phone-bin {
-      border: 1px solid rgba(255, 211, 107, 0.34);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(255, 211, 107, 0.06);
-    }
-
-    .phone-bin span {
-      display: block;
-      color: var(--muted-2);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .phone-bin strong {
-      display: block;
-      color: var(--gold-2);
-      font-size: 30px;
-      line-height: 1.1;
+    @media (prefers-reduced-motion: reduce) {
+      .phone-product {
+        animation: none;
+      }
     }
 
     .feature-grid {
@@ -620,6 +607,38 @@
     .card .icon svg {
       width: 23px;
       height: 23px;
+    }
+
+    .mobile-sync-visual {
+      position: relative;
+      display: grid;
+      place-items: center;
+      margin: 18px 0 2px;
+      min-height: 140px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 211, 107, 0.16);
+      border-radius: 18px;
+      background:
+        radial-gradient(180px 120px at 50% 58%, rgba(255, 196, 73, 0.18), transparent 72%),
+        rgba(255, 211, 107, 0.035);
+    }
+
+    .mobile-sync-visual::before {
+      content: "";
+      position: absolute;
+      inset: 18% 24% 2%;
+      border-radius: 999px;
+      background: rgba(255, 196, 73, 0.17);
+      filter: blur(18px);
+    }
+
+    .mobile-sync-visual img {
+      position: relative;
+      z-index: 1;
+      width: min(120px, 44%);
+      max-height: 168px;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 14px rgba(255, 190, 65, 0.13));
     }
 
     .final-cta {
@@ -766,6 +785,14 @@
       .companion-grid {
         grid-template-columns: 1fr;
       }
+
+      .phone-card {
+        min-height: auto;
+      }
+
+      .phone-product {
+        width: min(320px, 72%);
+      }
     }
 
     @media (max-width: 620px) {
@@ -829,6 +856,23 @@
 
       .step {
         min-height: 0;
+      }
+
+      .phone-card {
+        padding: 18px;
+      }
+
+      .phone-product {
+        width: min(260px, 82%);
+      }
+
+      .mobile-sync-visual {
+        min-height: 118px;
+      }
+
+      .mobile-sync-visual img {
+        width: min(96px, 38%);
+        max-height: 138px;
       }
 
       .footer-grid,
@@ -971,17 +1015,12 @@
           </ul>
         </div>
 
-        <div class="phone-card" aria-hidden="true">
-          <div class="phone-frame">
-            <img class="phone-logo" src="images/swiftsaleapp_logo.png" alt="" />
-            <h3>SwiftSale Companion</h3>
-            <p>Connected to show</p>
-            <div class="phone-bin">
-              <span>Latest Assignment</span>
-              <strong>BIN 1</strong>
-              <span>@mobaljes74124</span>
-            </div>
-          </div>
+        <div class="phone-card">
+          <img
+            class="phone-product"
+            src="images/ss-mobile.png"
+            alt="SwiftSale Companion live BIN assignment on a phone"
+          />
         </div>
       </div>
     </section>
@@ -1041,6 +1080,9 @@
             </span>
             <h3>Companion Sync</h3>
             <p>Share live BIN assignments with another device, helper, or second screen.</p>
+            <div class="mobile-sync-visual" aria-hidden="true">
+              <img src="images/ss-mobile.png" alt="" />
+            </div>
           </article>
         </div>
       </div>
