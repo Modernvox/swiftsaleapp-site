@@ -797,47 +797,147 @@
 
     @media (max-width: 620px) {
       .container {
-        width: min(var(--max), calc(100% - 24px));
+        width: min(var(--max), calc(100% - 28px));
       }
 
       .site-header,
       .nav {
-        min-height: 68px;
+        min-height: 60px;
       }
 
       :root {
-        --nav-h: 68px;
+        --nav-h: 60px;
+      }
+
+      .nav {
+        gap: 10px;
       }
 
       .brand img {
-        height: 38px;
-        max-width: 145px;
+        height: 31px;
+        max-width: 126px;
+      }
+
+      .menu-toggle {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        gap: 3px;
+      }
+
+      .menu-toggle span,
+      .menu-toggle::before,
+      .menu-toggle::after {
+        width: 16px;
+      }
+
+      .nav-links {
+        inset-inline: 14px;
+        padding: 8px;
+        border-radius: 16px;
+      }
+
+      .nav-links a {
+        padding: 11px 10px;
+        font-size: 13px;
       }
 
       .hero {
-        padding-top: 34px;
+        padding: 22px 0 28px;
+        background:
+          radial-gradient(360px 180px at 42% 18%, rgba(255, 206, 105, 0.16), transparent 68%),
+          linear-gradient(180deg, rgba(255, 211, 107, 0.04), transparent 46%);
+      }
+
+      .hero::before {
+        height: 120px;
+      }
+
+      .hero-layout {
+        gap: 18px;
+        align-items: start;
+      }
+
+      .hero-copy {
+        width: min(100%, 355px);
+        max-width: 355px;
       }
 
       .hero h1 {
-        font-size: clamp(38px, 12vw, 54px);
+        max-width: 350px;
+        margin-bottom: 13px;
+        font-size: clamp(30px, 8.3vw, 38px);
+        line-height: 1.06;
+      }
+
+      .hero-copy p {
+        max-width: 335px;
+        margin-bottom: 17px;
+        font-size: clamp(14px, 3.8vw, 15.5px);
+        line-height: 1.55;
+        color: #dfd0b8;
+      }
+
+      .eyebrow {
+        margin-bottom: 12px;
+        padding: 6px 10px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
       }
 
       .hero-actions,
       .cta-band .hero-actions {
         display: grid;
         grid-template-columns: 1fr;
+        gap: 9px;
       }
 
       .btn {
         width: 100%;
+        min-height: 42px;
+        padding: 0 16px;
+        font-size: 14px;
       }
 
       .hero-media {
-        border-radius: 18px;
+        width: 100%;
+        max-width: 520px;
+        margin-top: 0;
+        border-radius: 16px;
+        box-shadow: 0 18px 54px rgba(0, 0, 0, 0.5), 0 0 46px rgba(246, 183, 53, 0.1);
+      }
+
+      .hero-media::before {
+        inset: -20px -18px auto auto;
+        width: 150px;
+        height: 150px;
       }
 
       .hero-media img {
-        border-radius: 17px;
+        width: 100%;
+        border-radius: 15px;
+      }
+
+      .strip {
+        padding: 4px 0 24px;
+      }
+
+      .section {
+        padding: 48px 0;
+      }
+
+      .section-header {
+        margin-bottom: 22px;
+      }
+
+      .section h2 {
+        font-size: clamp(29px, 8vw, 38px);
+        line-height: 1.08;
+      }
+
+      .section .lead {
+        font-size: 15px;
+        line-height: 1.6;
       }
 
       .value-strip,
