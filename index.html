@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SwiftSale - Run Singles + Fill-A-Box Back-to-Back</title>
+  <title>SwiftSale - Whatnot Seller Command Center</title>
   <meta
     name="description"
-    content="SwiftSale captures Whatnot winners, assigns BINs, syncs to Companion, and stamps the right BIN onto every packing slip."
+    content="SwiftSale is operational software for Whatnot live sellers running singles, fill-a-box, and fast-paced streams. Capture winners, assign BINs, sync Companion, and annotate packing slips."
   />
   <meta name="theme-color" content="#090705" />
   <link rel="icon" href="/favicon.ico?v=4" />
@@ -14,10 +14,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" />
 
-  <meta property="og:title" content="SwiftSale - Never Lose Track During Fast Shows" />
+  <meta property="og:title" content="SwiftSale - Whatnot Seller Command Center" />
   <meta
     property="og:description"
-    content="Run singles and fill-a-box back-to-back. Capture winners, assign BINs, sync Companion, and annotate packing slips faster."
+    content="Built for Whatnot live sellers running singles, fill-a-box, and fast-paced streams. Capture winners, assign BINs, sync Companion, and turn post-show packing into a cleaner workflow."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://swiftsaleapp.com/" />
@@ -26,10 +26,10 @@
   <meta property="og:image:height" content="1024" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SwiftSale - Never Lose Track During Fast Shows" />
+  <meta name="twitter:title" content="SwiftSale - Whatnot Seller Command Center" />
   <meta
     name="twitter:description"
-    content="Capture Whatnot winners, assign BINs, sync Companion, and stamp BINs onto packing slips."
+    content="Operational software for Whatnot live sellers: capture winners, assign BINs, sync Companion, and stamp BINs onto packing slips."
   />
   <meta name="twitter:image" content="https://swiftsaleapp.com/images/ss-hero.png" />
 
@@ -47,7 +47,7 @@
     "name": "SwiftSale",
     "operatingSystem": "Windows",
     "applicationCategory": "BusinessApplication",
-    "description": "Desktop software for live sellers to capture winners, assign BINs, sync to Companion, annotate packing slips, and stay organized during and after every show.",
+    "description": "Desktop software for Whatnot live sellers to capture winners, assign BINs, sync to Companion, annotate packing slips, and stay organized during and after every show.",
     "url": "https://swiftsaleapp.com/",
     "downloadUrl": "https://downloads.swiftsaleapp.com/SwiftSale-Setup-0.2.0.exe"
   }
@@ -348,6 +348,32 @@
       color: #eadcc6;
       font-size: clamp(16px, 1.55vw, 19px);
       line-height: 1.72;
+    }
+
+    .hero-support {
+      display: grid;
+      gap: 7px;
+      max-width: 550px;
+      margin: -8px 0 24px;
+    }
+
+    .hero-support strong,
+    .hero-support span {
+      display: block;
+      color: #fff8e9;
+      line-height: 1.45;
+      text-wrap: balance;
+    }
+
+    .hero-support strong {
+      font-size: clamp(15px, 1.35vw, 17px);
+      font-weight: 900;
+    }
+
+    .hero-support span {
+      color: #eadcc6;
+      font-size: clamp(14px, 1.2vw, 16px);
+      font-weight: 700;
     }
 
     .hero-actions {
@@ -834,6 +860,19 @@
       line-height: 1.72;
     }
 
+    .annotate-impact {
+      max-width: 620px;
+      margin: 20px 0 0;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 211, 107, 0.18);
+      border-radius: 16px;
+      color: #fff3d8;
+      background: rgba(255, 211, 107, 0.055);
+      font-size: 17px;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
     .annotate-list {
       display: grid;
       gap: 11px;
@@ -1009,6 +1048,10 @@
         margin-bottom: 22px;
         font-size: 18px;
         line-height: 1.62;
+      }
+
+      .hero-support {
+        margin-bottom: 22px;
       }
 
       .hero-actions {
@@ -1262,6 +1305,23 @@
         overflow-wrap: break-word;
       }
 
+      .hero-support {
+        width: 100%;
+        max-width: 335px;
+        margin: -4px 0 17px;
+        gap: 6px;
+      }
+
+      .hero-support strong {
+        font-size: 14.5px;
+        line-height: 1.4;
+      }
+
+      .hero-support span {
+        font-size: 13.5px;
+        line-height: 1.42;
+      }
+
       .eyebrow {
         margin-bottom: 12px;
         padding: 6px 10px;
@@ -1416,6 +1476,11 @@
         line-height: 1.62;
       }
 
+      .annotate-impact {
+        margin-top: 16px;
+        font-size: 15px;
+      }
+
       .annotate-list {
         margin-top: 18px;
       }
@@ -1455,9 +1520,9 @@
       </a>
 
       <nav id="nav-menu" class="nav-links" aria-label="Primary navigation">
-        <a href="#features">Features</a>
         <a href="#how-it-works">How It Works</a>
-        <a href="#companion">Companion</a>
+        <a href="#annotate">Annotate Labels</a>
+        <a href="#features">Features</a>
         <a href="#download">Download</a>
         <a class="mobile-download btn btn-primary" href="#download">Download SwiftSale</a>
       </nav>
@@ -1475,15 +1540,19 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-layout">
         <div class="hero-copy">
-          <span class="eyebrow">Sellers only</span>
+          <span class="eyebrow">Whatnot sellers only</span>
           <h1 id="hero-title">
-            SELLERS ONLY:<br />
+            WHATNOT SELLERS:<br />
             Run Singles + Fill-A-Box Back-to-Back.<br />
             <span class="gold-text">Never Lose Track.</span>
           </h1>
           <p>
-            SwiftSale captures Whatnot winners, assigns BINs, syncs to Companion, and stamps the right BIN onto every packing slip.
+            SwiftSale is the command center for Whatnot live sellers who need every buyer, BIN, helper, and packing slip moving through one clean workflow.
           </p>
+          <div class="hero-support" aria-label="SwiftSale positioning">
+            <strong>Built specifically for Whatnot live sellers running singles, fill-a-box, and fast-paced streams.</strong>
+            <span>Stop handwriting BINs, losing buyer orders, and struggling through chaotic post-show packing.</span>
+          </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#download">Download SwiftSale</a>
             <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
@@ -1502,7 +1571,7 @@
           <span class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46L12 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46L11 14Z" /></svg>
           </span>
-          Live BIN Assignment
+          Whatnot BIN Assignment
         </div>
         <div class="value-item">
           <span class="icon" aria-hidden="true">
@@ -1514,13 +1583,13 @@
           <span class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="m7.5 4.27 9 5.15" /><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" /><path d="m3.3 7 8.7 5 8.7-5" /><path d="M12 22V12" /></svg>
           </span>
-          Faster Packing
+          Faster Fulfillment
         </div>
         <div class="value-item">
           <span class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>
           </span>
-          Packing Slip Annotation
+          Annotate Labels
         </div>
       </div>
     </section>
@@ -1529,21 +1598,21 @@
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">How it works</span>
-          <h2>A cleaner workflow while the show is moving fast.</h2>
-          <p class="lead">SwiftSale keeps the live sale, BIN board, Companion view, and packing slips connected.</p>
+          <h2>A cleaner workflow while your Whatnot show is moving fast.</h2>
+          <p class="lead">SwiftSale keeps your Whatnot stream, BIN board, Companion view, and packing slips connected from sale to fulfillment.</p>
         </div>
 
         <div class="steps">
           <article class="step">
             <div class="step-number">1</div>
             <h3>Double-click a Whatnot winner</h3>
-            <p>Capture the buyer before the next item pulls your attention away.</p>
+            <p>Capture the buyer before the next singles lot or fill-a-box claim pulls your attention away.</p>
           </article>
 
           <article class="step">
             <div class="step-number">2</div>
             <h3>SwiftSale assigns the buyer a BIN</h3>
-            <p>Every buyer gets a clear location for sorting and fulfillment.</p>
+            <p>Every buyer gets a clear location for sorting, packing, and post-show fulfillment.</p>
           </article>
 
           <article class="step">
@@ -1554,8 +1623,85 @@
 
           <article class="step">
             <div class="step-number">4</div>
-            <h3>Annotate packing slips and print faster</h3>
-            <p>Stamp the right BIN onto each packing slip for cleaner post-show packing.</p>
+            <h3>Annotate labels and pack with control</h3>
+            <p>Stamp the right BIN onto each Whatnot packing slip so fulfillment starts organized.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section annotate" id="annotate">
+      <div class="container annotate-grid">
+        <div class="annotate-copy">
+          <span class="eyebrow">Annotate Labels</span>
+          <h2>Annotate Labels: The Feature That Changes Post-Show Fulfillment</h2>
+          <p class="lead">
+            SwiftSale turns Whatnot packing slips into an organized fulfillment workflow by matching each captured buyer to their assigned BIN and stamping it directly onto the right slip.
+          </p>
+          <p class="annotate-body">
+            Before SwiftSale, sellers are handwriting BINs, manually checking buyer names, fighting packing confusion, and working through chaotic stacks of orders. With SwiftSale, upload your Whatnot packing slips, stamp matching BINs automatically, and pack with a cleaner system.
+          </p>
+          <p class="annotate-impact">
+            Turn chaotic post-show packing into an organized fulfillment workflow.
+          </p>
+
+          <ul class="annotate-list">
+            <li>Upload Whatnot packing slips after the stream</li>
+            <li>Automatically stamp BINs onto matching buyer slips</li>
+            <li>Reduce fulfillment mistakes from manual name checks</li>
+            <li>Organize singles and fill-a-box orders faster</li>
+            <li>Export one clean annotated PDF for batch printing</li>
+          </ul>
+
+          <div class="annotate-actions">
+            <a class="btn btn-secondary" href="/guide.html">See How Annotate Works</a>
+          </div>
+        </div>
+
+        <div class="annotate-visual">
+          <img
+            src="images/annotate.png"
+            alt="SwiftSale annotated Whatnot packing slip workflow"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mailing-lists">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Mailing Lists</span>
+          <h2>How Mailing Lists Work</h2>
+          <p class="lead">
+            SwiftSale helps Whatnot live sellers turn compatible packing slip details from post-show fulfillment into organized mailing-list records for review, label printing, and future customer follow-up.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="card">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M8 13h8" /><path d="M8 17h5" /></svg>
+            </span>
+            <h3>Capture buyer details during fulfillment</h3>
+            <p>When Annotate Labels reads compatible Whatnot packing slips, SwiftSale can save buyer names, usernames, street addresses, city, state, and zip codes into a mailing list.</p>
+          </article>
+
+          <article class="card">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m9 11 3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+            </span>
+            <h3>Review and clean the list</h3>
+            <p>Open the mailing list table to review buyer records, check entries, select all when needed, refresh the list, and remove selected records before exporting.</p>
+          </article>
+
+          <article class="card">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7" /><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /><path d="M6 14h12v8H6z" /></svg>
+            </span>
+            <h3>Export labels for follow-up</h3>
+            <p>Selected mailing-list entries can be exported into a printable mailing-label PDF, giving sellers a cleaner workflow for package inserts, promotions, and repeat-customer outreach.</p>
           </article>
         </div>
       </div>
@@ -1565,10 +1711,10 @@
       <div class="container companion-grid">
         <div class="companion-panel">
           <span class="eyebrow">SwiftSale Companion</span>
-          <h2>Keep another device synced while the show is running.</h2>
+          <h2>Keep another device synced while the Whatnot stream is moving.</h2>
           <p class="lead">
-            SwiftSale Companion lets another device see live BIN assignments while the show is running.
-            Perfect for remote helpers, second screens, and sellers who want their phone to stay in sync.
+            SwiftSale Companion lets another device see live BIN assignments while your Whatnot show is running.
+            Perfect for remote helpers, second screens, and Whatnot live sellers who want their phone to stay in sync during fast-paced streams.
           </p>
 
           <ul class="bullet-list">
@@ -1597,7 +1743,7 @@
           <span class="eyebrow">Post-sale bonus games</span>
           <h2>Post-Sale Bonus Games That Keep Buyers Engaged</h2>
           <p class="lead">
-            SwiftSale includes seller-friendly bonus games that run after purchases are complete, giving your show more energy without changing what buyers receive.
+            SwiftSale includes Whatnot seller-friendly bonus games that run after purchases are complete, giving your stream more energy without changing what buyers receive.
           </p>
 
           <div class="game-cards">
@@ -1646,8 +1792,8 @@
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">Features</span>
-          <h2>Built for sellers who run fast shows.</h2>
-          <p class="lead">Short, practical tools for capture, organization, packing, and second-screen coordination.</p>
+          <h2>Operational software for serious Whatnot live sellers.</h2>
+          <p class="lead">A command center for singles shows, fill-a-box workflows, post-show fulfillment, and second-screen coordination.</p>
         </div>
 
         <div class="feature-grid">
@@ -1656,7 +1802,7 @@
               <svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46L12 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46L11 14Z" /></svg>
             </span>
             <h3>Capture / Assign BINs</h3>
-            <p>Capture winners and assign clear order locations without slowing the sale.</p>
+            <p>Capture Whatnot winners and assign clear order locations without slowing the stream.</p>
           </article>
 
           <article class="card">
@@ -1664,7 +1810,7 @@
               <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
             </span>
             <h3>Buyer History</h3>
-            <p>Keep repeat buyers and show activity connected to each capture.</p>
+            <p>Keep repeat buyers and Whatnot show activity connected to each capture.</p>
           </article>
 
           <article class="card">
@@ -1672,7 +1818,7 @@
               <svg viewBox="0 0 24 24"><path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" /></svg>
             </span>
             <h3>Show Analytics</h3>
-            <p>Review show activity so you can understand what happened after the stream.</p>
+            <p>Review stream activity so you can understand what happened after a fast singles or fill-a-box show.</p>
           </article>
 
           <article class="card">
@@ -1688,7 +1834,7 @@
               <svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>
             </span>
             <h3>Annotate Packing Slips</h3>
-            <p>Stamp BIN details onto packing slips and make fulfillment easier to follow.</p>
+            <p>Stamp BIN details onto Whatnot packing slips and make post-show fulfillment easier to follow.</p>
           </article>
 
           <article class="card">
@@ -1705,47 +1851,12 @@
       </div>
     </section>
 
-    <section class="section annotate" id="annotate">
-      <div class="container annotate-grid">
-        <div class="annotate-copy">
-          <span class="eyebrow">Annotate Labels</span>
-          <h2>Annotate Labels in Seconds</h2>
-          <p class="lead">
-            SwiftSale matches each captured buyer to their assigned BIN and stamps it directly onto your Whatnot packing slips.
-          </p>
-          <p class="annotate-body">
-            After your show, download your Whatnot packing slips, upload them into SwiftSale, and generate a clean annotated PDF with BIN numbers placed where you want them. Print faster, pack cleaner, and stop guessing which buyer goes with which order.
-          </p>
-
-          <ul class="annotate-list">
-            <li>Automatically matches buyers to their BIN numbers</li>
-            <li>Stamps BINs onto packing slips before printing</li>
-            <li>Drag and place the stamp exactly where you want it</li>
-            <li>Exports one clean annotated PDF for batch printing</li>
-          </ul>
-
-          <div class="annotate-actions">
-            <a class="btn btn-secondary" href="/guide.html">See How Annotate Works</a>
-          </div>
-        </div>
-
-        <div class="annotate-visual">
-          <img
-            src="images/annotate.png"
-            alt="SwiftSale annotated packing slip workflow"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
-    </section>
-
     <section class="section final-cta" id="download">
       <div class="container">
         <div class="cta-band">
           <span class="eyebrow">Download</span>
-          <h2>Stop Losing Track During Fast Shows.</h2>
-          <p>Run cleaner shows, keep buyers organized, and pack faster after the stream.</p>
+          <h2>Stop Losing Track During Fast Whatnot Shows.</h2>
+          <p>Run cleaner singles and fill-a-box streams, keep buyers organized, and pack faster after the show.</p>
           <div class="hero-actions">
             <a
               id="download-btn"
