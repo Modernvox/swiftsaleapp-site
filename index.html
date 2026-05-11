@@ -693,6 +693,117 @@
       filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 14px rgba(255, 190, 65, 0.13));
     }
 
+    .games {
+      overflow: hidden;
+      contain: paint;
+      background:
+        radial-gradient(760px 420px at 18% 40%, rgba(255, 190, 74, 0.12), transparent 64%),
+        linear-gradient(180deg, rgba(255, 211, 107, 0.02), transparent 52%);
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(22px, 4vw, 46px);
+      align-items: center;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .games-copy {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .game-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .game-card {
+      min-width: 0;
+      max-width: 100%;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255, 211, 107, 0.07), transparent 46%),
+        linear-gradient(180deg, rgba(28, 21, 13, 0.86), rgba(9, 7, 5, 0.94));
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.24);
+      overflow-wrap: break-word;
+    }
+
+    .game-card .icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+    }
+
+    .game-card h3 {
+      margin-bottom: 8px;
+      color: #fff9ea;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .game-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.58;
+    }
+
+    .games-note {
+      margin: 18px 0 0;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 211, 107, 0.16);
+      border-radius: 14px;
+      color: #d6c8b0;
+      background: rgba(255, 211, 107, 0.045);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .games-visual {
+      position: relative;
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
+      contain: paint;
+      border: 1px solid rgba(255, 211, 107, 0.25);
+      border-radius: 26px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 211, 107, 0.54), rgba(255, 211, 107, 0.08), rgba(122, 70, 4, 0.55));
+      box-shadow: 0 24px 76px rgba(0, 0, 0, 0.5), 0 0 70px rgba(246, 183, 53, 0.12);
+    }
+
+    .games-visual::before {
+      content: "";
+      position: absolute;
+      inset: auto 8% -24% 8%;
+      height: 46%;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255, 196, 73, 0.22), transparent 70%);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    .games-visual img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 25px;
+      object-fit: contain;
+      background: #090604;
+    }
+
     .final-cta {
       padding-bottom: clamp(66px, 9vw, 110px);
     }
@@ -867,6 +978,8 @@
       .hero-media,
       .value-strip,
       .feature-grid,
+      .games-grid,
+      .game-cards,
       .companion-grid {
         width: 100%;
         max-width: 100%;
@@ -1088,7 +1201,9 @@
 
       .value-strip,
       .steps,
-      .feature-grid {
+      .feature-grid,
+      .games-grid,
+      .game-cards {
         grid-template-columns: 1fr;
         width: 100%;
         max-width: 100%;
@@ -1098,6 +1213,8 @@
       .value-item,
       .step,
       .card,
+      .game-card,
+      .games-visual,
       .companion-panel,
       .download-card {
         width: 100%;
@@ -1126,6 +1243,28 @@
       .mobile-sync-visual img {
         width: min(96px, 38%);
         max-height: 138px;
+      }
+
+      .games-grid {
+        gap: 20px;
+      }
+
+      .game-cards {
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .game-card {
+        padding: 16px;
+      }
+
+      .games-visual {
+        border-radius: 18px;
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45), inset 0 0 30px rgba(246, 183, 53, 0.05);
+      }
+
+      .games-visual img {
+        border-radius: 17px;
       }
 
       .footer-grid,
@@ -1273,6 +1412,57 @@
             class="phone-product"
             src="https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/f5639205-d1f5-4539-8f79-68bc57f85f00/public"
             alt="SwiftSale Companion live BIN assignment on mobile"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section games" id="games">
+      <div class="container games-grid">
+        <div class="games-copy">
+          <span class="eyebrow">Post-sale bonus games</span>
+          <h2>Post-Sale Bonus Games That Keep Buyers Engaged</h2>
+          <p class="lead">
+            SwiftSale includes seller-friendly bonus games that run after purchases are complete, giving your show more energy without changing what buyers receive.
+          </p>
+
+          <div class="game-cards">
+            <article class="game-card">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /><path d="M3 15h18" /><path d="M9 3v18" /><path d="M15 3v18" /></svg>
+              </span>
+              <h3>Bingo Live</h3>
+              <p>Every captured buyer can be assigned bingo numbers during the show. Call numbers, track the board, and reveal winners with a live second-screen display.</p>
+            </article>
+
+            <article class="game-card">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2v4" /><path d="M12 18v4" /><path d="m4.93 4.93 2.83 2.83" /><path d="m16.24 16.24 2.83 2.83" /><path d="M2 12h4" /><path d="M18 12h4" /><path d="m4.93 19.07 2.83-2.83" /><path d="m16.24 7.76 2.83-2.83" /><circle cx="12" cy="12" r="4" /></svg>
+              </span>
+              <h3>Bin Bonanza</h3>
+              <p>Each assigned BIN becomes a wheel entry. Set a prize, spin the wheel, and reveal a winning BIN for a fun post-sale bonus moment.</p>
+            </article>
+
+            <article class="game-card">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /><path d="M12 16h.01" /></svg>
+              </span>
+              <h3>Vault Breaker</h3>
+              <p>Top buyers get a vault-style number pick experience. Reveal digits, build suspense, and celebrate the winner with a cinematic overlay.</p>
+            </article>
+          </div>
+
+          <p class="games-note">
+            Games are optional post-sale bonus entertainment and do not affect what a buyer purchased or receives.
+          </p>
+        </div>
+
+        <div class="games-visual">
+          <img
+            src="images/games.png"
+            alt="SwiftSale post-sale bonus games interface"
             loading="lazy"
             decoding="async"
           />
