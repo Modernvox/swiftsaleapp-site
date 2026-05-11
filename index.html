@@ -804,6 +804,97 @@
       background: #090604;
     }
 
+    .annotate {
+      overflow: hidden;
+      contain: paint;
+      background:
+        radial-gradient(720px 360px at 82% 38%, rgba(255, 190, 74, 0.12), transparent 62%),
+        linear-gradient(180deg, rgba(255, 211, 107, 0.018), transparent 58%);
+    }
+
+    .annotate-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(24px, 4vw, 50px);
+      align-items: center;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .annotate-copy {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .annotate-body {
+      max-width: 650px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    .annotate-list {
+      display: grid;
+      gap: 11px;
+      max-width: 620px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .annotate-list li {
+      display: flex;
+      gap: 11px;
+      min-width: 0;
+      color: #eadcc6;
+      font-weight: 750;
+      overflow-wrap: break-word;
+    }
+
+    .annotate-list li::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      flex: 0 0 auto;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: var(--gold-2);
+      box-shadow: 0 0 16px rgba(255, 211, 107, 0.58);
+    }
+
+    .annotate-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .annotate-visual {
+      position: relative;
+      justify-self: end;
+      width: 100%;
+      max-width: 640px;
+      min-width: 0;
+      overflow: hidden;
+      contain: paint;
+      border: 1px solid rgba(255, 211, 107, 0.26);
+      border-radius: 18px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 211, 107, 0.52), rgba(255, 211, 107, 0.08), rgba(122, 70, 4, 0.55));
+      box-shadow: 0 22px 68px rgba(0, 0, 0, 0.48), 0 0 64px rgba(246, 183, 53, 0.12);
+    }
+
+    .annotate-visual img {
+      display: block;
+      width: 100%;
+      max-width: 640px;
+      height: auto;
+      border-radius: 17px;
+      object-fit: contain;
+      background: #090604;
+    }
+
     .final-cta {
       padding-bottom: clamp(66px, 9vw, 110px);
     }
@@ -1025,6 +1116,7 @@
       .feature-grid,
       .games-grid,
       .game-cards,
+      .annotate-grid,
       .companion-grid {
         width: 100%;
         max-width: 100%;
@@ -1248,7 +1340,8 @@
       .steps,
       .feature-grid,
       .games-grid,
-      .game-cards {
+      .game-cards,
+      .annotate-grid {
         grid-template-columns: 1fr;
         width: 100%;
         max-width: 100%;
@@ -1260,6 +1353,7 @@
       .card,
       .game-card,
       .games-visual,
+      .annotate-visual,
       .companion-panel,
       .download-card {
         width: 100%;
@@ -1309,6 +1403,39 @@
       }
 
       .games-visual img {
+        border-radius: 17px;
+      }
+
+      .annotate-grid {
+        gap: 20px;
+      }
+
+      .annotate-body {
+        margin-top: 14px;
+        font-size: 15px;
+        line-height: 1.62;
+      }
+
+      .annotate-list {
+        margin-top: 18px;
+      }
+
+      .annotate-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+      }
+
+      .annotate-visual {
+        justify-self: center;
+        border-radius: 18px;
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.44), inset 0 0 30px rgba(246, 183, 53, 0.05);
+      }
+
+      .annotate-visual img {
+        max-width: 100%;
         border-radius: 17px;
       }
 
@@ -1574,6 +1701,41 @@
               <img src="https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/f5639205-d1f5-4539-8f79-68bc57f85f00/public" alt="" />
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section annotate" id="annotate">
+      <div class="container annotate-grid">
+        <div class="annotate-copy">
+          <span class="eyebrow">Annotate Labels</span>
+          <h2>Annotate Labels in Seconds</h2>
+          <p class="lead">
+            SwiftSale matches each captured buyer to their assigned BIN and stamps it directly onto your Whatnot packing slips.
+          </p>
+          <p class="annotate-body">
+            After your show, download your Whatnot packing slips, upload them into SwiftSale, and generate a clean annotated PDF with BIN numbers placed where you want them. Print faster, pack cleaner, and stop guessing which buyer goes with which order.
+          </p>
+
+          <ul class="annotate-list">
+            <li>Automatically matches buyers to their BIN numbers</li>
+            <li>Stamps BINs onto packing slips before printing</li>
+            <li>Drag and place the stamp exactly where you want it</li>
+            <li>Exports one clean annotated PDF for batch printing</li>
+          </ul>
+
+          <div class="annotate-actions">
+            <a class="btn btn-secondary" href="/guide.html">See How Annotate Works</a>
+          </div>
+        </div>
+
+        <div class="annotate-visual">
+          <img
+            src="images/annotate.png"
+            alt="SwiftSale annotated packing slip workflow"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
