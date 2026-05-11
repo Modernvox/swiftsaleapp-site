@@ -16,29 +16,29 @@
   />
   <style>
     :root {
-      --bg: #090611;
-      --bg-2: #120b22;
-      --bg-3: #17102c;
-      --panel: rgba(18, 11, 34, 0.76);
-      --panel-strong: rgba(23, 16, 44, 0.92);
-      --panel-soft: rgba(255, 255, 255, 0.04);
-      --stroke: rgba(255, 255, 255, 0.1);
-      --stroke-strong: rgba(255, 214, 92, 0.28);
-      --text: #f7f2ff;
-      --muted: #bcaed8;
-      --muted-2: #9180b2;
-      --gold: #ffd65c;
-      --gold-2: #ffb93d;
-      --cyan: #46e8ff;
-      --cyan-2: #15b8ff;
-      --purple: #9d59ff;
-      --purple-2: #6b33db;
-      --pink: #ff58c9;
-      --success: #63ffa6;
+      --bg: #050505;
+      --bg-2: #0d0d0d;
+      --bg-3: #15110a;
+      --panel: rgba(13, 13, 13, 0.76);
+      --panel-strong: rgba(13, 13, 13, 0.92);
+      --panel-soft: rgba(255, 204, 92, 0.04);
+      --stroke: rgba(255, 204, 92, 0.12);
+      --stroke-strong: rgba(255, 204, 92, 0.28);
+      --text: #ffffff;
+      --muted: #d8d0c0;
+      --muted-2: #a99a7d;
+      --gold: #f5b841;
+      --gold-2: #ffcc5c;
+      --cyan: #ffcc5c;
+      --cyan-2: #f5b841;
+      --purple: #f5b841;
+      --purple-2: #8a5a12;
+      --pink: #ffcc5c;
+      --success: #ffcc5c;
       --shadow-xl: 0 30px 90px rgba(0, 0, 0, 0.45);
       --shadow-lg: 0 20px 55px rgba(0, 0, 0, 0.35);
-      --shadow-glow-gold: 0 0 40px rgba(255, 214, 92, 0.18);
-      --shadow-glow-cyan: 0 0 44px rgba(70, 232, 255, 0.16);
+      --shadow-glow-gold: 0 0 38px rgba(255, 204, 92, 0.16);
+      --shadow-glow-cyan: 0 0 34px rgba(245, 184, 65, 0.12);
       --radius-xl: 28px;
       --radius-lg: 22px;
       --radius-md: 16px;
@@ -59,10 +59,10 @@
       font-family: "Inter", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(157, 89, 255, 0.16), transparent 24%),
-        radial-gradient(circle at top right, rgba(70, 232, 255, 0.12), transparent 20%),
-        radial-gradient(circle at 50% 20%, rgba(255, 214, 92, 0.08), transparent 18%),
-        linear-gradient(180deg, #08050f 0%, #0c0715 30%, #100a1c 60%, #090611 100%);
+        radial-gradient(circle at top left, rgba(245, 184, 65, 0.12), transparent 24%),
+        radial-gradient(circle at top right, rgba(255, 204, 92, 0.1), transparent 20%),
+        radial-gradient(circle at 50% 20%, rgba(255, 204, 92, 0.07), transparent 18%),
+        linear-gradient(180deg, #050505 0%, #080808 30%, #0d0d0d 60%, #050505 100%);
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -103,8 +103,8 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: rgba(8, 5, 15, 0.72);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(5, 5, 5, 0.78);
+      border-bottom: 1px solid rgba(255, 204, 92, 0.12);
     }
 
     .header-inner {
@@ -168,8 +168,8 @@
     .nav a:hover,
     .nav a.active {
       color: var(--text);
-      background: rgba(255, 255, 255, 0.06);
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+      background: rgba(255, 204, 92, 0.08);
+      box-shadow: inset 0 0 0 1px rgba(255, 204, 92, 0.12);
     }
 
     .nav-actions {
@@ -208,9 +208,9 @@
 
     .btn-secondary {
       color: var(--text);
-      border-color: rgba(70, 232, 255, 0.22);
-      background: linear-gradient(135deg, rgba(70, 232, 255, 0.1), rgba(157, 89, 255, 0.12));
-      box-shadow: 0 12px 30px rgba(70, 232, 255, 0.08);
+      border-color: rgba(255, 204, 92, 0.22);
+      background: linear-gradient(135deg, rgba(255, 204, 92, 0.1), rgba(245, 184, 65, 0.08));
+      box-shadow: 0 12px 30px rgba(245, 184, 65, 0.08);
     }
 
     .hero {
@@ -233,7 +233,7 @@
       height: 280px;
       top: -30px;
       right: -90px;
-      background: rgba(70, 232, 255, 0.12);
+      background: rgba(255, 204, 92, 0.1);
     }
 
     .hero::after {
@@ -241,7 +241,7 @@
       height: 320px;
       bottom: -60px;
       left: -100px;
-      background: rgba(157, 89, 255, 0.12);
+      background: rgba(245, 184, 65, 0.1);
     }
 
     .hero-wrap {
@@ -262,7 +262,7 @@
       border: 1px solid var(--stroke);
       background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
-        linear-gradient(180deg, rgba(17, 10, 31, 0.9), rgba(11, 7, 22, 0.95));
+        linear-gradient(180deg, rgba(13, 13, 13, 0.9), rgba(5, 5, 5, 0.95));
       backdrop-filter: blur(18px);
       box-shadow: var(--shadow-xl);
     }
@@ -278,7 +278,7 @@
       pointer-events: none;
       background:
         linear-gradient(130deg, rgba(255, 214, 92, 0.08), transparent 28%),
-        linear-gradient(220deg, rgba(70, 232, 255, 0.08), transparent 32%);
+        linear-gradient(220deg, rgba(245, 184, 65, 0.07), transparent 32%);
     }
 
     .hero-card {
@@ -325,7 +325,7 @@
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #ffffff 0%, var(--gold) 45%, var(--cyan) 100%);
+      background: linear-gradient(135deg, #ffffff 0%, var(--gold) 48%, var(--gold-2) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -388,7 +388,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 
   background:
-    linear-gradient(180deg, rgba(8, 5, 15, 0.1), rgba(8, 5, 15, 0.48)),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.1), rgba(5, 5, 5, 0.5)),
     url("https://imagedelivery.net/fYqzQPf1CS3qAF1vZpfSLw/667cddc4-ece7-4a7d-13be-204c4047dc00/public")
     center center / cover no-repeat;
 
@@ -399,8 +399,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(5, 4, 11, 0.1), rgba(5, 4, 11, 0.58)),
-        radial-gradient(circle at 70% 20%, rgba(70, 232, 255, 0.2), transparent 28%),
+        linear-gradient(180deg, rgba(5, 5, 5, 0.1), rgba(5, 5, 5, 0.58)),
+        radial-gradient(circle at 70% 20%, rgba(255, 204, 92, 0.16), transparent 28%),
         radial-gradient(circle at 20% 80%, rgba(255, 214, 92, 0.16), transparent 26%);
     }
 
@@ -426,15 +426,15 @@
       text-transform: uppercase;
       color: var(--text);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(8, 5, 15, 0.45);
+      background: rgba(5, 5, 5, 0.52);
       backdrop-filter: blur(12px);
     }
 
     .badge.live {
-      color: #07110c;
-      background: linear-gradient(135deg, #7cffc4, #46ff8a);
+      color: #140d05;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
       border: none;
-      box-shadow: 0 0 24px rgba(99, 255, 166, 0.35);
+      box-shadow: 0 0 22px rgba(255, 204, 92, 0.22);
     }
 
     .hero-caption {
@@ -445,8 +445,8 @@
       z-index: 2;
       padding: 18px;
       border-radius: 20px;
-      background: rgba(8, 5, 15, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(5, 5, 5, 0.62);
+      border: 1px solid rgba(255, 204, 92, 0.1);
       backdrop-filter: blur(14px);
     }
 
@@ -623,9 +623,9 @@
       min-height: 34px;
       padding: 0 14px;
       border-radius: 999px;
-      border: 1px solid rgba(70, 232, 255, 0.18);
-      color: var(--cyan);
-      background: rgba(70, 232, 255, 0.08);
+      border: 1px solid rgba(255, 204, 92, 0.18);
+      color: var(--gold-2);
+      background: rgba(255, 204, 92, 0.08);
       font-size: 0.82rem;
       font-weight: 800;
       letter-spacing: 0.06em;
@@ -725,7 +725,7 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
-        linear-gradient(180deg, rgba(15, 9, 28, 0.92), rgba(10, 7, 19, 0.96));
+        linear-gradient(180deg, rgba(13, 13, 13, 0.92), rgba(5, 5, 5, 0.96));
       box-shadow: var(--shadow-lg);
     }
 
@@ -798,7 +798,7 @@
     .site-footer {
       padding: 28px 0 38px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(7, 4, 13, 0.45);
+      background: rgba(5, 5, 5, 0.55);
       backdrop-filter: blur(12px);
       position: relative;
       z-index: 1;
@@ -925,7 +925,7 @@
   <header class="site-header">
     <div class="container header-inner">
 <a href="index.html" class="brand" aria-label="SwiftSale home">
-  <img src="/images/ssa_logo.png" alt="SwiftSale logo" />
+  <img src="/images/swiftsaleapp_logo.png" alt="SwiftSale logo" />
   <div class="brand-text">
     <div class="brand-title">SwiftSale</div>
     <div class="brand-sub">Desktop</div>
