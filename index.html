@@ -704,16 +704,27 @@
     }
 
     .savings {
+      position: relative;
       overflow: hidden;
       contain: paint;
       background:
-        radial-gradient(680px 360px at 18% 42%, rgba(255, 190, 74, 0.11), transparent 64%),
-        linear-gradient(180deg, rgba(255, 211, 107, 0.018), transparent 58%);
+        radial-gradient(760px 360px at 20% 28%, rgba(255, 190, 74, 0.16), transparent 66%),
+        radial-gradient(620px 340px at 84% 64%, rgba(246, 183, 53, 0.11), transparent 68%),
+        linear-gradient(180deg, rgba(255, 211, 107, 0.025), transparent 58%);
+    }
+
+    .savings::before {
+      content: "";
+      position: absolute;
+      inset: 34px max(18px, calc((100% - var(--max)) / 2)) auto;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 211, 107, 0.4), transparent);
+      pointer-events: none;
     }
 
     .savings-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 16px;
       min-width: 0;
       max-width: 100%;
@@ -724,45 +735,182 @@
     }
 
     .savings-card {
+      position: relative;
       display: flex;
-      min-height: 255px;
+      min-height: 310px;
       flex-direction: column;
-      gap: 18px;
+      gap: 20px;
+      overflow: hidden;
+      padding: 1px;
+      border-color: rgba(255, 211, 107, 0.3);
+      background:
+        linear-gradient(135deg, rgba(255, 211, 107, 0.45), rgba(255, 211, 107, 0.08) 34%, rgba(122, 70, 4, 0.45)),
+        linear-gradient(180deg, rgba(38, 28, 14, 0.96), rgba(8, 6, 4, 0.96));
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.38), 0 0 44px rgba(246, 183, 53, 0.07);
+    }
+
+    .savings-card::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      z-index: 0;
+      border-radius: calc(var(--radius) - 1px);
+      background:
+        radial-gradient(280px 140px at 72% 10%, rgba(255, 211, 107, 0.14), transparent 66%),
+        linear-gradient(180deg, rgba(27, 20, 12, 0.97), rgba(9, 7, 5, 0.98));
+    }
+
+    .savings-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .savings-card:nth-child(1),
+    .savings-card:nth-child(2) {
+      grid-column: span 3;
+    }
+
+    .savings-card:nth-child(n+3) {
+      grid-column: span 2;
+    }
+
+    .savings-card.is-featured {
+      border-color: rgba(255, 211, 107, 0.44);
+      box-shadow: 0 26px 82px rgba(0, 0, 0, 0.48), 0 0 66px rgba(246, 183, 53, 0.14);
+    }
+
+    .savings-card.is-featured::before {
+      background:
+        radial-gradient(340px 170px at 72% 8%, rgba(255, 211, 107, 0.22), transparent 68%),
+        linear-gradient(180deg, rgba(34, 24, 11, 0.98), rgba(8, 6, 4, 0.98));
     }
 
     .savings-card h3 {
       margin-bottom: 0;
-    }
-
-    .savings-list {
-      display: grid;
-      gap: 13px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    .savings-list li {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.45;
-    }
-
-    .savings-list strong {
-      color: #fff3d8;
+      color: #fff9ea;
       font-size: 18px;
-      line-height: 1.28;
+      line-height: 1.2;
+    }
+
+    .savings-card-inner {
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+      gap: 20px;
+      padding: 24px;
+    }
+
+    .savings-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .seller-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 211, 107, 0.28);
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: #ffe2a1;
+      background: rgba(255, 211, 107, 0.08);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .savings-metric {
+      display: grid;
+      gap: 5px;
+      margin-top: auto;
+      padding-top: 10px;
+    }
+
+    .savings-metric strong {
+      color: #fff3d8;
+      font-size: clamp(36px, 4.5vw, 58px);
+      font-weight: 900;
+      letter-spacing: 0;
+      line-height: 0.95;
+      text-shadow: 0 0 32px rgba(255, 211, 107, 0.16);
+    }
+
+    .savings-metric span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .savings-stats {
+      display: grid;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .savings-stat {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      border: 1px solid rgba(255, 211, 107, 0.13);
+      border-radius: 14px;
+      padding: 12px 13px;
+      background: rgba(255, 211, 107, 0.045);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .savings-stat strong {
+      color: #fff6df;
+      font-size: 15px;
+      text-align: right;
+    }
+
+    .savings-stat.value {
+      border-color: rgba(255, 211, 107, 0.28);
+      background: linear-gradient(180deg, rgba(255, 211, 107, 0.12), rgba(255, 211, 107, 0.055));
+    }
+
+    .savings-stat.value strong {
+      color: var(--gold-2);
+      font-size: 17px;
     }
 
     .savings-note {
-      margin: 24px 0 0;
-      padding: 18px 20px;
-      border: 1px solid rgba(255, 211, 107, 0.18);
-      border-radius: 18px;
+      margin: 26px 0 0;
+      padding: 22px 24px;
+      border: 1px solid rgba(255, 211, 107, 0.28);
+      border-radius: 22px;
       color: #eadcc6;
-      background: rgba(255, 211, 107, 0.045);
-      font-size: 16px;
-      line-height: 1.65;
+      background:
+        radial-gradient(360px 180px at 80% 30%, rgba(255, 211, 107, 0.13), transparent 70%),
+        linear-gradient(180deg, rgba(31, 22, 11, 0.86), rgba(10, 8, 5, 0.9));
+      box-shadow: 0 18px 52px rgba(0, 0, 0, 0.26);
+    }
+
+    .savings-note strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff8e9;
+      font-size: clamp(20px, 2.2vw, 28px);
+      line-height: 1.18;
+    }
+
+    .savings-note span {
+      display: block;
+      max-width: 920px;
+      color: var(--muted-2);
+      font-size: 13px;
+      line-height: 1.6;
     }
 
     .mobile-sync-visual {
@@ -1203,6 +1351,13 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .savings-card,
+      .savings-card:nth-child(1),
+      .savings-card:nth-child(2),
+      .savings-card:nth-child(n+3) {
+        grid-column: auto;
+      }
+
       .companion-grid {
         grid-template-columns: 1fr;
       }
@@ -1511,6 +1666,37 @@
 
       .savings-card {
         min-height: 0;
+      }
+
+      .savings-card-inner {
+        padding: 20px;
+      }
+
+      .savings-card-top,
+      .savings-stat {
+        align-items: flex-start;
+      }
+
+      .savings-card-top {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .savings-stat {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .savings-stat strong {
+        text-align: left;
+      }
+
+      .savings-metric strong {
+        font-size: clamp(34px, 11vw, 46px);
+      }
+
+      .savings-note {
+        padding: 18px;
       }
 
       .phone-card {
@@ -1984,48 +2170,137 @@
     <section class="section savings" id="savings">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Value</span>
-          <h2>What SwiftSale Can Save You</h2>
+          <span class="eyebrow">ROI Dashboard</span>
+          <h2>Stop Spending Hours After Every Show</h2>
           <p class="lead">
-            SwiftSale is built to save sellers hours of post-show work by automating winner capture, BIN assignment, label annotation, giveaway handling, and mailing list collection.
+            SwiftSale turns post-show busy work into selling time by automating winner capture, BIN assignment, label annotation, giveaway handling, and mailing list collection.
           </p>
           <p class="lead">
-            Many sellers can reduce post-show processing by 2&ndash;4 hours per show, depending on show size and workflow.
+            Many sellers can reduce post-show processing by approximately 2&ndash;4 hours per show, depending on show size and workflow.
           </p>
         </div>
 
         <div class="savings-grid">
           <article class="card savings-card">
-            <h3>1 Show Per Week</h3>
-            <ul class="savings-list">
-              <li><strong>8&ndash;16 hours saved per month</strong></li>
-              <li><strong>100&ndash;200+ hours saved per year</strong></li>
-              <li><strong>Estimated yearly value at $25/hr: $2,500&ndash;$5,000</strong></li>
-            </ul>
+            <div class="savings-card-inner">
+              <div class="savings-card-top">
+                <h3>1 Show / Week</h3>
+                <span class="seller-badge">Starter</span>
+              </div>
+              <div class="savings-metric">
+                <strong>8&ndash;16</strong>
+                <span>hrs/month saved</span>
+              </div>
+              <div class="savings-stats">
+                <div class="savings-stat">
+                  <span>Annual time</span>
+                  <strong>100&ndash;200+ hrs/year</strong>
+                </div>
+                <div class="savings-stat value">
+                  <span>Yearly value</span>
+                  <strong>$2,500&ndash;$5,000/year</strong>
+                </div>
+              </div>
+            </div>
           </article>
 
           <article class="card savings-card">
-            <h3>2 Shows Per Week</h3>
-            <ul class="savings-list">
-              <li><strong>16&ndash;32 hours saved per month</strong></li>
-              <li><strong>200&ndash;400+ hours saved per year</strong></li>
-              <li><strong>Estimated yearly value at $25/hr: $5,000&ndash;$10,000</strong></li>
-            </ul>
+            <div class="savings-card-inner">
+              <div class="savings-card-top">
+                <h3>2 Shows / Week</h3>
+                <span class="seller-badge">Growing</span>
+              </div>
+              <div class="savings-metric">
+                <strong>16&ndash;32</strong>
+                <span>hrs/month saved</span>
+              </div>
+              <div class="savings-stats">
+                <div class="savings-stat">
+                  <span>Annual time</span>
+                  <strong>200&ndash;400+ hrs/year</strong>
+                </div>
+                <div class="savings-stat value">
+                  <span>Yearly value</span>
+                  <strong>$5,000&ndash;$10,000/year</strong>
+                </div>
+              </div>
+            </div>
           </article>
 
-          <article class="card savings-card">
-            <h3>1 Show Per Day</h3>
-            <ul class="savings-list">
-              <li><strong>60&ndash;120+ hours saved per month</strong></li>
-              <li><strong>700&ndash;1,400+ hours saved per year</strong></li>
-              <li><strong>Estimated yearly value at $25/hr: $17,500&ndash;$35,000</strong></li>
-            </ul>
+          <article class="card savings-card is-featured">
+            <div class="savings-card-inner">
+              <div class="savings-card-top">
+                <h3>1 Show / Day</h3>
+                <span class="seller-badge">Serious Seller</span>
+              </div>
+              <div class="savings-metric">
+                <strong>60&ndash;120+</strong>
+                <span>hrs/month saved</span>
+              </div>
+              <div class="savings-stats">
+                <div class="savings-stat">
+                  <span>Annual time</span>
+                  <strong>700&ndash;1,400+ hrs/year</strong>
+                </div>
+                <div class="savings-stat value">
+                  <span>Yearly value</span>
+                  <strong>$17,500&ndash;$35,000/year</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card savings-card is-featured">
+            <div class="savings-card-inner">
+              <div class="savings-card-top">
+                <h3>2 Shows / Day</h3>
+                <span class="seller-badge">Power Seller</span>
+              </div>
+              <div class="savings-metric">
+                <strong>120&ndash;240+</strong>
+                <span>hrs/month saved</span>
+              </div>
+              <div class="savings-stats">
+                <div class="savings-stat">
+                  <span>Annual time</span>
+                  <strong>1,400&ndash;2,800+ hrs/year</strong>
+                </div>
+                <div class="savings-stat value">
+                  <span>Yearly value</span>
+                  <strong>$35,000&ndash;$70,000/year</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card savings-card is-featured">
+            <div class="savings-card-inner">
+              <div class="savings-card-top">
+                <h3>3 Shows / Day</h3>
+                <span class="seller-badge">Full-Time Seller</span>
+              </div>
+              <div class="savings-metric">
+                <strong>180&ndash;360+</strong>
+                <span>hrs/month saved</span>
+              </div>
+              <div class="savings-stats">
+                <div class="savings-stat">
+                  <span>Annual time</span>
+                  <strong>2,100&ndash;4,200+ hrs/year</strong>
+                </div>
+                <div class="savings-stat value">
+                  <span>Yearly value</span>
+                  <strong>$52,500&ndash;$105,000/year</strong>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
 
-        <p class="savings-note">
-          SwiftSale does more than save time. It helps reduce manual mistakes, speed up fulfillment, and gives sellers more time to source inventory, run shows, and grow.
-        </p>
+        <div class="savings-note">
+          <strong>If SwiftSale saves you even one extra show worth of time each month, it can pay for itself many times over.</strong>
+          <span>Examples are estimates based on approximately 2&ndash;4 hours of post-show work saved per show. Actual results vary depending on workflow, show size, and selling volume.</span>
+        </div>
       </div>
     </section>
 
