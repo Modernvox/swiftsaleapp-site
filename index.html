@@ -703,6 +703,68 @@
       height: 23px;
     }
 
+    .savings {
+      overflow: hidden;
+      contain: paint;
+      background:
+        radial-gradient(680px 360px at 18% 42%, rgba(255, 190, 74, 0.11), transparent 64%),
+        linear-gradient(180deg, rgba(255, 211, 107, 0.018), transparent 58%);
+    }
+
+    .savings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .savings .lead + .lead {
+      margin-top: 12px;
+    }
+
+    .savings-card {
+      display: flex;
+      min-height: 255px;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .savings-card h3 {
+      margin-bottom: 0;
+    }
+
+    .savings-list {
+      display: grid;
+      gap: 13px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .savings-list li {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .savings-list strong {
+      color: #fff3d8;
+      font-size: 18px;
+      line-height: 1.28;
+    }
+
+    .savings-note {
+      margin: 24px 0 0;
+      padding: 18px 20px;
+      border: 1px solid rgba(255, 211, 107, 0.18);
+      border-radius: 18px;
+      color: #eadcc6;
+      background: rgba(255, 211, 107, 0.045);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
     .mobile-sync-visual {
       position: relative;
       display: grid;
@@ -1136,6 +1198,7 @@
 
       .value-strip,
       .steps,
+      .savings-grid,
       .feature-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -1173,6 +1236,7 @@
       .hero-media,
       .value-strip,
       .feature-grid,
+      .savings-grid,
       .games-grid,
       .game-cards,
       .annotate-grid,
@@ -1415,6 +1479,7 @@
       .value-strip,
       .steps,
       .feature-grid,
+      .savings-grid,
       .games-grid,
       .game-cards,
       .annotate-grid {
@@ -1428,6 +1493,7 @@
       .step,
       .card,
       .game-card,
+      .savings-card,
       .games-visual,
       .annotate-visual,
       .companion-panel,
@@ -1440,6 +1506,10 @@
       }
 
       .step {
+        min-height: 0;
+      }
+
+      .savings-card {
         min-height: 0;
       }
 
@@ -1908,6 +1978,54 @@
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section savings" id="savings">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Value</span>
+          <h2>What SwiftSale Can Save You</h2>
+          <p class="lead">
+            SwiftSale is built to save sellers hours of post-show work by automating winner capture, BIN assignment, label annotation, giveaway handling, and mailing list collection.
+          </p>
+          <p class="lead">
+            Many sellers can reduce post-show processing by 2&ndash;4 hours per show, depending on show size and workflow.
+          </p>
+        </div>
+
+        <div class="savings-grid">
+          <article class="card savings-card">
+            <h3>1 Show Per Week</h3>
+            <ul class="savings-list">
+              <li><strong>8&ndash;16 hours saved per month</strong></li>
+              <li><strong>100&ndash;200+ hours saved per year</strong></li>
+              <li><strong>Estimated yearly value at $25/hr: $2,500&ndash;$5,000</strong></li>
+            </ul>
+          </article>
+
+          <article class="card savings-card">
+            <h3>2 Shows Per Week</h3>
+            <ul class="savings-list">
+              <li><strong>16&ndash;32 hours saved per month</strong></li>
+              <li><strong>200&ndash;400+ hours saved per year</strong></li>
+              <li><strong>Estimated yearly value at $25/hr: $5,000&ndash;$10,000</strong></li>
+            </ul>
+          </article>
+
+          <article class="card savings-card">
+            <h3>1 Show Per Day</h3>
+            <ul class="savings-list">
+              <li><strong>60&ndash;120+ hours saved per month</strong></li>
+              <li><strong>700&ndash;1,400+ hours saved per year</strong></li>
+              <li><strong>Estimated yearly value at $25/hr: $17,500&ndash;$35,000</strong></li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="savings-note">
+          SwiftSale does more than save time. It helps reduce manual mistakes, speed up fulfillment, and gives sellers more time to source inventory, run shows, and grow.
+        </p>
       </div>
     </section>
 
