@@ -464,6 +464,82 @@
       overflow-wrap: break-word;
     }
 
+    .demo {
+      overflow: hidden;
+      contain: paint;
+      background:
+        radial-gradient(700px 340px at 78% 44%, rgba(255, 190, 74, 0.12), transparent 66%),
+        linear-gradient(180deg, rgba(255, 211, 107, 0.018), transparent 58%);
+    }
+
+    .demo-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+      gap: clamp(24px, 4vw, 48px);
+      align-items: center;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .demo-copy {
+      min-width: 0;
+      max-width: 430px;
+    }
+
+    .demo-copy h2 {
+      margin-bottom: 14px;
+    }
+
+    .demo-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(16px, 1.5vw, 18px);
+      line-height: 1.7;
+    }
+
+    .demo-video-shell {
+      position: relative;
+      width: 100%;
+      min-width: 0;
+      overflow: hidden;
+      contain: paint;
+      border: 1px solid rgba(255, 211, 107, 0.3);
+      border-radius: 26px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 211, 107, 0.62), rgba(255, 211, 107, 0.08), rgba(134, 79, 7, 0.64));
+      box-shadow: 0 26px 76px rgba(0, 0, 0, 0.52), 0 0 72px rgba(246, 183, 53, 0.12);
+    }
+
+    .demo-video-shell::before {
+      content: "";
+      position: absolute;
+      inset: auto 8% -28% 8%;
+      height: 46%;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255, 196, 73, 0.22), transparent 70%);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    .demo-video-frame {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 25px;
+      background: #090604;
+    }
+
+    .demo-video-frame iframe {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .icon {
       display: inline-flex;
       width: 42px;
@@ -1193,6 +1269,77 @@
       padding: 24px;
     }
 
+    .download-guide {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .download-guide-note {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      border: 1px solid rgba(255, 211, 107, 0.2);
+      border-radius: 18px;
+      padding: 16px;
+      color: #eadcc6;
+      background: rgba(255, 211, 107, 0.055);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .download-guide-note .icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+    }
+
+    .download-steps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .download-steps li {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 12px;
+      align-items: flex-start;
+      min-width: 0;
+      border: 1px solid rgba(255, 211, 107, 0.14);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255, 211, 107, 0.04);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      overflow-wrap: break-word;
+    }
+
+    .download-step-number {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 211, 107, 0.36);
+      border-radius: 999px;
+      color: #130c02;
+      background: linear-gradient(180deg, #ffe08a, #d28a12);
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: 0 8px 22px rgba(246, 183, 53, 0.18);
+    }
+
+    .download-steps strong {
+      color: #fff8e9;
+      font-weight: 900;
+    }
+
     .download-meta {
       display: flex;
       flex-wrap: wrap;
@@ -1335,6 +1482,14 @@
         grid-template-columns: 1fr;
       }
 
+      .demo-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .demo-copy {
+        max-width: 720px;
+      }
+
       .hero-copy {
         max-width: 760px;
       }
@@ -1389,6 +1544,8 @@
       .hero-visual,
       .hero-card,
       .hero-media,
+      .demo-layout,
+      .demo-video-shell,
       .value-strip,
       .feature-grid,
       .savings-grid,
@@ -1609,6 +1766,15 @@
         object-fit: contain;
       }
 
+      .demo-video-shell {
+        border-radius: 18px;
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.44), inset 0 0 30px rgba(246, 183, 53, 0.05);
+      }
+
+      .demo-video-frame {
+        border-radius: 17px;
+      }
+
       .strip {
         padding: 4px 0 24px;
       }
@@ -1635,6 +1801,7 @@
       .steps,
       .feature-grid,
       .savings-grid,
+      .download-steps,
       .games-grid,
       .game-cards,
       .annotate-grid {
@@ -1862,6 +2029,31 @@
             <svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg>
           </span>
           Packing Slip Annotation
+        </div>
+      </div>
+    </section>
+
+    <section class="section demo" id="demo">
+      <div class="container demo-layout">
+        <div class="demo-copy">
+          <span class="eyebrow">Product Demo</span>
+          <h2>See SwiftSale in Action</h2>
+          <p>Watch how SwiftSale helps Whatnot sellers capture winners, assign BINs, annotate labels, and move from show to fulfillment faster before you download.</p>
+        </div>
+
+        <div class="demo-video-shell" aria-label="SwiftSale demo video">
+          <div class="demo-video-frame">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/KlSnzJRWvsk?si=xFXeCMNR15wZvfmX"
+              title="SwiftSale Demo Video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -2321,8 +2513,45 @@
           </div>
 
           <div class="download-card">
-            <h3>SwiftSale for Windows</h3>
-            <p>SwiftSale V5 is available now. Existing installs update automatically the next time users open SwiftSale.</p>
+            <h3>How to Download SwiftSale for Windows</h3>
+            <p>
+              Windows or your browser may show an extra security confirmation because SwiftSale is developed by a small independent software company and is not yet code-signed.
+            </p>
+            <div class="download-guide">
+              <div class="download-guide-note">
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 8.9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1Z" /><path d="m9 12 2 2 4-4" /></svg>
+                </span>
+                <span>SwiftSale is safe to install. Windows may display an extra confirmation screen because we are in the process of obtaining a code-signing certificate.</span>
+              </div>
+
+              <ol class="download-steps">
+                <li>
+                  <span class="download-step-number">1</span>
+                  <span>Click <strong>Download SwiftSale</strong>.</span>
+                </li>
+                <li>
+                  <span class="download-step-number">2</span>
+                  <span>If your browser displays a warning, click <strong>Keep</strong> or <strong>Keep anyway</strong>.</span>
+                </li>
+                <li>
+                  <span class="download-step-number">3</span>
+                  <span>Open the downloaded installer.</span>
+                </li>
+                <li>
+                  <span class="download-step-number">4</span>
+                  <span>If Windows SmartScreen appears, click <strong>More info</strong>.</span>
+                </li>
+                <li>
+                  <span class="download-step-number">5</span>
+                  <span>Click <strong>Run anyway</strong>.</span>
+                </li>
+                <li>
+                  <span class="download-step-number">6</span>
+                  <span>Complete the installation and launch SwiftSale.</span>
+                </li>
+              </ol>
+            </div>
             <div class="download-meta">
               <span>Windows desktop</span>
               <span>SwiftSale V5</span>
